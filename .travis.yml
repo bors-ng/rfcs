@@ -1,7 +1,7 @@
-language: rust
 script:
-  - (cargo install mdbook --vers '^0.2.0' --force || true)
-  - mdbook build
+  - curl -L https://github.com/rust-lang-nursery/mdBook/releases/download/v0.2.1/mdbook-v0.2.1-x86_64-unknown-linux-musl.tar.gz > mdbook.tar.gz
+  - tar -xvf mdbook.tar.gz
+  - ./mdbook build
   - cd book
   # We don't use jekyll. Disable it so it doesn't assign special meaning to any
   # of our files (e.g. ignoring directories with a leading '_').

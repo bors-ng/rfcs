@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Introduction - The Bors RFC Book</title>
+        <title>Introduction - The Bors RFC Archive</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,7 +32,10 @@
     </head>
     <body class="light">
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">var path_to_root = "";</script>
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "light";
+        </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script type="text/javascript">
@@ -54,7 +57,7 @@
         <script type="text/javascript">
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
-            if (theme === null || theme === undefined) { theme = 'light'; }
+            if (theme === null || theme === undefined) { theme = default_theme; }
             document.body.className = theme;
             document.querySelector('html').className = theme + ' js';
         </script>
@@ -72,7 +75,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="../index.html" class="active">Introduction</a></li><li><a href="INFORMATIONAL.html">Informational RFC</a></li><li><a href="PROCESS.html">Process RFC</a></li><li><ol class="section"><li><a href="0296-adopt-a-process-for-proposing-approving-and-tracking-major-changes-to-bors-ng.html">0296 — Adopt a process for proposing, approving, and tracking major changes to bors-ng</a></li></ol></li><li><a href="FEATURE.html">Feature RFC</a></li></ol>
+            <ol class="chapter"><li><a href="../index.html" class="active">Introduction</a></li><li><a href="INFORMATIONAL.html">Informational RFC</a></li><li><a href="PROCESS.html">Process RFC</a></li><li><ol class="section"><li><a href="0296-adopt-a-process-for-proposing-approving-and-tracking-major-changes-to-bors-ng.html">0296 — Adopt a process for proposing, approving, and tracking major changes to bors-ng</a></li></ol></li><li><a href="FEATURE.html">Feature RFC</a></li><li><ol class="section"><li><a href="0313-the-bors-button-extension.html">0313 — The bors button extension</a></li></ol></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -89,7 +92,7 @@
                                 <i class="fa fa-paint-brush"></i>
                             </button>
                             <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
                                 <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                                 <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                                 <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
@@ -102,12 +105,13 @@
                             
                         </div>
 
-                        <h1 class="menu-title">The Bors RFC Book</h1> 
+                        <h1 class="menu-title">The Bors RFC Archive</h1> 
 
                         <div class="right-buttons">
                             <a href="print.html" title="Print this book" aria-label="Print this book">
                                 <i id="print-button" class="fa fa-print"></i>
                             </a>
+                            
                         </div>
                     </div>
                 </div>

@@ -120,6 +120,3 @@ If you use a Bors server with `perform_git_merges_locally` set to `true`, and yo
 Once the ability to create merge commits locally has been implemented, future work might include the implementation of a `git_squash = true` option in `bors.toml` that would pass the `--squash` flag to the `git merge` command. This could potentially help us close [issue #138](https://github.com/bors-ng/bors-ng/issues/138) and/or [issue #194](https://github.com/bors-ng/bors-ng/issues/194).
 
 But this would be an advanced feature, and we should not implement it as part of this first RFC. The best plan is to first implement the ability simply to create merge commits locally. Once we have implemented that, we can consider opening a second RFC for discussion specifically of a `git_squash = true` option for passing the `--squash` flag to the `git merge` command, or something similar.
-
-# Change history
-- 2019-07-15: initial version posted

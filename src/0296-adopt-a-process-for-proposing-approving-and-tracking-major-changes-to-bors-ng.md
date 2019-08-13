@@ -1,6 +1,6 @@
-Summary: This RFC proposes to expand, and make more explicit, decision-making for bors-ng. It puts in place a template for new proposals (with typical sections such as Motivation, Summary, Drawbacks), a plan for accepting and rejecting them, and sets the stage for better governance changes in the future (it doesn't set up a core team, but once the core team is put in place, it'll follow the RFC process). This "initial RFC" shall be approved following its own process; nobody seemed to have a problem with it during the spitballing stage.
+﻿Summary: This RFC proposes to expand, and make more explicit, decision-making for bors-ng. It puts in place a template for new proposals (with typical sections such as Motivation, Summary, Drawbacks), a plan for accepting and rejecting them, and sets the stage for better governance changes in the future (it doesn't set up a core team, but once the core team is put in place, it'll follow the RFC process). This "initial RFC" shall be approved following its own process; nobody seemed to have a problem with it during the spitballing stage.
 
-> I allow this RFC document to be modified and redistributed under the terms of the [Apache-2.0 license](http://www.apache.org/licenses/LICENSE-2.0%3E), or the [CC-BY-NC-SA 3.0 license](http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US), at your option.
+> I allow this RFC document to be modified and redistributed under the terms of the [Apache-2.0 license](http://www.apache.org/licenses/LICENSE-2.0), or the [CC-BY-NC-SA 3.0 license](http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US), at your option.
 
 # Motivation
 

@@ -1,6 +1,6 @@
-Summary: Provide a way for projects to run arbitrary code before testing, and before merging.
+﻿Summary: Provide a way for projects to run arbitrary code before testing, and before merging.
 
-> I allow this RFC document to be modified and redistributed under the terms of the [Apache-2.0 license](http://www.apache.org/licenses/LICENSE-2.0%3E), or the [CC-BY-NC-SA 3.0 license](http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US), at your option.
+> I allow this RFC document to be modified and redistributed under the terms of the [Apache-2.0 license](http://www.apache.org/licenses/LICENSE-2.0), or the [CC-BY-NC-SA 3.0 license](http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US), at your option.
 
 # Motivation
 

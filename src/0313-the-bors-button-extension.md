@@ -1,6 +1,6 @@
 ﻿Summary: Commit to maintaining an extension that adds a `bors r+` button to GitHub, move it to the bors-ng GitHub org, and publish it to as many extension stores as possible.
 
-> I allow this RFC document to be modified and redistributed under the terms of the [Apache-2.0 license](http://www.apache.org/licenses/LICENSE-2.0%3E), or the [CC-BY-NC-SA 3.0 license](http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US), at your option.
+> I allow this RFC document to be modified and redistributed under the terms of the [Apache-2.0 license](http://www.apache.org/licenses/LICENSE-2.0), or the [CC-BY-NC-SA 3.0 license](http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US), at your option.
 
 # Motivation
 

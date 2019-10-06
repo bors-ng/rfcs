@@ -12,4 +12,5 @@
   - [0349 &mdash; Use a squash merge in Bors](0349-use-a-squash-merge-in-bors.md)
   - [0357 &mdash; Bors support for CODEOWNERS](0357-bors-support-for-codeowners.md)
   - [0362 &mdash; Allow `delegate` to be abbreviated as `d`](0362-allow-delegate-to-be-abbreviated-as-d.md)
+  - [0376 &mdash; Allow `merge` as an alias for `r+`](0376-allow-merge-as-an-alias-for-r.md)
 

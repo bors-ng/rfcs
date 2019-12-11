@@ -14,4 +14,5 @@
   - [0360 &mdash; Add a new configuration option `status_wait_success`](0360-add-a-new-configuration-option-status-wait-success.md)
   - [0362 &mdash; Allow `delegate` to be abbreviated as `d`](0362-allow-delegate-to-be-abbreviated-as-d.md)
   - [0376 &mdash; Allow `merge` as an alias for `r+`](0376-allow-merge-as-an-alias-for-r.md)
+  - [0388 &mdash; Wait for CI to finish instead of rejecting immediately on bors r+ when CI is still "pending"](0388-wait-for-ci-to-finish-instead-of-rejecting-immediately-on-bors-r-when-ci-is-still-pending.md)
 

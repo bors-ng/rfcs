@@ -70,3 +70,9 @@ None foreseen.
 
 Implemented by pull request #839 on GitHub
 
+# Implementation status
+
+**Implemented**:
+
+* Pull request: https://github.com/bors-ng/bors-ng/pull/839
+

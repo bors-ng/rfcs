@@ -151,3 +151,7 @@ None.
 I briefly considered adding a mechanism to pass information between the pre-test and pre-merge hooks. (For example: the pre-test hook could return some JSON data, which would then be passed through to the pre-merge hook.) I couldn't think of any use cases, so I left it out, but it could be added later if any use cases are discovered.
 
 If you have a lot of repositories managed by bors-ng, then it might be tiresome to have to manually configure secrets for each one. Maybe we'll want to add a way to let multiple repositories use the same secret? (E.g., a per-github-org secret instead of a per-repo secret.)
+
+# Implementation status
+
+**Yet to be implemented**

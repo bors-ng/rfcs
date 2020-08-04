@@ -63,3 +63,10 @@ See https://forum.bors.tech/t/is-anyone-working-on-squash-merge-for-bors/340 and
 # Future possibilities
 
 The alternative option could become easy to support if Github adds a more robust Git manipulation API.
+
+# Implementation status
+
+**Implemented**:
+
+* Pull request: https://github.com/bors-ng/bors-ng/pull/718
+

@@ -64,3 +64,9 @@ None.
 
 Hopefully we won't need to add any more aliases after this one.
 
+# Implementation status
+
+**Implemented**:
+
+* Pull request: https://github.com/bors-ng/bors-ng/pull/746
+

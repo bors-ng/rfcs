@@ -45,3 +45,9 @@ There are a bunch of pre-checks. Right now, we only poll statuses, but maybe we'
 
 * Implemented by <https://github.com/bors-ng/bors-ng/pull/785>
 
+# Implementation status
+
+**Implemented**:
+
+* Pull request: https://github.com/bors-ng/bors-ng/pull/785
+

@@ -49,3 +49,12 @@ This is kind of tangential to the bors-ng project itself. Especially since we're
 # Future possibilities
 
 Designing an API that we can use instead of the hardcoded list should be done as its own RFC.
+
+# Implementaton status
+
+**Implemented**:
+
+* Source code: https://github.com/bors-ng/bors-extension
+
+* Firefox add-on: https://addons.mozilla.org/en-US/firefox/addon/bors-for-github-com/
+

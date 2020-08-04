@@ -163,3 +163,8 @@ The feature described here is the only approach that avoids a race condition.
 # Future possibilities
 
 I can't think of any future possibilities at this time.
+
+# Implementation status
+
+**Yet to implement**
+

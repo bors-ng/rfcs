@@ -37,3 +37,10 @@ An alternative, this could be implemented by an external github tagger bot.  The
 # Future possibilities
 
 We could extend the CODEOWNERS functionality to support features not officially supported in GitHub proper.
+
+# Implementation status
+
+**Implemented**:
+
+* Pull request: https://github.com/bors-ng/bors-ng/pull/725
+

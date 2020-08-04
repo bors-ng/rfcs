@@ -75,3 +75,10 @@ If `up_to_date_approvals` is true and _l_ != _m_:
 # Future possibilities
 
 Didn't think of anything.
+
+# Implementation status
+
+**Implemented**:
+
+* Pull request: https://github.com/bors-ng/bors-ng/pull/986
+

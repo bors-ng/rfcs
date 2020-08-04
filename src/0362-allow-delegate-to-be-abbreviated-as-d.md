@@ -62,3 +62,8 @@ The "design" is pretty much already nailed down.
 
 The only other multi-letter commands are `try` and `retry`. Try is pretty short, at three letters, and retry ought to be pretty rare, even if not as rare as ping.
 
+# Implementation status
+
+**Implemented**
+
+* Pull request: https://github.com/bors-ng/bors-ng/pull/727

@@ -50,3 +50,7 @@ Collecting metrics on API calls could allow us to detect things that go wrong, e
 # See also
 
 * Mostly implemented by <https://github.com/bors-ng/bors-ng/pull/996>
+
+# Implementation status
+
+* in progress

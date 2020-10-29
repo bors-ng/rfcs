@@ -54,3 +54,9 @@ Github is previewing an API to rebase a PR that could be used after updating the
 * [PR #1023](https://github.com/bors-ng/bors-ng/pull/1023) implements the proposal
 * This solution was previously suggested in a topic titled ["Better handling PRs with dependencies"](https://forum.bors.tech/t/better-handling-prs-with-dependencies/409)
 * The issue was raised in [#950](https://github.com/bors-ng/bors-ng/issues/950) in the repo
+
+# Implementation status
+
+**Implemented**:
+
+* Pull request: https://github.com/bors-ng/bors-ng/pull/1023

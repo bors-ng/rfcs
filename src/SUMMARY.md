@@ -21,3 +21,5 @@
   - [0471 &mdash; The required_approvals option should require up-to-date approvals](0471-the-required-approvals-option-should-require-up-to-date-approvals.md)
   - [0507 &mdash; Update base branch of PRs depending on a branch that will be deleted](0507-update-base-branch-of-prs-depending-on-a-branch-that-will-be-deleted.md)
   - [0508 &mdash; Log outgoing HTTP request](0508-log-outgoing-http-request.md)
+  - [0521 &mdash; Add a new environment variable 'PUBLIC_PROTOCOL', to allow serving bors at a HTTP endpoint](0521-add-a-new-environment-variable-public-protocol-to-allow-serving-bors-at-a-http-endpoint.md)
+

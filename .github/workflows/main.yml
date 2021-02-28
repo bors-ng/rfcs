@@ -1,0 +1,28 @@
+name: CI
+on:
+  # Only run when merging to master, or open/synchronize/reopen a PR.
+  push:
+    branches:
+      - master
+      - staging
+      - trying
+  pull_request:
+
+jobs:
+  mdbook:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - run: curl -L https://github.com/rust-lang/mdBook/releases/download/v0.4.7/mdbook-v0.4.7-x86_64-unknown-linux-gnu.tar.gz | tar -xzvf -
+    - run: "./mdbook build"
+    - run: touch book/.nojekyll
+    - run: echo -ne "machine github.com\nlogin ${{secrets.DEPLOY_LOGIN}}\npassword ${{secrets.DEPLOY_PASSWORD}}\n" > $HOME/.netrc && chmod 600 ~/.netrc
+    - run: git config --global --add user.name "Github Actions"
+    - run: git config --global --add user.email "github-action@users.noreply.github.com"
+    - run: git -C book init
+    - run: git -C book add .
+    - run: git -C book commit -m "Deploy page"
+    - run: git -C book remote add origin https://github.com/bors-ng/rfcs
+    - run: git -C book push -f origin HEAD:gh-pages
+

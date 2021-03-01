@@ -1,12 +1,9 @@
 name: CI
 on:
-  # Only run when merging to master, or open/synchronize/reopen a PR.
+  # Only run when merging to master, because it uses secrets.
   push:
     branches:
       - master
-      - staging
-      - trying
-  pull_request:
 
 jobs:
   mdbook:

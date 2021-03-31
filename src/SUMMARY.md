@@ -24,3 +24,4 @@
   - [0521 &mdash; Add a new environment variable 'PUBLIC_PROTOCOL', to allow serving bors at a HTTP endpoint](0521-add-a-new-environment-variable-public-protocol-to-allow-serving-bors-at-a-http-endpoint.md)
   - [0516 &mdash; Add support for custom commit titles](0516-add-support-for-custom-commit-titles.md)
   - [0547 &mdash; Make the database timeout configurable](0547-make-the-database-timeout-configurable.md)
+  - [0561 &mdash; Add "bors cancel" as alias for "bors r-"](0561-add-bors-cancel-as-alias-for-bors-r.md)

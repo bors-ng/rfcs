@@ -25,3 +25,4 @@
   - [0516 &mdash; Add support for custom commit titles](0516-add-support-for-custom-commit-titles.md)
   - [0547 &mdash; Make the database timeout configurable](0547-make-the-database-timeout-configurable.md)
   - [0561 &mdash; Add "bors cancel" as alias for "bors r-"](0561-add-bors-cancel-as-alias-for-bors-r.md)
+  - [0563 &mdash; Add a simple health check endpoint](0563-add-a-simple-health-check-endpoint.md)

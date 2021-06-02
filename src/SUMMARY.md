@@ -26,3 +26,4 @@
   - [0547 &mdash; Make the database timeout configurable](0547-make-the-database-timeout-configurable.md)
   - [0561 &mdash; Add "bors cancel" as alias for "bors r-"](0561-add-bors-cancel-as-alias-for-bors-r.md)
   - [0563 &mdash; Add a simple health check endpoint](0563-add-a-simple-health-check-endpoint.md)
+  - [0566 &mdash; Helm chart and examples using Terraform with Kubernetes](0566-helm-chart-and-examples-using-terraform-with-kubernetes.md)

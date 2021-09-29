@@ -24,6 +24,7 @@
   - [0521 &mdash; Add a new environment variable 'PUBLIC_PROTOCOL', to allow serving bors at a HTTP endpoint](0521-add-a-new-environment-variable-public-protocol-to-allow-serving-bors-at-a-http-endpoint.md)
   - [0516 &mdash; Add support for custom commit titles](0516-add-support-for-custom-commit-titles.md)
   - [0547 &mdash; Make the database timeout configurable](0547-make-the-database-timeout-configurable.md)
+  - [0556 &mdash; Keep track of unmergeable and draft pull requests](0556-keep-track-of-unmergeable-and-draft-pull-requests.md)
   - [0561 &mdash; Add "bors cancel" as alias for "bors r-"](0561-add-bors-cancel-as-alias-for-bors-r.md)
   - [0563 &mdash; Add a simple health check endpoint](0563-add-a-simple-health-check-endpoint.md)
   - [0566 &mdash; Helm chart and examples using Terraform with Kubernetes](0566-helm-chart-and-examples-using-terraform-with-kubernetes.md)

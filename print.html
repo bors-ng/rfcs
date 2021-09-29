@@ -1,0 +1,1820 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>The Bors RFC Archive</title>
+        
+        <meta name="robots" content="noindex" />
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="INFORMATIONAL.html">Informational RFC</a></li><li class="chapter-item expanded "><a href="PROCESS.html">Process RFC</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="0296-adopt-a-process-for-proposing-approving-and-tracking-major-changes-to-bors-ng.html">0296 — Adopt a process for proposing, approving, and tracking major changes to bors-ng</a></li><li class="chapter-item expanded "><a href="0332-elixir-and-erlang-version-update-policy.html">0332 — Elixir and Erlang version update policy</a></li><li class="chapter-item expanded "><a href="0412-simplify-bors-ng-bors-ngs-label-system.html">0412 — Simplify bors-ng/bors-ng's label system</a></li><li class="chapter-item expanded "><a href="0434-show-status-on-accepted-rfcs.html">0434 — Show status on accepted RFCs</a></li></ol></li><li class="chapter-item expanded "><a href="FEATURE.html">Feature RFC</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="0313-the-bors-button-extension.html">0313 — The bors button extension</a></li><li class="chapter-item expanded "><a href="0322-pre-test-and-pre-merge-hooks.html">0322 — Pre-test and Pre-merge hooks</a></li><li class="chapter-item expanded "><a href="0347-ability-to-create-merge-commits-locally-in-self-hosted-instances-of-bors.html">0347 — Ability to create merge commits locally in self-hosted instances of Bors</a></li><li class="chapter-item expanded "><a href="0349-use-a-squash-merge-in-bors.html">0349 — Use a squash merge in Bors</a></li><li class="chapter-item expanded "><a href="0357-bors-support-for-codeowners.html">0357 — Bors support for CODEOWNERS</a></li><li class="chapter-item expanded "><a href="0360-add-a-new-configuration-option-status-wait-success.html">0360 — Add a new configuration option status_wait_success</a></li><li class="chapter-item expanded "><a href="0362-allow-delegate-to-be-abbreviated-as-d.html">0362 — Allow delegate to be abbreviated as d</a></li><li class="chapter-item expanded "><a href="0376-allow-merge-as-an-alias-for-r.html">0376 — Allow merge as an alias for r+</a></li><li class="chapter-item expanded "><a href="0388-wait-for-ci-to-finish-instead-of-rejecting-immediately-on-bors-r-when-ci-is-still-pending.html">0388 — Wait for CI to finish instead of rejecting immediately on bors r+ when CI is still &quot;pending&quot;</a></li><li class="chapter-item expanded "><a href="0425-allow-patches-to-be-batched-by-themselves-only.html">0425 — Allow patches to be batched by themselves only</a></li><li class="chapter-item expanded "><a href="0471-the-required-approvals-option-should-require-up-to-date-approvals.html">0471 — The required_approvals option should require up-to-date approvals</a></li><li class="chapter-item expanded "><a href="0507-update-base-branch-of-prs-depending-on-a-branch-that-will-be-deleted.html">0507 — Update base branch of PRs depending on a branch that will be deleted</a></li><li class="chapter-item expanded "><a href="0508-log-outgoing-http-request.html">0508 — Log outgoing HTTP request</a></li><li class="chapter-item expanded "><a href="0521-add-a-new-environment-variable-public-protocol-to-allow-serving-bors-at-a-http-endpoint.html">0521 — Add a new environment variable 'PUBLIC_PROTOCOL', to allow serving bors at a HTTP endpoint</a></li><li class="chapter-item expanded "><a href="0516-add-support-for-custom-commit-titles.html">0516 — Add support for custom commit titles</a></li><li class="chapter-item expanded "><a href="0547-make-the-database-timeout-configurable.html">0547 — Make the database timeout configurable</a></li><li class="chapter-item expanded "><a href="0556-keep-track-of-unmergeable-and-draft-pull-requests.html">0556 — Keep track of unmergeable and draft pull requests</a></li><li class="chapter-item expanded "><a href="0561-add-bors-cancel-as-alias-for-bors-r.html">0561 — Add &quot;bors cancel&quot; as alias for &quot;bors r-&quot;</a></li><li class="chapter-item expanded "><a href="0563-add-a-simple-health-check-endpoint.html">0563 — Add a simple health check endpoint</a></li><li class="chapter-item expanded "><a href="0566-helm-chart-and-examples-using-terraform-with-kubernetes.html">0566 — Helm chart and examples using Terraform with Kubernetes</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">The Bors RFC Archive</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="bors-rfcs"><a class="header" href="#bors-rfcs">Bors RFCs</a></h1>
+<p>The <a href="https://forum.bors.tech/c/development/draft-rfcs">Draft RFCs</a> are over there. This is just an archive of accepted RFCs.</p>
+<h2 id="whats-an-rfc"><a class="header" href="#whats-an-rfc">What's an RFC?</a></h2>
+<p>Major changes and events are usually proposed by opening an RFC. What counts as &quot;major&quot; can get subjective, but any of these will count:</p>
+<ul>
+<li>Feature RFC’s, which include:
+<ul>
+<li>All breaking changes, such as removing or renaming commands, bors.toml configuration options, environment configuration options, changing the name or packaging of the OTP application (which would break people’s deployment scripts), or bumping the Erlang or Elixir version requirement (we will probably make an RFC putting breaking dependency bumps onto some kind of schedule)</li>
+<li>Adding new features with config options and commands, because they need to be tested and maintained to avoid breakage when users rely on them</li>
+</ul>
+</li>
+<li>Informational RFC’s, which include:
+<ul>
+<li>Starting a talk, meetup, or social networking account that will be expected to officially “represent bors-ng”</li>
+<li>Documenting design issues, deciding to never implement a feature, proposing an experiment, or recording a proof-generated insight</li>
+</ul>
+</li>
+<li>Process RFC’s, which include:
+<ul>
+<li>Changing the RFC process, the organization of the issue tracker or the support forum, or other community infrastructure</li>
+<li>Amending the Code of Conduct</li>
+</ul>
+</li>
+</ul>
+<p>Major changes <em>do not</em> include:</p>
+<ul>
+<li>Most moderation actions</li>
+<li>Bumping a hex.pm dependency, since the Distillery release process automatically pulls those in anyway</li>
+<li>Refactoring the codebase</li>
+<li>Making a blog post</li>
+<li>Fixing something that is clearly a bug, such as breaking the Not Rocket Science Rule, crashing, or displaying wrong information</li>
+<li>Minor look and feel improvements, or even minor feature additions to the dashboard that aren’t likely to translate to a we-will-not-break-this commitment</li>
+</ul>
+<p>If you submit a pull request to implement a new feature without going through the RFC process, it may be closed with a polite request to submit an RFC first.</p>
+<h2 id="how-to-submit-an-rfc"><a class="header" href="#how-to-submit-an-rfc">How to submit an RFC</a></h2>
+<p>Once you've made sure it's appropriate for an RFC, open a new topic in the <a href="https://forum.bors.tech/c/development/draft-rfcs">Draft RFCs</a> section of the forum. Fill out the included template, tag it as feature, process, or informational, and then respond to any feedback.</p>
+<p>RFCs rarely go through the process unchanged. The goal is to refine your proposal so that it can answer most sensible objections on its own, without having to reread the entire discussion thread. &quot;Out-of-band&quot; discussions, either in forum private messages, company chatrooms, or even in-person meetings, are common; just make sure you post a summary on the in-band discussion thread, and that anything truly important gets included in the RFC text itself. As the discussion goes along, try to keep the RFC text up-to-date with whatever consensus seems to emerge.</p>
+<p>At some point, a member of the project leadership will place the RFC into Final Comment Period, the <a href="https://forum.bors.tech/c/development/fcp-rfcs">FCP RFCs</a> category. After two final weeks of remaining open, your RFC will finally be accepted or rejected. The FCP is usually pretty quiet, since it's only really opened after a consensus has already emerged. Once it's approved, your RFC will be numbered and archived.</p>
+<h2 id="after-an-rfc-has-been-accepted"><a class="header" href="#after-an-rfc-has-been-accepted">After an RFC has been accepted</a></h2>
+<p>Once an RFC becomes &quot;approved,&quot; authors may implement it and submit the feature as a pull request to the bors-ng repo. Being approved is not a rubber stamp, and in particular still does not mean the feature will ultimately be merged; it does mean that in principle all the major stakeholders have agreed to the feature and are amenable to merging it.</p>
+<p>Furthermore, the fact that a given RFC has been accepted implies nothing about what priority is assigned to its implementation, nor does it imply anything about whether a developer has been assigned the task of implementing the feature. While it is not <em>necessary</em> that the author of the RFC also write the implementation, it is by far the most effective way to see an RFC through to completion: authors should not expect that other project developers will take on responsibility for implementing their accepted feature.</p>
+<p>If an accepted RFC needs to be modified, please flag it for a moderator, using the &quot;Something Else&quot; option and mentioning what needs changed. Most of the time, an RFC won't need changed after it's been accepted, but the nature of this process means that we cannot expect every accepted RFC to actually reflect what the end result will be once the change has actually been tested out. Only very minor changes should be submitted as amendments. More substantial changes should be new RFCs, with a note added to the original RFC.</p>
+<p>Recorded information and announcements.</p>
+<p>Changes to the development or RFC process.</p>
+<p>Summary: This RFC proposes to expand, and make more explicit, decision-making for bors-ng. It puts in place a template for new proposals (with typical sections such as Motivation, Summary, Drawbacks), a plan for accepting and rejecting them, and sets the stage for better governance changes in the future (it doesn't set up a core team, but once the core team is put in place, it'll follow the RFC process). This &quot;initial RFC&quot; shall be approved following its own process; nobody seemed to have a problem with it during the spitballing stage.</p>
+<blockquote>
+<p>I allow this RFC document to be modified and redistributed under the terms of the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache-2.0 license</a>, or the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">CC-BY-NC-SA 3.0 license</a>, at your option.</p>
+</blockquote>
+<h1 id="motivation"><a class="header" href="#motivation">Motivation</a></h1>
+<p>Some of you might remember <a href="https://github.com/bors-ng/bors-ng/pull/232">way back when</a> @khodzha opened a pull request for an E-easy issue, but @Macarse, who had never even realized the issue existed, wasn’t sure if it was a good idea or not. I (@notriddle) overruled their concerns, mostly because I figured it would be kind of mean to have a newbie open a pull request just to have it rejected with “actually, we didn’t want that anyway”. This essentially indicates a mismatch of expectations: @khodzha and @notriddle thought that the decision had already been made, while @Macarse still thought it was up for debate.</p>
+<p>This is not the only time I ended up making judgement without very much discussion in response to an issue report, pull request, or support thread. Even when there is feedback, it isn’t very organized, and the design decisions that are made there get mixed with support questions, bug reports, and announcements. We need a statement of record about what has been decided and who decided it, and it needs to strike the reasonable balance between “set in stone” and “overridden on the Benevolent Dictator Pro Tempore’s daily whims”. It also needs to maintain the balance between “maintaining a coherent features set and overall vision” and “getting community involvement in decision making”.</p>
+<h1 id="guide-level-explanation"><a class="header" href="#guide-level-explanation">Guide-level explanation</a></h1>
+<h2 id="whats-an-rfc-1"><a class="header" href="#whats-an-rfc-1">What's an RFC?</a></h2>
+<p>Major changes and events are usually proposed by opening an RFC. What counts as &quot;major&quot; can get subjective, but any of these will count:</p>
+<ul>
+<li>Feature RFC’s, which include:
+<ul>
+<li>All breaking changes, such as removing or renaming commands, bors.toml configuration options, environment configuration options, changing the name or packaging of the OTP application (which would break people’s deployment scripts), or bumping the Erlang or Elixir version requirement (we will probably make an RFC putting breaking dependency bumps onto some kind of schedule)</li>
+<li>Adding new features with config options and commands, because they need to be tested and maintained to avoid breakage when users rely on them</li>
+</ul>
+</li>
+<li>Informational RFC’s, which include:
+<ul>
+<li>Starting a talk, meetup, or social networking account that will be expected to officially “represent bors-ng”</li>
+<li>Documenting design issues, deciding to never implement a feature, proposing an experiment, or recording a proof-generated insight</li>
+</ul>
+</li>
+<li>Process RFC’s, which include:
+<ul>
+<li>Changing the RFC process, the organization of the issue tracker or the support forum, or other community infrastructure</li>
+<li>Amending the Code of Conduct</li>
+</ul>
+</li>
+</ul>
+<p>Major changes <em>do not</em> include:</p>
+<ul>
+<li>Most moderation actions</li>
+<li>Bumping a hex.pm dependency, since the Distillery release process automatically pulls those in anyway</li>
+<li>Refactoring the codebase</li>
+<li>Making a blog post</li>
+<li>Fixing something that is clearly a bug, such as breaking the Not Rocket Science Rule, crashing, or displaying wrong information</li>
+<li>Minor look and feel improvements, or even minor feature additions to the dashboard that aren’t likely to translate to a we-will-not-break-this commitment</li>
+</ul>
+<p>If you submit a pull request to implement a new feature without going through the RFC process, it may be closed with a polite request to submit an RFC first.</p>
+<h2 id="how-to-submit-an-rfc-1"><a class="header" href="#how-to-submit-an-rfc-1">How to submit an RFC</a></h2>
+<p>Once you've made sure it's appropriate for an RFC, open a new topic in the #development:draft-rfcs section of the forum. Fill out the included template, tag it as feature, process, or informational, and then respond to any feedback.</p>
+<p>RFCs rarely go through the process unchanged. The goal is to refine your proposal so that it can answer most sensible objections on its own, without having to reread the entire discussion thread. &quot;Out-of-band&quot; discussions, either in forum private messages, company chatrooms, or even in-person meetings, are common; just make sure you post a summary on the in-band discussion thread, and that anything truly important gets included in the RFC text itself. As the discussion goes along, try to keep the RFC text up-to-date with whatever consensus seems to emerge.</p>
+<p>At some point, a member of the project leadership will place the RFC into Final Comment Period, the #development:fcp-rfcs category. After two final weeks of remaining open, your RFC will finally be accepted or rejected. The FCP is usually pretty quiet, since it's only really opened after a consensus has already emerged. Once it's approved, your RFC will be numbered and archived.</p>
+<h2 id="after-an-rfc-has-been-accepted-1"><a class="header" href="#after-an-rfc-has-been-accepted-1">After an RFC has been accepted</a></h2>
+<p>Once an RFC becomes &quot;approved,&quot; authors may implement it and submit the feature as a pull request to the bors-ng repo. Being approved is not a rubber stamp, and in particular still does not mean the feature will ultimately be merged; it does mean that in principle all the major stakeholders have agreed to the feature and are amenable to merging it.</p>
+<p>Furthermore, the fact that a given RFC has been accepted implies nothing about what priority is assigned to its implementation, nor does it imply anything about whether a developer has been assigned the task of implementing the feature. While it is not <em>necessary</em> that the author of the RFC also write the implementation, it is by far the most effective way to see an RFC through to completion: authors should not expect that other project developers will take on responsibility for implementing their accepted feature.</p>
+<p>If an accepted RFC needs to be modified, please flag it for a moderator, using the &quot;Something Else&quot; option and mentioning what needs changed. Most of the time, an RFC won't need changed after it's been accepted, but the nature of this process means that we cannot expect every accepted RFC to actually reflect what the end result will be once the change has actually been tested out. Only very minor changes should be submitted as amendments. More substantial changes should be new RFCs, with a note added to the original RFC.</p>
+<h1 id="reference-level-explanation"><a class="header" href="#reference-level-explanation">Reference-level explanation</a></h1>
+<h2 id="the-project-leadership"><a class="header" href="#the-project-leadership">The project leadership</a></h2>
+<p>Throughout this RFC, the project leadership will be a role given a number of responsibilities. In particular, project leadership approves and rejects RFC’s.</p>
+<p>Currently, the project leadership is Michael Howell, also known as @notriddle, the Benevolent Dictator Pro Tempore. Future RFC’s are expected to replace him with a team structure, who will act in consensus as the project leadership.</p>
+<h2 id="the-rfc-process"><a class="header" href="#the-rfc-process">The RFC process</a></h2>
+<p>There are four RFC categories, each of which corresponds to a stage:</p>
+<ul>
+<li>#development:draft-rfcs : This is the first actual stage in the process. The responsibilities of all participants are spelled out below this list.
+<ul>
+<li>#development:fcp-rfcs : The last part of the discussion stage, where the discussion is timeboxed at two weeks. An RFC will always go through this phase before being accepted, and will likely, though not necessarily, go through this phase before being rejected.</li>
+</ul>
+</li>
+<li>#development:approved-rfcs : An RFC that has been accepted for implementation.</li>
+<li>#development:rejected-rfcs : An RFC that has not been accepted, and likely will not be accepted.</li>
+<li>#development:postponed-rfcs : An RFC in this category will likely be moved back to draft later. This phase is used when no process seems to be made, yet the leadership doesn't want to accept or reject it yet either, such as if the discussion is blocked on something external to the project.</li>
+</ul>
+<h3 id="responsibilities-of-the-author"><a class="header" href="#responsibilities-of-the-author">Responsibilities of the author</a></h3>
+<p>The individual (or, I guess, an organization would be allowed to act as an author as long as they can agree on everything out-of-band before acting together as a &quot;hive mind&quot;) who opens an RFC up will act as the RFC’s “author”. They are responsible for defending or editing the RFC based on criticism that comes up during the discussion, acting as the RFC’s advocate.</p>
+<p>If the original author no longer wishes to champion the RFC, they can hand it over to someone else (obviously, the new author and the old author both have to publicly agree to this) or withdraw the RFC. If the RFC is withdrawn, it will be closed.</p>
+<p>For any discussions that happened before the RFC was opened that the author thinks are relevant, the author should copy any knowledge they created into the RFC or the discussion thread. They should also copy any necessary knowledge from the RFC’s own discussion thread into the RFC, so that the RFC’s text can stand alone. Linking to external discussions is allowed, but they should copy or summarize it in case the third-party discussion host goes away.</p>
+<h3 id="responsibilities-of-the-project-leadership"><a class="header" href="#responsibilities-of-the-project-leadership">Responsibilities of the project leadership</a></h3>
+<p>While anyone can participate in the RFC discussion, the final decision about approving or rejecting an RFC lies with the project leadership (and the mod team, if they decide that an “RFC” is pure spam they can just delete it, but the mod team can’t just accept an RFC). They do not have to put it up to a community vote, though they will need to come to an internal consensus, and they may ask for a non-binding poll if they think it would help.</p>
+<p>The project leadership is expected to voice their concerns, allowing the author to edit or defend the RFC. As described in the Code of Conduct, the project leadership shall make every effort to maintain a professional atmosphere, and to make the author feel that they are being helped, not hindered. The win condition is one where everyone involved feels that they made the best possible decision with what they have.</p>
+<p>Project leadership must put an RFC into a “Final Comment Period” if they wish to accept it, and may (but need not) do so if they wish to reject it. Final Comment Period lasts two weeks (14 days), to make sure that anyone who receives RFC’s in weekly digests has a chance to respond. After FCP, all non-staff commenting is disabled and project leadership must make their final decision, moving the RFC from the discussion phase on to the accepted or rejected category.</p>
+<p>The RFC document must also be de-wiki-fied after the RFC is closed, and if the RFC is accepted, it must be assigned a number, archived as a GitHub Page, and have a tracking issue created.</p>
+<h3 id="responsibilities-for-all-discussion-participants"><a class="header" href="#responsibilities-for-all-discussion-participants">Responsibilities for all discussion participants</a></h3>
+<p>The most important rule is to keep tabs on the discussion, and avoid relitigating a point that has already been made. As always, follow the <a href="https://bors.tech/documentation/code-of-conduct/">Code of Conduct</a>.</p>
+<p>It is highly recommended that third-party participants avoid acting as the devil’s advocate. Instead, please represent what your actually needs are in an honest way; the personal experience of individuals who are not the champion or a member of the project is the most valuable contribution that third-party participants can make.</p>
+<p>Also, participants should send any mechanical corrections (spelling, grammar, formatting) to the author as a Private Message, not as a public post in the thread. The project leadership appreciates mechanical fixes, and the author probably does too, but once they’ve been fixed any post that corrects them is just clutter, not something that people who want to understand what happened should have to read through years later. Alternatively, if the participant has a high enough permission level on the forum, they may simply perform mechanical fixes to the RFC themselves.</p>
+<p>Meta-discussion, surrounding the quality of the discussion itself rather than the RFC text directly, should be kept in a separate #meta thread or in a Private Message. And while the ethical implications of an RFC are perfectly welcome in the in-band discussion thread, problems that are related to the background or behavior of participants should, again, be kept to the #meta section, to PMs, or should simply be handled by flagging the offending post and moving on.</p>
+<h1 id="drawbacks"><a class="header" href="#drawbacks">Drawbacks</a></h1>
+<p>So far, this RFC basically copies what <a href="https://github.com/rust-lang/rfcs/blob/41406150ed48491281f952b04db6623dcdc4c90c/text/0002-rfc-process.md">Rust does</a>, with a couple of tweaks to fit Bors’s slower development pace and a few notes and bits pulled from <a href="https://github.com/apple/swift-evolution/blob/6065aef88c7b45c9a588cd481450c5dadb943117/process.md">Swift Evolution</a>, <a href="http://bittorrent.org/beps/bep_0001.html">BEP</a>, and <a href="https://www.python.org/dev/peps/pep-0001/">PEP</a>.</p>
+<p>This means we’re already very familiar with the major drawbacks:</p>
+<ul>
+<li>Public RFC’s have been known to attract a lot of attention, sometimes creating a discussion that is so long that it’s impossible to read it all, which compounds the problem because it causes people to post the same concern twice.</li>
+<li>Public RFC’s also attract concern trolls, since they have so much attention paid to them, making the length problem even worse.</li>
+<li>Settling on a single canonical discussion medium requires one to make final decisions about a bunch of trade-offs, such as ease of archive (the contents of a git repository excel at this one), moderation tools (Discourse excels at this one), familiarity (GitHub Issues excel at this one), ease of entry (chat rooms excel at this one), sophisticated review features (<a href="http://reviewable.io">reviewable.io</a> and Gerrit excel at this one), and others that I can’t think of right off the bat. The disorganized status quo allows participants to make an in-the-moment best call.
+<ul>
+<li>Since this version of the RFC RFC uses Discourse, it sacrifices ease of entry and archive in favor of Discourse's customizability and moderation tools.</li>
+</ul>
+</li>
+<li>This RFC process is essentially waterfall; implementing the feature is expected to happen after the feature has been planned. While amending an RFC is expected to happen on occasion, it's heavy-weight enough, and this process is slow enough, that an implementer may choose to stick to the plan even if they know it's wrong to avoid having to propose a change of plan.</li>
+<li>It is also very easy to spend a lot of time arguing about one minor problem, only to find out later that there's something way more important to figure out later.</li>
+</ul>
+<h1 id="rationale-and-alternatives"><a class="header" href="#rationale-and-alternatives">Rationale and alternatives</a></h1>
+<p>In spite of all the ink spilled in this document, the described process is actually very lightweight. It can be summarized as: open a topic in the RFC subforum, argue about it in the comments, and it gets approved or rejected. Most of the RFC Process RFC is just trying to head off forms of dysfunction that have been seen in other places, which includes describing things in excruciating detail, or in some cases even spelling out parts of the process that don't exist.</p>
+<ul>
+<li>
+<p>This process avoids a lot of features that Python PEPs have, such as Editors. Adding a role like that might help reduce the noise that project leadership is exposed to, but that hasn't really been a problem yet, and nobody likes having all their time spent dealing with gatekeeping nonsense.</p>
+</li>
+<li>
+<p>The other big alternative is to just continue on as-is. Such a choice seems livable, but not really good, for reasons spelled out in Motivation.</p>
+</li>
+<li>
+<p>This RFC introduces the RFC process first, and postpones creating a core team for later. The alternative would be to try to set up a core team first, <em>and then set up an RFC process</em>. The main reason for going with the RFC-process-first approach is that the RFC process is designed to deal with specific pain points, even under the BDPT model.</p>
+</li>
+</ul>
+<h1 id="prior-art"><a class="header" href="#prior-art">Prior art</a></h1>
+<ul>
+<li><a href="https://www.python.org/dev/peps/pep-8002/">PEP 8002</a> does a nice job of examining other project governance systems</li>
+<li>The process spelled out in this &quot;RFC process for bors&quot; is particularly modeled after <a href="https://github.com/rust-lang/rfcs/blob/41406150ed48491281f952b04db6623dcdc4c90c/text/0002-rfc-process.md">Rust's RFC-0002</a>, with additional references to <a href="https://www.python.org/dev/peps/pep-0001/">PEP 0001</a>.</li>
+<li>Some changes made here are modeled after stuff discussed in <a href="https://manishearth.github.io/blog/2019/02/04/rust-governance-scaling-empathy/">&quot;scaling empathy&quot;</a> and <a href="https://boats.gitlab.io/blog/post/rust-2019/">&quot;organizational debt&quot;</a>. While this RFC certainly does not attempt to plan a process that will scale like Rust needs (we just aren't that big yet), the process should be adaptable enough, and some tweaks were deliberately made so that Bors can experiment with things that were discussed for use in Rust.</li>
+<li>Part of the moderation policy in general is designed to avoid <a href="https://lobste.rs/s/v9rktg/new_users_ethics_civility_threads_you">this kind of failure mode</a>.
+<ul>
+<li>Note that Lobsters and Discourse have very different treatments of flagging: in Discourse, if three users with TL1 or better flag a post, the post will be hidden regardless of how many likes it gets. This was an intentional driving force in choosing Discourse instead of, for example, Reddit; I are intentionally taking an &quot;if there's reasonable doubt on whether it's okay, hide it until a moderator comes around&quot; approach.</li>
+<li>The bors approach also specifically avoids trying to take a &quot;self-governing&quot; moderation approach in favor of just biting the bullet and using a hierarchy.</li>
+<li>And, of course, because topics are not sorted by likes, it seeks to <a href="https://meta.discourse.org/t/opinion-kids-would-you-please-start-fighting/73450">encourage discussion</a> rather than groupthink.</li>
+</ul>
+</li>
+<li>Basically, <a href="https://communityroundtable.com/what-we-do/research/community-maturity-model/">bors is at the first stage</a>.</li>
+</ul>
+<h1 id="unresolved-questions"><a class="header" href="#unresolved-questions">Unresolved questions</a></h1>
+<ul>
+<li>Is this too much?</li>
+<li>An RFC only gets a number when it's approved, right?</li>
+<li>Should I bother archiving the RFCs in GitHub pages or Amazon S3 or something? It seems like a good idea to have as many backups as possible for these things, but I'm not sure if it's truly necessary.</li>
+</ul>
+<h1 id="future-possibilities"><a class="header" href="#future-possibilities">Future possibilities</a></h1>
+<h2 id="the-core-team-and-the-moderation-team"><a class="header" href="#the-core-team-and-the-moderation-team">The Core Team and The Moderation Team</a></h2>
+<p>This is the biggie; instead of just having notriddle check everything, there should probably be a small group who decides whether to approve an RFC or not.</p>
+<p>Once the core team exists, it'll probably also be worthwhile to have an automated &quot;proposal for FCP&quot; system like Rust's rfcbot.</p>
+<h2 id="rfc-automation"><a class="header" href="#rfc-automation">RFC automation</a></h2>
+<p>In the current implementation, a lot of stuff is done manually upon approving an RFC:</p>
+<ul>
+<li>Giving RFCs numbers</li>
+<li>Archiving them on GitHub Pages</li>
+<li>Creating tracking issues</li>
+<li>Un-wiki-fying the initial post</li>
+</ul>
+<p>All of these steps can be automated, but it should probably all be done after some experience is had with the process; we don't want to set stuff in stone too early.</p>
+<h2 id="rfc-tracking"><a class="header" href="#rfc-tracking">RFC tracking</a></h2>
+<p>Similarly, it would be really cool to have an automatically-built Kanban board. Perhaps just a GitHub Project generated using the API.</p>
+<table>
+<thead><tr><th>Discussion</th><th>Final Comment Period</th><th>Approved</th><th>Implemented</th><th>Rejected/Withdrawn</th><th>Postponed</th></tr></thead>
+<tbody><tr>
+<td>
+<p>Write Status to a GitHub Check</p>
+<p>Minimally-Viable GitLab Support</p>
+<p>New-Style Emoji</p>
+<p>Non-Batching Mode</p>
+</td><td>
+<p>Batch-Size Limit</p>
+</td><td>
+<p>Localization Support for the Web Site</p>
+<p>GitLab Worker Protocol</p>
+<p>Basic REST API</p>
+</td><td>
+<p>Try Cancellation Command (<code>bors try-</code>)</p>
+</td><td>
+<p>Vape spam</p>
+<p>Turn bors into a SPA</p>
+<p>Full-blown issue tracking</p>
+</td>
+<td></td>
+</tr></tbody></table><p>Summary: Bors-NG promises to support the current version of Elixir, plus the previous stable release, and the previous two Erlang versions.</p>
+<blockquote>
+<p>I allow this RFC document to be modified and redistributed under the terms of the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache-2.0 license</a>, or the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">CC-BY-NC-SA 3.0 license</a>, at your option.</p>
+</blockquote>
+<h1 id="motivation-1"><a class="header" href="#motivation-1">Motivation</a></h1>
+<p>While bors has been deliberately conservative with non-Mix dependencies, it's never had a written plan for them.</p>
+<p>The purpose of supporting older versions of OTP/Elixir is to allow upgrading to be decoupled. They shouldn't have to upgrade everything at the same time. If their OS package manager hasn't approved the new version of OTP, but they're pulling bors from git, they can still stay up-to-date as long as their PM gets around to pushing the update before the next one comes out.</p>
+<h1 id="guide-level-explanation-1"><a class="header" href="#guide-level-explanation-1">Guide-level explanation</a></h1>
+<p>Bors will always be tested against the most recent, and second most recent, feature release of Elixir (feature releases are defined by the second number: 1.8.1 and 1.8.2 are the same feature version). The list of released versions of Elixir can be found at <a href="https://github.com/elixir-lang/elixir/releases">https://github.com/elixir-lang/elixir/releases</a>. Bors will always test with the latest bugfix releases. For example, if 1.7.1, 1.7.2, 1.7.3, 1.7.4, 1.8.1, and 1.8.2 all exist, then bors will test against 1.7.4 and 1.8.2.</p>
+<p>Bors will also be tested against the corresponding two most recent feature releases of OTP that are supported by the Elixir versions. For example, when this RFC was written, Bors will support OTP 22.0.1 and 21.3.8.2.</p>
+<h1 id="reference-level-explanation-1"><a class="header" href="#reference-level-explanation-1">Reference-level explanation</a></h1>
+<p>The set of Elixir versions we test against can be found, and updated, in <a href="https://github.com/bors-ng/bors-ng/blob/ef4587809ee21600dbbcc6df127c9f6210aa2a1f/.travis.yml">https://github.com/bors-ng/bors-ng/blob/ef4587809ee21600dbbcc6df127c9f6210aa2a1f/.travis.yml</a> and <a href="https://github.com/notriddle/docker-phoenix-elixir-test">https://github.com/notriddle/docker-phoenix-elixir-test</a>. The latter should probably be moved...</p>
+<p>Elixir versions are currently not automatically bumped. Check <a href="https://github.com/elixir-lang/elixir/releases">https://github.com/elixir-lang/elixir/releases</a> and <a href="https://github.com/elixir-lang/elixir/releases">https://github.com/elixir-lang/elixir/releases</a> and <a href="http://erlang.org/download/otp_versions_tree.html">http://erlang.org/download/otp_versions_tree.html</a> for the versions to use.</p>
+<h1 id="drawbacks-1"><a class="header" href="#drawbacks-1">Drawbacks</a></h1>
+<p>It slows down development.</p>
+<h1 id="rationale-and-alternatives-1"><a class="header" href="#rationale-and-alternatives-1">Rationale and alternatives</a></h1>
+<ul>
+<li>Our main underlying dependency, the Phoenix framework, seems to follow a similar policy. See <a href="https://github.com/phoenixframework/phoenix/blob/fb3c92309c02cca1e4b3d857f8f19f27987078d0/.travis.yml">https://github.com/phoenixframework/phoenix/blob/fb3c92309c02cca1e4b3d857f8f19f27987078d0/.travis.yml</a> for their (somewhat wider) set of supported OTP and Elixir versions.</li>
+<li>The exact decision is based on a desire to avoid nonsense where you can't update bors because Chocolatey or Debian haven't gotten around to reviewing a new version of Elixir yet. These package managers tend to either never update, like Debian Stable, or never go more than one version behind upstream, like Debian Unstable or Chocolatey. I don't want to deal with the former, but I don't want people messed up by the latter, hence this choice.</li>
+<li>Alternatively, we could actually just pin ourselves to Phoenix (&quot;we support every Elixir version that the corresponding version of Phoenix supports&quot;). I'd like to hear a use case for it, though.</li>
+</ul>
+<h1 id="prior-art-1"><a class="header" href="#prior-art-1">Prior art</a></h1>
+<ul>
+<li>These sorts of version pinning is so common, Travis CI has it built-in.</li>
+<li>An earlier version of this policy called the previous-stable version &quot;oldstable&quot;, after Debian &quot;oldstable&quot;, since Debian supports the immediately previous stable version for the same reason (the user needs a chance to upgrade).</li>
+</ul>
+<h1 id="unresolved-questions-1"><a class="header" href="#unresolved-questions-1">Unresolved questions</a></h1>
+<ul>
+<li>What happens of some dependency can't handle it? Do we have to fork libraries? Or make an exception? (I vote for temporary forking, but I'm willing to be persuaded otherwise)</li>
+</ul>
+<h1 id="future-possibilities-1"><a class="header" href="#future-possibilities-1">Future possibilities</a></h1>
+<ul>
+<li>Better guarantees and contracts between the deployment env and bors-ng.</li>
+</ul>
+<p>Summary: Clean up GitHub Issue labels.</p>
+<!-- RFC documents are put under a dual license, because the default license for content on this forum is CC-BY-NC-SA, while the license for bors's code is Apache 2.0 -->
+<blockquote>
+<p>I allow this RFC document to be modified and redistributed under the terms of the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache-2.0 license</a>, or the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">CC-BY-NC-SA 3.0 license</a>, at your option.</p>
+</blockquote>
+<h1 id="motivation-2"><a class="header" href="#motivation-2">Motivation</a></h1>
+<p>There are a couple of big problems with them.</p>
+<ul>
+<li>
+<p>They're not consistently set. Only people with access to the repository can add them (which is mostly just me, plus a few other regulars). The amount of work required to maintain them, however, should be minimized if possible.</p>
+</li>
+<li>
+<p>They're not the same as what other stuff uses. GitHub treats the <code>good first issue</code> label a special, but knows nothing about <code>E-easy</code>, which predates it. Dependabot uses plain old <code>elixir</code> and <code>javascript</code> labels, which are redundant with <code>L-elixir</code> and <code>L-javascript</code>. Doing a bunch of bespoke configuration is annoying, and it would be better to integrate with others' defaults.</p>
+</li>
+<li>
+<p>They're too complicated. The only labels that anyone really cares about are something like &quot;issue accepted&quot;, the language labels, E-easy, and maybe a high priority ones. The other schemata is not necessary.</p>
+</li>
+</ul>
+<h1 id="guide-level-explanation-2"><a class="header" href="#guide-level-explanation-2">Guide-level explanation</a></h1>
+<p>We should change this to just be a redirect:</p>
+<p>https://bors.tech/starters/ ➡ https://github.com/bors-ng/bors-ng/contribute</p>
+<p>Also:</p>
+<blockquote>
+<p>If you're looking for an issue to work on, look for the <code>good first issue</code>, <code>mentored</code>, and <code>help wanted</code> issues, indicating that any pull requests fixing the issue will definitely be merged.</p>
+</blockquote>
+<h1 id="reference-level-explanation-2"><a class="header" href="#reference-level-explanation-2">Reference-level explanation</a></h1>
+<ul>
+<li><code>high priority</code> — indicates an issue that impacts a lot of existing users, has security implications, or otherwise needs done NOW</li>
+<li><code>blocked</code> — indicates a pull request that should not be merged, or an issue that cannot be solved yet</li>
+<li><code>javascript</code> — indicates an issue or pull request that primarily relies on JavaScript code (sometimes added by dependabot to pull requests)</li>
+<li><code>elixir</code> — indicates an issue or pull request that primarily relies on Elixir code (sometimes added by dependabot to pull requests)</li>
+<li><code>css</code> — indicates an issue or pull request that primarily relies on CSS code</li>
+<li><code>html</code> — indicates an issue or pull request that primarily relies on HTML and IEX code</li>
+<li><code>good first issue</code> — indicates that the fix should be easy, self-contained, and that someone is ready to guide you through fixing it</li>
+<li><code>mentored</code> — indicates that someone is ready to guide you through fixing it</li>
+<li><code>help wanted</code> — indicates that the issue is definitely a bug or accepted feature</li>
+<li><code>dependencies</code> — indicates that a pull request updates dependencies (added by dependabot to pull requests)</li>
+<li><code>duplicate</code> — indicates that an issue or pull request was redundant</li>
+</ul>
+<h1 id="drawbacks-2"><a class="header" href="#drawbacks-2">Drawbacks</a></h1>
+<p>This does remove a few labels, particularly the ones distinguishing between feature requests and bugs. This is mostly to avoid pointless categorization between the two, but it does remove some help with prioritizing.</p>
+<h1 id="rationale-and-alternatives-2"><a class="header" href="#rationale-and-alternatives-2">Rationale and alternatives</a></h1>
+<ul>
+<li>
+<p>This design is mostly modeled after what repositories <em>other than Rust</em> do. In particular, several of the labels are based on the ones that Dependabot and GitHub treat specially, so that we get better integration with them.</p>
+<ul>
+<li>https://help.github.com/en/github/building-a-strong-community/encouraging-helpful-contributions-to-your-project-with-labels</li>
+<li>https://help.github.com/en/github/managing-your-work-on-github/about-labels</li>
+</ul>
+</li>
+<li>
+<p>We could, alternatively, keep the <code>bug</code> and <code>feature</code> labels, if anybody actually uses them.</p>
+</li>
+<li>
+<p><a href="https://dependabot.com/docs/config-file/">Dependabot only seems capable of replacing the <code>dependencies</code> label, not of actually changing the language labels</a>, so making it use the <code>L-</code> labels seems impossible.</p>
+</li>
+</ul>
+<h1 id="prior-art-2"><a class="header" href="#prior-art-2">Prior art</a></h1>
+<p>Bazillions of them. Here's some I knew about and had in mind.</p>
+<ul>
+<li>https://github.com/phoenixframework/phoenix/labels</li>
+<li>https://github.com/rust-lang/rust/labels</li>
+<li>https://github.com/elixir-lang/elixir/labels</li>
+<li>https://github.com/SergioBenitez/Rocket/labels</li>
+<li>https://github.com/libressl-portable/portable/labels</li>
+<li>https://github.com/lobsters/lobsters/labels</li>
+<li>https://github.com/github/hub/labels</li>
+</ul>
+<p>Also, I expect a decent number of users to learn through GitHub's documentation, so let's try to follow their recommendations wherever possible:</p>
+<ul>
+<li>https://opensource.guide/</li>
+</ul>
+<h1 id="unresolved-questions-2"><a class="header" href="#unresolved-questions-2">Unresolved questions</a></h1>
+<p>We should probably look at the other repos in more detail. I would really like some numbers:</p>
+<ul>
+<li>
+<p>How often are particular labels sorted on?</p>
+</li>
+<li>
+<p>How often are particular labels applied?</p>
+</li>
+<li>
+<p>How are labels used? For dev priorities? For newbie discovery?</p>
+</li>
+</ul>
+<h1 id="future-possibilities-2"><a class="header" href="#future-possibilities-2">Future possibilities</a></h1>
+<p>I can't think of any.</p>
+<h1 id="implementation-status"><a class="header" href="#implementation-status">Implementation status</a></h1>
+<p><strong>Yet to implement</strong></p>
+<p>Summary: Easily understand where in the implementation process an accepted RFC is.</p>
+<!-- RFC documents are put under a dual license, because the default license for content on this forum is CC-BY-NC-SA, while the license for bors's code is Apache 2.0 -->
+<blockquote>
+<p>I allow this RFC document to be modified and redistributed under the terms of the Apache-2.0 license, or the CC-BY-NC-SA 3.0 license, at your option.</p>
+</blockquote>
+<h1 id="motivation-3"><a class="header" href="#motivation-3">Motivation</a></h1>
+<p>Once a RFC has been accepted, it is generally very common to show a status in some form whether it has been implemented or not. While the <a href="https://bors.tech/rfcs">archive</a> shows all the accepted RFCs, it does not show what implementation status each RFC is in.</p>
+<h1 id="guide-level-explanation-3"><a class="header" href="#guide-level-explanation-3">Guide-level explanation</a></h1>
+<p>Every RFC in the archive will have a section at the end titled <strong>Implementation Status</strong> whose text will be one of the following:</p>
+<ul>
+<li><strong>Yet to be Implemented</strong> - with a link to a github issue calling for it's implementation.</li>
+<li><strong>In Review</strong> - with a link to github pull request which implements it.</li>
+<li><strong>Implemented</strong> - with a link to the merged github pull request which implemented it and the date.</li>
+</ul>
+<p>In addition, we will have a top-level page on the archive called <em>Implementation Status Summary</em> on which will have a summary of all the implementation statuses of the RFCs.</p>
+<h1 id="drawbacks-3"><a class="header" href="#drawbacks-3">Drawbacks</a></h1>
+<p>The maintainer might feel a bit tedious in managing the statuses of the RFCs. But the status change will happen only once or twice per RFC.</p>
+<h1 id="rationale-and-alternatives-3"><a class="header" href="#rationale-and-alternatives-3">Rationale and alternatives</a></h1>
+<p>Instead of doing both a Summary and an Implementation Status on each RFC, we can choose to do only one of them.</p>
+<p>Instead of Implementation Status, we can just create an issue calling for the RFC implementation and link it to the RFC leaving the reader to following it properly using Github.</p>
+<h1 id="prior-art-3"><a class="header" href="#prior-art-3">Prior art</a></h1>
+<p><a href="https://tools.ietf.org/html/rfc7942">IETF RFC 7492</a></p>
+<h1 id="future-possibilities-3"><a class="header" href="#future-possibilities-3">Future possibilities</a></h1>
+<p>Automate the RFC process. Once an RFC is accepted, an issue is created automatically and once that is fixed, RFC's implementation Status is updated.</p>
+<p>Breaking backwards compatibility, or adding something new
+that will need to be kept working.</p>
+<p>Summary: Commit to maintaining an extension that adds a <code>bors r+</code> button to GitHub, move it to the bors-ng GitHub org, and publish it to as many extension stores as possible.</p>
+<blockquote>
+<p>I allow this RFC document to be modified and redistributed under the terms of the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache-2.0 license</a>, or the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">CC-BY-NC-SA 3.0 license</a>, at your option.</p>
+</blockquote>
+<h1 id="motivation-4"><a class="header" href="#motivation-4">Motivation</a></h1>
+<p>One of the common complaints about bors-ng is that the command is a pain to type and annoying to remember. There aren't very many good ways to make it easier that don't have significant drawbacks, but what we could do is add a button to the user interface that approves something in bors instead of requiring the user to type it out.</p>
+<h1 id="guide-level-explanation-4"><a class="header" href="#guide-level-explanation-4">Guide-level explanation</a></h1>
+<p>To make using bors with GitHub Reviews easier, you can install the <em>bors button</em> extension. This adds a button to the GitHub Reviews interface to approve-and-merge.</p>
+<p>Starting out, this extension defaults to assuming bors-ng is used in its default configuration, but also has a hardcoded list of projects that use instances of homu or bors-ng with customized command names instead. Improving how it figures that out in the future would make a <em>great</em> pull request, but for now, if you're using a setup with bors-ng or homu and the <code>bors r+</code> button doesn't work for you, you can also open a pull request to add your project to the hardcoded list.</p>
+<p>If you have permission to do so, the <code>bors r+</code> button makes an Approving GitHub Review with <code>bors r+</code> in it, so not only is bors triggered to run, it also gives that green checkmark to your contributor, which is comforting when they're not familiar with your workflow.</p>
+<h1 id="reference-level-explanation-3"><a class="header" href="#reference-level-explanation-3">Reference-level explanation</a></h1>
+<p>The WebExtension is maintained by a small group of people called the &quot;webextension keyholders.&quot; They share access to accounts in every applicable browser extension store (like the Microsoft Edge one, the Google Chrome one, the Apple Safari one, and the Mozilla Firefox one). Adding the bors extension to another store requires there to be at least one keyholder who primarily uses that browser, to make sure it's getting tested in it.</p>
+<p>The keyholders team will decide where those keys should be stored. Probably, 1password, keybase, or something.</p>
+<h1 id="drawbacks-4"><a class="header" href="#drawbacks-4">Drawbacks</a></h1>
+<p>This is kind of tangential to the bors-ng project itself. Especially since we're committing to supporting homu users with this extension.</p>
+<h1 id="rationale-and-alternatives-4"><a class="header" href="#rationale-and-alternatives-4">Rationale and alternatives</a></h1>
+<ul>
+<li>On the other hand, since we're supporting bors-ng users who reassign their bot name, we already have to have the whitelist, since there's no way to detect what the trigger word is for any particular repository anyway. We could add an API, but that's far more work, and this way seems fine as long as there aren't that many bors-ng instances that change the word.</li>
+<li>The impact of doing nothing is that we can't offer an option to people who hate the command interface. They have been, and continue to, ask for ways around it.</li>
+</ul>
+<h1 id="prior-art-4"><a class="header" href="#prior-art-4">Prior art</a></h1>
+<ul>
+<li>This is not the only extension for GitHub. There's plenty of them, like <a href="https://www.zenhub.com/">ZenHub</a> and <a href="https://github.com/onmyway133/github-extended">GitHub Extended</a>. I'm not aware of any CI apps that do this, though.</li>
+</ul>
+<ul>
+<li>
+<p>Since this is a trivial convenience improvement for the existing app, it should easily fit in with the existing bors-ng workflow. From the point of view of someone not doing the reviewing, nothing should change at all.</p>
+</li>
+<li>
+<p>As the keyholders group, the concept of using a single user account with a shared password in a password manager is copied directly from what Mozilla does.</p>
+</li>
+</ul>
+<h1 id="unresolved-questions-3"><a class="header" href="#unresolved-questions-3">Unresolved questions</a></h1>
+<ul>
+<li>
+<p>I'd like to gather together everyone who will be in the extension keyholders group. There are a lot of accounts associated with bors, and it would be nice if we could trial the keyholders' process structure with something that isn't critical infrastructure.</p>
+</li>
+<li>
+<p>Which browsers will be initially supported depends on who I can convince to help test it.</p>
+</li>
+</ul>
+<h1 id="future-possibilities-4"><a class="header" href="#future-possibilities-4">Future possibilities</a></h1>
+<p>Designing an API that we can use instead of the hardcoded list should be done as its own RFC.</p>
+<h1 id="implementaton-status"><a class="header" href="#implementaton-status">Implementaton status</a></h1>
+<p><strong>Implemented</strong>:</p>
+<ul>
+<li>
+<p>Source code: https://github.com/bors-ng/bors-extension</p>
+</li>
+<li>
+<p>Firefox add-on: https://addons.mozilla.org/en-US/firefox/addon/bors-for-github-com/</p>
+</li>
+</ul>
+<p>Summary: Provide a way for projects to run arbitrary code before testing, and before merging.</p>
+<blockquote>
+<p>I allow this RFC document to be modified and redistributed under the terms of the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache-2.0 license</a>, or the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">CC-BY-NC-SA 3.0 license</a>, at your option.</p>
+</blockquote>
+<h1 id="motivation-5"><a class="header" href="#motivation-5">Motivation</a></h1>
+<p>Consider an auto-formatter, like clang-format. When should you run it?</p>
+<ul>
+<li>You could assume everyone contributing to your project will run it before committing. But this is error-prone and requires changes to many individual users' computers, which isn't practical, especially for open-source projects.</li>
+<li>You could use your CI to enforce that the linter has been run: run it on a temporary checkout, see if it makes any changes, and if it does then fail the test and force someone to fix it by hand. But creates extra work for contributors.</li>
+<li>You could make a bot that automatically formats PRs, and pushes the changes back into the PR branch. But inserting commits into a PR branch like this causes problems for users when they want to update their PR, because now the PR branch on github doesn't match their PR branch locally. This is annoying, and contributors with less experience with git may not be able to recover at all.</li>
+</ul>
+<p>The ideal workflow, therefore, is: approve PR -&gt; merge from master -&gt; auto-format -&gt; test -&gt; merge to master. The &quot;pre-test&quot; hook in this RFC allows bors-ng to handle everything after the approval. And you probably also want to run this during &quot;try&quot; commands too, so we provide a &quot;pre-try&quot; hook as well.</p>
+<p>Consider a continuous deployment workflow, where everytime you merge into master, you also want to upload the latest version somewhere. Since bors-ng takes care of merging into master, it seems like a natural place to handle this uploading step. This RFC defines a &quot;pre-merge&quot; hook to handle this.</p>
+<p>There's some more discussion in this thread: https://forum.bors.tech/t/running-custom-code-before-and-after-the-merge-for-continuous-deployment-or-other-uses/315</p>
+<h1 id="guide-level-explanation-5"><a class="header" href="#guide-level-explanation-5">Guide-level explanation</a></h1>
+<p>In <code>bors.toml</code>, you can set <em>pre-test</em>, <em>pre-try</em>, and <em>pre-merge hooks</em> to be a list of URLs:</p>
+<pre><code class="language-toml">pre-test-hooks = [&quot;https://example.com/pre-test-example&quot;]
+pre-try-hooks = [&quot;https://example.com/pre-try-example&quot;]
+pre-merge-hooks = [
+    &quot;https://example.com/pre-merge-example1&quot;,
+    &quot;https://example.com/pre-merge-example2&quot;,
+]
+</code></pre>
+<p>The pre-test and pre-try hooks are invoked after bors-ng has prepared a commit for testing, but before running tests. They may be used to alter the code being tested – for example, by running an auto-formatter. The pre-merge hook is invoked after an approved commit has passed testing, just before bors-ng merges it into the target branch. It cannot alter the code, but it can do other things, like trigger a deployment process or create a tag.</p>
+<p>A hook is &quot;invoked&quot; by <code>POST</code>ing a JSON document to the given URL – something like:</p>
+<pre><code class="language-json">{
+    &quot;phase&quot;: &quot;pre-test&quot;,
+    &quot;repository&quot;: &quot;https://github.com/bors-ng/bors-ng&quot;,
+    &quot;work-branch&quot;: &quot;staging.tmp&quot;,
+    &quot;target-branch&quot;: &quot;master&quot;,
+    &quot;commit-id&quot;: &quot;0b7d6e1ccf9d5fdbce73b690da8a4f76fffc38eb&quot;,
+    &quot;timeout&quot;: 60,
+    &quot;callback&quot;: &quot;https://bors.tech/webhook/callback/5a4857627&quot;
+}
+</code></pre>
+<p>More keys may be added in the future. Unrecognized keys should be ignored.</p>
+<p>When implementing a hook, the first thing you should do is validate the payload. Normally this includes the following steps:</p>
+<ol>
+<li>
+<p>Confirm that the request actually came from the bors-ng service, by checking the <code>X-Bors-NG-Signature</code> header. This will contain a comma-separated list of signatures, like:</p>
+<pre><code>X-Bors-NG-Signature: sha256-hmac=5257a869e7ecebeda32affa62cdca3fa51cad7e77a0e56ff536d0ce8e108d8bd, some-future-algorithm=6ffbb59b2300aae63f272406069a9788598b792a944a07aba816edb039989a39
+</code></pre>
+<p>Right now the only supported form is <code>sha256-hmac</code>, which will contain hex-encoded SHA256-HMAC of the request body. The key is a unique per-repo secret, which can be obtained from your bors-ng dashboard. In the future, more algorithms may be added, and you should be prepared to detect and ignore unrecognized signatures.</p>
+<p>Remember to use a constant-time equality test whenever checking HMAC signatures. For example, in Python use <a href="https://docs.python.org/3/library/hmac.html#hmac.compare_digest"><code>hmac.compare_digest</code></a>.</p>
+</li>
+<li>
+<p>Before manipulating the <code>work-branch</code>, confirm that its HEAD matches the given <code>commit-id</code>. This helps avoid race conditions in case the bors-ng service and your hook get confused and out-of-sync.</p>
+<p>Depending on what your hook does, it may also make sense to revalidate this commit id later. For example, if you're going to mutate the branch, don't use <code>git push --force</code>; always use <code>git push</code> or <a href="https://blog.developer.atlassian.com/force-with-lease/"><code>git push --force-with-lease</code></a>.</p>
+</li>
+</ol>
+<p>The hook responds by <code>POST</code>ing JSON documents to the given <code>callback</code> URL. These documents look like:</p>
+<pre><code class="language-json">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;comment&quot;: &quot;Hook complete - for details see [here](https://...)&quot;
+}
+</code></pre>
+<p>The <code>&quot;status&quot;</code> field must be one of <code>&quot;success&quot;</code>, <code>&quot;failure&quot;</code>, or <code>&quot;pending&quot;</code>. The <code>&quot;comment&quot;</code> field contains arbitrary Github-flavored Markdown.</p>
+<p>The <code>&quot;timeout&quot;</code> field in the request body indicates how many seconds bors-ng is willing to wait for the callback to be invoked. If bors-ng receives a <code>&quot;pending&quot;</code> response, then it resets its timeout. We recommend that if a hook needs more than this amount of time to run, then it should send a <code>&quot;pending&quot;</code> callback every (timeout/2) seconds to extend the timeout.</p>
+<h1 id="reference-level-explanation-4"><a class="header" href="#reference-level-explanation-4">Reference-level explanation</a></h1>
+<h2 id="hook-lifecycle"><a class="header" href="#hook-lifecycle">Hook lifecycle</a></h2>
+<p>Hooks are always invoked in sequence with each other and with other operations on the branch, never in parallel. For example, if there are two pre-test hooks, then bors-ng performs the following steps in order:</p>
+<ul>
+<li>Set up the <code>staging.tmp</code> branch</li>
+<li><code>POST</code> to the first hook</li>
+<li>Wait for the first hook's callback to be invoked.</li>
+<li><code>POST</code> to the second hook</li>
+<li>Wait for the second hook's callback to be invoked</li>
+<li>Rename <code>staging.tmp</code> → <code>staging</code> to start the test run.</li>
+</ul>
+<p>Rationale: hooks are allowed to mutate things and may fail. Running them sequentially makes it much easier to reason about these cases.</p>
+<p>If a hook returns a non-200 response, the timeout expires, the callback is invoked with any <code>status</code> besides <code>&quot;success&quot;</code> or <code>&quot;pending&quot;</code>, or the callback payload is invalid, then the run is immediately aborted, and an error is reported to the user, similar to a test failure. If the run is a rollup, then the entire rollup is failed; no attempt is made to bisect the failing commit. (Rationale: hooks are not tests; they're intended to always succeed. So if a hook fails, there's no point in trying to figure out which commit to blame; the hook is to blame, and the hook is what needs to be fixed.)</p>
+<p>If a pre-merge hook alters the working branch (i.e., after running it, the head of the test branch has changed), then bors-ng should detect that and report an error rather than merge an untested commit.</p>
+<h2 id="request-payload"><a class="header" href="#request-payload">Request payload</a></h2>
+<p>The request payload is a JSON object with the following keys:</p>
+<ul>
+<li><code>phase</code>: one of <code>&quot;pre-test&quot;</code>, <code>&quot;pre-try&quot;</code>, or <code>&quot;pre-merge&quot;</code></li>
+<li><code>repository</code>: the canonical URL for the repository</li>
+<li><code>work-branch</code>: the branch in that repository that bors-ng is working on. Generally <code>&quot;staging.tmp&quot;</code> for pre-test hooks, <code>&quot;trying.tmp&quot;</code> for pre-try hooks, and <code>&quot;staging&quot;</code> for <code>pre-merge</code> hooks.</li>
+<li><code>target-branch</code>: For pre-test and pre-merge hooks, the name of the target branch that this change will eventually be merged into. For <code>pre-try</code> hooks, this is always <code>null</code>.</li>
+<li><code>commit-id</code>: Bors-ng believes that this commit is the HEAD of the <code>work-branch</code>.</li>
+<li><code>timeout</code>: The number of seconds bors-ng will wait before assuming the hook has crashed.</li>
+<li><code>callback</code>: The URL the hook should <code>POST</code> updates to.</li>
+</ul>
+<h2 id="security"><a class="header" href="#security">Security</a></h2>
+<p>We need some way for hooks to tell that they're being invoked by bors-ng, and for bors-ng to tell that the callbacks are coming from the hooks.</p>
+<p>The latter is fairly easy: bors-ng should create a new, high-entropy callback URL for each hook invocation. That way it knows that anyone who invokes the callback is in fact authorized to do so.</p>
+<p>For invoking hooks, life is more difficult, because we expect hook URLs to be checked into public repositories. And if hooks don't validate that it's really bors-ng invoking them, then anyone who knows the hook URL could send it a POST that pretends to be from bors-ng. If timed correctly, this might cause a hook to try to auto-format a <code>testing.tmp</code> branch that bors-ng is in the middle of assembling, or trigger the deployment of a branch whose tests are still running. That would be bad.</p>
+<p>Therefore, each time bors-ng adds a new repo, it generates a 256-bit secret. This secret is shown on the repo's dashboard page, and can be manually regenerated by the user (e.g. by pressing a button on the dashboard).</p>
+<p>When bors-ng invokes a hook, it includes a <code>X-Bors-NG-Signature</code> header, containing a SHA256 HMAC of the request body, keyed by this secret: <code>sha256-hmac=&lt;256 bits of hex&gt;</code>. (Prior art: <a href="https://developer.github.com/webhooks/securing/">Github</a>, <a href="https://stripe.com/docs/webhooks/signatures">Stripe</a>.)</p>
+<p>The header should also contain some fake signatures with randomly generated names, like <code>sdof123-jow=&lt;more gibberish here&gt;</code>. This forces hook implementations to be prepared to handle unrecognized signature algorithms, so that if we later need to transition to a new signature algorithm we can do that without breaking everyone (<a href="https://tools.ietf.org/html/draft-ietf-tls-grease-02">see also</a>).</p>
+<h1 id="drawbacks-5"><a class="header" href="#drawbacks-5">Drawbacks</a></h1>
+<p>It's kind of complicated? But auto-formatting and continuous deployment are pretty awesome things.</p>
+<h1 id="rationale-and-alternatives-5"><a class="header" href="#rationale-and-alternatives-5">Rationale and alternatives</a></h1>
+<p>We could provide a way for bors-ng to run arbitrary code directly. That might be acceptable for locally-hosted versions, or with complex sandboxing. But we would like to support this feature in the publically hosted version, and without complex sandboxing. This is the simplest approach I can think of that doesn't require trusting the hook code.</p>
+<p>In practice, it seems likely that the pre-test and pre-try hooks will often be the same. I kept them separate because I'm not sure whether this is always true or not.</p>
+<p>The pre-merge hook has a weaker rationale than the others, because there are other ways to invoke code after your tests pass, or after code is merged into master (e.g. the deployment support in most popular CI systems). However, it still seems to be worth including, because:</p>
+<ul>
+<li>In the continuous deployment use case, you probably want pre-test and pre-merge hooks to collaborate (e.g., setting the version number in pre-test, and then creating the corresponding tag in pre-merge). Splitting this between two different services seems like a pain.</li>
+<li>If you're using multiple status checks and want to gate deployment on all of them together, then that requires some separate service. bors-ng is already set up to do this.</li>
+<li>Most hosted CI systems expose deployment secrets to all users with write access to the repository. In bors-ng deployments, its common that there are users who have write permission (e.g. to create branches or modify issues), but who don't have permission to push directly to the master branch. Storing the deployment secrets in some other system, whose access is gated behind bors-ng, is a way to enforce the NRSROSE principle for deployments as well as merges.</li>
+<li>We expect that the cost of implementing pre-merge hooks should be pretty low, since they should be able to share most of their code with pre-test/pre-try hooks.</li>
+</ul>
+<h1 id="prior-art-5"><a class="header" href="#prior-art-5">Prior art</a></h1>
+<p>I'm not aware of any prior art for these kinds of hooks in other NRSROSE systems.</p>
+<h1 id="unresolved-questions-4"><a class="header" href="#unresolved-questions-4">Unresolved questions</a></h1>
+<p>None.</p>
+<h1 id="future-possibilities-5"><a class="header" href="#future-possibilities-5">Future possibilities</a></h1>
+<p>I briefly considered adding a mechanism to pass information between the pre-test and pre-merge hooks. (For example: the pre-test hook could return some JSON data, which would then be passed through to the pre-merge hook.) I couldn't think of any use cases, so I left it out, but it could be added later if any use cases are discovered.</p>
+<p>If you have a lot of repositories managed by bors-ng, then it might be tiresome to have to manually configure secrets for each one. Maybe we'll want to add a way to let multiple repositories use the same secret? (E.g., a per-github-org secret instead of a per-repo secret.)</p>
+<h1 id="implementation-status-1"><a class="header" href="#implementation-status-1">Implementation status</a></h1>
+<p><strong>Yet to be implemented</strong></p>
+<p>Summary: Add support for creating merge commits locally in self-hosted instances of Bors. This feature will never be enabled on the free public instance of Bors.</p>
+<blockquote>
+<p>I allow this RFC document to be modified and redistributed under the terms of the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache-2.0 license</a>, or the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">CC-BY-NC-SA 3.0 license</a>, at your option.</p>
+</blockquote>
+<h1 id="motivation-6"><a class="header" href="#motivation-6">Motivation</a></h1>
+<p>Currently, Bors uses GitHub's <a href="https://developer.github.com/v3/git/">Git Database API</a> to create merge commits. This approach results in relatively inexpensive disk storage requirements and is sufficient for most purposes.</p>
+<p>However, there are several important features that are not possible when creating merge commits with the Git Database API. For example:</p>
+<ol>
+<li>
+<p>Merge commits created using the Git Database API are not automatically GPG-signed (<a href="https://github.com/bors-ng/bors-ng/issues/647">issue #647</a>).</p>
+</li>
+<li>
+<p>Merges performed using the Git Database API do not respect the merge strategies specified in any <code>.gitattributes</code> files (<a href="https://github.com/bors-ng/bors-ng/issues/512">issue #512</a>).</p>
+</li>
+</ol>
+<h1 id="guide-level-explanation-6"><a class="header" href="#guide-level-explanation-6">Guide-level explanation</a></h1>
+<p>An instance of Bors can be configured either to perform all merges using the Git Database API or to perform all merges locally using local <code>git</code>. This is a server-wide setting; the same setting will apply to all repositories on the Bors server. The default setting is to perform all merges using the Git Database API.</p>
+<p>If you manage an instance of Bors, you can enable local <code>git</code> merges by setting the <code>perform_git_merges_locally</code> configuration setting to <code>true</code> in the <a href="https://github.com/bors-ng/bors-ng/blob/a4c2f27367027172aad4c7624316025c6e6640aa/config/config.exs"><code>config.exs</code> file</a>. The default value of <code>perform_git_merges_locally</code> is <code>false</code>.</p>
+<pre><code class="language-elixir"># General application configuration
+config :bors, BorsNG,
+  command_trigger: {:system, :string, &quot;COMMAND_TRIGGER&quot;, &quot;bors&quot;},
+  home_url: &quot;https://bors.tech/&quot;,
+  allow_private_repos: {:system, :boolean, &quot;ALLOW_PRIVATE_REPOS&quot;, false},
+  perform_git_merges_locally: {:system, :boolean, &quot;PERFORM_GIT_MERGES_LOCALLY&quot;, true},
+  dashboard_header_html: {:system, :string, &quot;DASHBOARD_HEADER_HTML&quot;, &quot;&quot;&quot;
+          &lt;a class=header-link href=&quot;https://bors.tech&quot;&gt;Home&lt;/a&gt;
+          &lt;a class=header-link href=&quot;https://forum.bors.tech&quot;&gt;Forum&lt;/a&gt;
+          &lt;a class=header-link href=&quot;https://bors.tech/documentation/getting-started/&quot;&gt;Docs&lt;/a&gt;
+          &lt;b class=header-link&gt;Dashboard&lt;/b&gt;
+    &quot;&quot;&quot;},
+  dashboard_footer_html: {:system, :string, &quot;DASHBOARD_FOOTER_HTML&quot;, &quot;&quot;&quot;
+        This service is provided for free on a best-effort basis.
+    &quot;&quot;&quot;}
+</code></pre>
+<p>By default, Bors will look for an executable named <code>git</code> in the PATH. To customize the location of the <code>git</code> executable, set the value of the <code>git_command</code> configuration setting. The default value of <code>git_command</code> is <code>git</code>.</p>
+<pre><code class="language-elixir"># General application configuration
+config :bors, BorsNG,
+  command_trigger: {:system, :string, &quot;COMMAND_TRIGGER&quot;, &quot;bors&quot;},
+  home_url: &quot;https://bors.tech/&quot;,
+  allow_private_repos: {:system, :boolean, &quot;ALLOW_PRIVATE_REPOS&quot;, false},
+  perform_git_merges_locally: {:system, :boolean, &quot;PERFORM_GIT_MERGES_LOCALLY&quot;, true},
+  git_command: {:system, :string, &quot;GIT_COMMAND&quot;, &quot;/bin/git&quot;},
+  dashboard_header_html: {:system, :string, &quot;DASHBOARD_HEADER_HTML&quot;, &quot;&quot;&quot;
+          &lt;a class=header-link href=&quot;https://bors.tech&quot;&gt;Home&lt;/a&gt;
+          &lt;a class=header-link href=&quot;https://forum.bors.tech&quot;&gt;Forum&lt;/a&gt;
+          &lt;a class=header-link href=&quot;https://bors.tech/documentation/getting-started/&quot;&gt;Docs&lt;/a&gt;
+          &lt;b class=header-link&gt;Dashboard&lt;/b&gt;
+    &quot;&quot;&quot;},
+  dashboard_footer_html: {:system, :string, &quot;DASHBOARD_FOOTER_HTML&quot;, &quot;&quot;&quot;
+        This service is provided for free on a best-effort basis.
+    &quot;&quot;&quot;}
+</code></pre>
+<p>This RFC does not deprecate or break any existing features. Maintainers of Bors servers will always have the option to perform all merges using the Git Database API.</p>
+<h1 id="reference-level-explanation-5"><a class="header" href="#reference-level-explanation-5">Reference-level explanation</a></h1>
+<p>If you were to perform the merge yourself, here are the steps you would follow. Suppose that we have a repository located at <code>https://github.com/someusername/somerepository.git</code>, and we want to merge pull requests <code>#10</code>, <code>#15</code>, and <code>#20</code> into the target branch <code>sometargetbranch</code>.</p>
+<ol>
+<li><code>git clone https://x-access-token:&lt;token&gt;@github.com/someusername/somerepository.git</code></li>
+<li><code>cd somerepository</code></li>
+<li><code>git checkout sometargetbranch</code></li>
+<li><code>git fetch origin pull/10/head:randomlygeneratedstring-10</code></li>
+<li><code>git checkout randomlygeneratedstring-10</code></li>
+<li><code>git fetch origin pull/10/head:randomlygeneratedstring-15</code></li>
+<li><code>git checkout randomlygeneratedstring-15</code></li>
+<li><code>git fetch origin pull/10/head:randomlygeneratedstring-20</code></li>
+<li><code>git checkout randomlygeneratedstring-20</code></li>
+<li><code>git checkout sometargetbranch</code></li>
+<li><code>git branch --force staging</code></li>
+<li><code>git checkout staging</code></li>
+<li><code>git merge randomlygeneratedstring-10 randomlygeneratedstring-15 randomlygeneratedstring-20</code></li>
+<li><code>git push --force origin staging</code></li>
+<li><code>cd ..</code></li>
+<li><code>rm -rf somerepository</code></li>
+</ol>
+<p>In order to implement this in Bors, we'll likely need to write additional versions of the <code>start_attempt</code> method in <a href="https://github.com/bors-ng/bors-ng/blob/a4c2f27367027172aad4c7624316025c6e6640aa/lib/worker/attemptor.ex">attemptor.ex</a> and the <code>start_waiting_batch</code> and <code>start_waiting_merged_batch</code>  methods in <a href="https://github.com/bors-ng/bors-ng/blob/a4c2f27367027172aad4c7624316025c6e6640aa/lib/worker/batcher.ex">batcher.ex</a>. Then, we'll add logic that calls the appropriate methods based on the value of the <code>perform_git_merges_locally</code> configuration option.</p>
+<h1 id="drawbacks-6"><a class="header" href="#drawbacks-6">Drawbacks</a></h1>
+<p>In order for Bors to perform a merge locally, the server on which Bors is running will need to have sufficient disk space for <code>git</code> to be able to clone repositories locally. Thus, any Bors server maintainer that is considering setting <code>perform_git_merges_locally</code> to <code>true</code> should make sure that they will have enough disk space.</p>
+<p>Let <code>N</code> denote the number of repositories on which Bors is installed, and let <code>M</code> denote the size on disk of the largest repository. Since each repository could have both <code>bors r+</code> and <code>bors try</code> commands running simultaneously, a conservative estimate for the disk space requirement for cloning repositories is <code>2MN</code>.</p>
+<h1 id="rationale-and-alternatives-6"><a class="header" href="#rationale-and-alternatives-6">Rationale and alternatives</a></h1>
+<p>The alternative will be to continue using the Git Database API for creating merge commits. This is a great option for most users, and it will continue to be the only option available on the free public instance of Bors. However, as described above, there are certain features that will never be available through the Git Database API, and for those, a Bors administrator will need to use local merges.</p>
+<h1 id="prior-art-6"><a class="header" href="#prior-art-6">Prior art</a></h1>
+<p>The following apps implement the NRSROSE and have the option to create the merge commit locally:</p>
+<ul>
+<li><a href="https://github.com/servo/homu">homu</a> (<a href="https://github.com/servo/homu/blob/2ea53e76ebac3e5fa11bc39054b3cd4c42eff607/homu/main.py#L693">source file</a>)</li>
+<li><a href="https://github.com/openstack-infra/zuul">zuul</a> (<a href="https://github.com/openstack-infra/zuul/blob/dc9347c1223e3c7eb0399889d03c5de9e854a836/zuul/merger/merger.py#L382">source file</a>)</li>
+<li><a href="https://github.com/smarkets/marge-bot">marge-bot</a> (<a href="https://github.com/smarkets/marge-bot/blob/4813da4baf9e92f8d429990a2fccf03baea1b668/marge/git.py#L104">source file</a>)</li>
+</ul>
+<h1 id="unresolved-questions-5"><a class="header" href="#unresolved-questions-5">Unresolved questions</a></h1>
+<ul>
+<li>How do we implement tests for this feature?</li>
+</ul>
+<h1 id="future-possibilities-6"><a class="header" href="#future-possibilities-6">Future possibilities</a></h1>
+<h3 id="next-steps-for-maintainers-of-bors-servers-after-this-feature-is-implemented"><a class="header" href="#next-steps-for-maintainers-of-bors-servers-after-this-feature-is-implemented">Next steps for maintainers of Bors servers after this feature is implemented</a></h3>
+<h5 id="gpg-signing-all-merge-commits"><a class="header" href="#gpg-signing-all-merge-commits">GPG-signing all merge commits</a></h5>
+<p>If you run a Bors server and you want to enable GPG-signing of all merge commits, you first need to set <code>perform_git_merges_locally</code> to <code>true</code>. Then, you should log in to the server as the same user that Bors runs as and run the following commands:</p>
+<ul>
+<li><code>git config --global user.signingkey your_gpg_key_id</code></li>
+<li><code>git config --global commit.gpgsign true</code></li>
+</ul>
+<h5 id="using-specific-merge-strategies-for-certain-files"><a class="header" href="#using-specific-merge-strategies-for-certain-files">Using specific merge strategies for certain files</a></h5>
+<p>If you use a Bors server with <code>perform_git_merges_locally</code> set to <code>true</code>, and you want to use a specific merge strategy for certain files in one of your repositories, you only need to create an appropriate <code>.gitattributes</code> file and commit it in your repository. The command-line <code>git</code> will use the <code>.gitattributes</code> file automatically.</p>
+<h3 id="future-work-in-bors"><a class="header" href="#future-work-in-bors">Future work in Bors</a></h3>
+<p>Once the ability to create merge commits locally has been implemented, future work might include the implementation of a <code>git_squash = true</code> option in <code>bors.toml</code> that would pass the <code>--squash</code> flag to the <code>git merge</code> command. This could potentially help us close <a href="https://github.com/bors-ng/bors-ng/issues/138">issue #138</a> and/or <a href="https://github.com/bors-ng/bors-ng/issues/194">issue #194</a>.</p>
+<p>But this would be an advanced feature, and we should not implement it as part of this first RFC. The best plan is to first implement the ability simply to create merge commits locally. Once we have implemented that, we can consider opening a second RFC for discussion specifically of a <code>git_squash = true</code> option for passing the <code>--squash</code> flag to the <code>git merge</code> command, or something similar.</p>
+<h1 id="implementation-status-2"><a class="header" href="#implementation-status-2">Implementation status</a></h1>
+<p><strong>Yet to be implemented</strong></p>
+<p>Summary: Implement a configuration option for bors to produce &quot;squash merge&quot; commits. When this option is enabled, instead of attaching all commits under the approved pull requests to a batch merge commit, bors will generate one, single, commit for each approved pull request.</p>
+<blockquote>
+<p>I allow this RFC document to be modified and redistributed under the terms of the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache-2.0 license</a>, or the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">CC-BY-NC-SA 3.0 license</a>, at your option.</p>
+</blockquote>
+<h1 id="motivation-7"><a class="header" href="#motivation-7">Motivation</a></h1>
+<p>Currently, Bors merges in the entire commit history of a PR.  This ends up polluting the git history with huge numbers of small commits that don't matter.  Github solves this by offering a &quot;Squash and merge&quot; functionality.  This will compress the entire commit history into a single commit and provide a good commit title with a link back to the PR.</p>
+<p>Squash and merge functionality is widely used in the Github community and is a blocker for rolling out Bors to more locations.</p>
+<p>There are several open bugs/feature requests that want the functionality of a squash merge in Bors.  Eg: https://forum.bors.tech/t/is-anyone-working-on-squash-merge-for-bors/340 and https://github.com/bors-ng/bors-ng/issues/194</p>
+<h1 id="guide-level-explanation-7"><a class="header" href="#guide-level-explanation-7">Guide-level explanation</a></h1>
+<p>To have Bors use the Github &quot;squash-and-merge&quot; functionality.</p>
+<p>Edit your bors.toml file and add <code>use_squash_merge = true</code>. (The default value of <code>use_squash_merge</code> is <code>false</code>.)</p>
+<p>When you run <code>bors r+</code>, bors will operate as normal, except when your batch passes:</p>
+<ol>
+<li>All changes in each PR will be squashed together, so there is one commit per PR.</li>
+<li>The commit message will be set to use the PR title with a link to the PR, and the the commit details will contain the commit messages that have been squashed together.</li>
+</ol>
+<h1 id="reference-level-explanation-6"><a class="header" href="#reference-level-explanation-6">Reference-level explanation</a></h1>
+<p>The basic functional loop of this feature is:</p>
+<ol>
+<li>Create the staging branch</li>
+<li>If the <code>use_squash_merge</code> flag is set to true for the report then</li>
+<li>For each Patch </li>
+</ol>
+<ul>
+<li>Get the Git tree of the final commit in each patch</li>
+<li>Create a commit on the staging branch with the commit tree (this is a squash commit)</li>
+<li>Generate a commit title from the PR title</li>
+<li>Generate a commit text body from the PR description</li>
+<li>Create a merge commit (if needed) of all squashed commits </li>
+</ul>
+<ol start="3">
+<li>Run the regular Bors build checks</li>
+<li>When a batch passes all required checks - For each Patch in a Batch</li>
+</ol>
+<ul>
+<li>Change the title of the patch from &quot;$title&quot; to &quot;[Merged By Bors] - $title&quot;</li>
+</ul>
+<h1 id="drawbacks-7"><a class="header" href="#drawbacks-7">Drawbacks</a></h1>
+<p>This is an opt-in feature.  I think most people would get a better experience if it was just enabled by default.</p>
+<h1 id="rationale-and-alternatives-7"><a class="header" href="#rationale-and-alternatives-7">Rationale and alternatives</a></h1>
+<ul>
+<li>Why is this design the best in the space of possible designs?</li>
+</ul>
+<p>This change leaves all other aspects of the code-base alone.  The functionality is exclusively opt-in, and does not require any additional services, process, or resources to be installed in the Bors container.  The code changes are non-obtrusive </p>
+<ul>
+<li>What other designs have been considered and what is the rationale for not choosing them?</li>
+</ul>
+<p>One alternative is using the green button merge functionality.  This works but could allow some code to be merged without being fully validated against the tests.</p>
+<ul>
+<li>What is the impact of not doing this?</li>
+</ul>
+<p>This is a highly demanded feature and not implementing it will hamper adoption of Bors in the wider world.</p>
+<h1 id="prior-art-7"><a class="header" href="#prior-art-7">Prior art</a></h1>
+<p>See https://forum.bors.tech/t/is-anyone-working-on-squash-merge-for-bors/340 and https://github.com/bors-ng/bors-ng/issues/194 for prior discussions of this.</p>
+<h1 id="future-possibilities-7"><a class="header" href="#future-possibilities-7">Future possibilities</a></h1>
+<p>The alternative option could become easy to support if Github adds a more robust Git manipulation API.</p>
+<h1 id="implementation-status-3"><a class="header" href="#implementation-status-3">Implementation status</a></h1>
+<p><strong>Implemented</strong>:</p>
+<ul>
+<li>Pull request: https://github.com/bors-ng/bors-ng/pull/718</li>
+</ul>
+<p>Summary: Add an option to have bors parse and enforce the GitHub-designed <code>CODEOWNERS</code> file.</p>
+<blockquote>
+<p>I allow this RFC document to be modified and redistributed under the terms of the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache-2.0 license</a>, or the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">CC-BY-NC-SA 3.0 license</a>, at your option.</p>
+</blockquote>
+<h1 id="motivation-8"><a class="header" href="#motivation-8">Motivation</a></h1>
+<p>Currently, bors only supports requiring numbers of contributors.  This works for many use cases but several users need the power of GitHub <a href="https://help.github.com/en/articles/about-code-owners">CODEOWNERS</a>.  CODEOWNERS let users set a 'required' code reviewer for specific code.  Eg, you could require review by security team if code in the security repository is altered.</p>
+<h1 id="guide-level-explanation-8"><a class="header" href="#guide-level-explanation-8">Guide-level explanation</a></h1>
+<p>This feature is intended to exactly mimic the functionality GitHub provides with their CODEOWNERS implementation.  As such, the exact guide level docs are owner by GitHub(<a href="https://help.github.com/en/articles/about-code-owners">here</a>)</p>
+<p>For bors, CODEOWNERS file support will be enabled by setting <code>enable_codeowners = true</code> in the bors.toml file.</p>
+<h1 id="reference-level-explanation-7"><a class="header" href="#reference-level-explanation-7">Reference-level explanation</a></h1>
+<p>Please see Github official <a href="https://help.github.com/en/articles/about-code-owners">docs</a></p>
+<h1 id="drawbacks-8"><a class="header" href="#drawbacks-8">Drawbacks</a></h1>
+<p>This will somewhat complicate the system by requiring us to follow the CODEOWNERS file format instead of just counting required reviewers.</p>
+<h1 id="rationale-and-alternatives-8"><a class="header" href="#rationale-and-alternatives-8">Rationale and alternatives</a></h1>
+<p>This is an important tool to support the Bors Squash merge feature.  Many teams cannot switch to squash-merge if they would lose the CODEOWNERS functionality.</p>
+<p>An alternative, this could be implemented by an external github tagger bot.  The bot could label PRs that still need review and could block on the attached label.</p>
+<h1 id="prior-art-8"><a class="header" href="#prior-art-8">Prior art</a></h1>
+<ul>
+<li>GitHub - This feature is widely used in larger organizations.</li>
+</ul>
+<h1 id="unresolved-questions-6"><a class="header" href="#unresolved-questions-6">Unresolved questions</a></h1>
+<ul>
+<li>Should the feature simply be automatically enabled when a CODEOWNERS file is present?</li>
+</ul>
+<h1 id="future-possibilities-8"><a class="header" href="#future-possibilities-8">Future possibilities</a></h1>
+<p>We could extend the CODEOWNERS functionality to support features not officially supported in GitHub proper.</p>
+<h1 id="implementation-status-4"><a class="header" href="#implementation-status-4">Implementation status</a></h1>
+<p><strong>Implemented</strong>:</p>
+<ul>
+<li>Pull request: https://github.com/bors-ng/bors-ng/pull/725</li>
+</ul>
+<p>Summary: Add a new configuration option <code>status_wait_success</code>. Bors will wait until all of the GitHub Statuses listed in <code>status_wait_success</code> succeed (i.e. &quot;turn green&quot;), or until Bors times out.</p>
+<blockquote>
+<p>I allow this RFC document to be modified and redistributed under the terms of the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache-2.0 license</a>, or the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">CC-BY-NC-SA 3.0 license</a>, at your option.</p>
+</blockquote>
+<h1 id="motivation-9"><a class="header" href="#motivation-9">Motivation</a></h1>
+<p>There are some GitHub Statuses that will initially report a failing (i.e. &quot;red X&quot;) status, but at a later point in time will change their status to passing (i.e. &quot;green checkmark&quot;). An example would be the <code>codecov/project</code> status from CodeCov. If you have multiple CI jobs that each report partial coverage, then initially the <code>codecov/project</code> status will be failing. However, after all of the CI jobs have completed and submitted their coverage reports, CodeCov will merge all of the coverage reports and will change the <code>codecov/project</code> status to passing.</p>
+<p>If you list such a status in the <code>status</code> section of your <code>bors.toml</code> file, then Bors will fail the build as soon as it sees a failing status. But this is not what we want - we want Bors to ignore those failing statuses and instead wait until the status passes (or until Bors times out, whichever comes first). </p>
+<p>A more detailed description of the CodeCov use case is available in <a href="https://forum.bors.tech/t/bug-report-travis-should-not-look-at-the-codecov-status-if-the-travis-status-check-is-still-pending/356">this forum thread</a>.</p>
+<h1 id="guide-level-explanation-9"><a class="header" href="#guide-level-explanation-9">Guide-level explanation</a></h1>
+<p>If you want Bors to require that a certain GitHub Status pass, and if you want Bors to immediately fail the build if that GitHub Status ever reports a failing (i.e. &quot;red X&quot;) status, put that status in the <code>status</code> list.</p>
+<p>If you want Bors to require that a certain GitHub Status pass, and you want Bors to wait until that GitHub status passes (i.e. &quot;green checkmark&quot;), and you do not want Bors to fail the build if that GitHub Status ever reports a failing status, put that status in the <code>status_wait_success</code>.</p>
+<p>If you specify one or more statuses in the <code>status_wait_success</code> list, the Bors will wait until all of those statuses succeed. If not all of the statuses have succeeded by the time that the Bors timeout period has elapsed, then Bors will fail with a timeout error.</p>
+<h2 id="example"><a class="header" href="#example">Example</a></h2>
+<p>For example, suppose that you want Bors to require that the following four statuses pass in order for Bors to merge:</p>
+<ul>
+<li><code>continuous-integration/travis-ci/push</code></li>
+<li><code>Taskcluster (push)</code></li>
+<li><code>codecov/project</code></li>
+<li><code>codecov/patch</code></li>
+</ul>
+<p>If the <code>continuous-integration/travis-ci/push</code> and/or <code>Taskcluster (push)</code> statuses fails, you want Bors to immediately fail the build. However, if the <code>codecov/project</code> and/or <code>codecov/patch</code> statuses fails, you want Bors to ignore the failure, and instead wait until both the <code>codecov/project</code> and <code>codecov/patch</code> statuses succeed. In this example, your <code>bors.toml</code> file would look like this:</p>
+<pre><code class="language-toml">status = [ &quot;continuous-integration/travis-ci/push&quot;, &quot;Taskcluster (push)&quot; ]
+
+status_wait_success = [&quot;codecov/project&quot;, &quot;codecov/patch&quot;]
+</code></pre>
+<h2 id="customizing-the-timeout"><a class="header" href="#customizing-the-timeout">Customizing the timeout</a></h2>
+<p>The default Bors timeout is one hour (i.e. 3600 seconds). You can specifying a longer or shorter timeout by setting the <code>timeout_sec</code> option in <code>bors.toml</code>. For example, to set the Bors timeout to twelve hours (i.e. 43200 seconds), you would set <code>timeout_sec = 43200</code>. So your <code>bors.toml</code> file would look like this:</p>
+<pre><code class="language-toml">status = [ &quot;continuous-integration/travis-ci/push&quot;, &quot;Taskcluster (push)&quot; ]
+
+status_wait_success = [&quot;codecov/project&quot;, &quot;codecov/patch&quot;]
+
+timeout_sec = 43200
+</code></pre>
+<h1 id="reference-level-explanation-8"><a class="header" href="#reference-level-explanation-8">Reference-level explanation</a></h1>
+<p>Here is a rough overview of the changes that we need to make.</p>
+<p>First, we will modify the code that lives in <a href="https://github.com/bors-ng/bors-ng/blob/4b7e2594ba2b4557c54e4f3d9980147240f6656e/lib/github/github.ex#L224"><code>lib/github/github.ex</code>, starting at line 224</a>. Currently, the code looks like this:</p>
+<pre><code class="language-elixir">@spec map_state_to_status(binary) :: tstatus
+def map_state_to_status(state) do
+  case state do
+    &quot;pending&quot; -&gt; :running
+    &quot;success&quot; -&gt; :ok
+    &quot;failure&quot; -&gt; :error
+    &quot;error&quot; -&gt; :error
+  end
+end
+
+@spec map_check_to_status(binary) :: tstatus
+def map_check_to_status(conclusion) do
+  case conclusion do
+    nil -&gt; :running
+    &quot;success&quot; -&gt; :ok
+    _ -&gt; :error
+  end
+end
+
+@spec map_status_to_state(tstatus) :: binary
+def map_status_to_state(state) do
+  case state do
+    :running -&gt; &quot;pending&quot;
+    :ok -&gt; &quot;success&quot;
+    :error -&gt; &quot;failure&quot;
+  end
+end
+</code></pre>
+<p>We will modify it to look like this:</p>
+<pre><code class="language-elixir">@spec map_state_to_status(binary) :: tstatus
+def map_state_to_status(state) do
+  case state do
+    &quot;pending&quot; -&gt; :running
+    &quot;success&quot; -&gt; :ok
+    &quot;failure&quot; -&gt; :error
+    &quot;error&quot; -&gt; :error
+  end
+end
+
+@spec map_check_to_status(binary) :: tstatus
+def map_check_to_status(conclusion) do
+  case conclusion do
+    nil -&gt; :running
+    &quot;success&quot; -&gt; :ok
+    _ -&gt; :error
+  end
+end
+
+@spec map_status_to_state(tstatus) :: binary
+def map_status_to_state(state) do
+  case state do
+    :running -&gt; &quot;pending&quot;
+    :ok -&gt; &quot;success&quot;
+    :error -&gt; &quot;failure&quot;
+  end
+end
+
+@spec map_state_to_status_wait_success(binary) :: tstatus
+def map_state_to_status_wait_success(state) do
+  case state do
+    &quot;pending&quot; -&gt; :running
+    &quot;success&quot; -&gt; :ok
+    &quot;failure&quot; -&gt; :running
+    &quot;error&quot; -&gt; :running
+  end
+end
+
+@spec map_check_to_status_wait_success(binary) :: tstatus
+def map_check_to_status_wait_success(conclusion) do
+  case conclusion do
+    nil -&gt; :running
+    &quot;success&quot; -&gt; :ok
+    _ -&gt; :running
+  end
+end
+
+@spec map_status_wait_success_to_state(tstatus) :: binary
+def map_status_wait_success_to_state(state) do
+  case state do
+    :running -&gt; &quot;pending&quot;
+    :ok -&gt; &quot;success&quot;
+    :error -&gt; &quot;pending&quot;
+  end
+end
+</code></pre>
+<p>Basically, we want Bors to think of any status other than <code>success</code> as <code>pending</code>.</p>
+<p>Then we will add logic that checks the <code>bors.toml</code> file and calls the correct functions (i.e. <code>map_state_to_status</code> versus <code>map_state_to_status_wait_success</code>) depending on whether the relevant GitHub Status was listed in <code>status</code> or <code>status_wait_success</code>.</p>
+<p>We should also make it a <code>bors.toml</code> parsing error to specify the same status in both <code>status</code> and <code>status_wait_success</code>.</p>
+<h1 id="drawbacks-rationale-and-alternatives"><a class="header" href="#drawbacks-rationale-and-alternatives">Drawbacks, rationale and alternatives</a></h1>
+<p>The drawbacks, rationale and alternatives have been explained in detail in <a href="https://forum.bors.tech/t/bug-report-travis-should-not-look-at-the-codecov-status-if-the-travis-status-check-is-still-pending/356">this forum thread</a>.</p>
+<p>The feature described here is the only approach that avoids a race condition.</p>
+<h1 id="prior-art-9"><a class="header" href="#prior-art-9">Prior art</a></h1>
+<ul>
+<li>I am not aware of any prior art.</li>
+</ul>
+<h1 id="unresolved-questions-7"><a class="header" href="#unresolved-questions-7">Unresolved questions</a></h1>
+<ul>
+<li>How will we implement tests for this new feature?</li>
+</ul>
+<h1 id="future-possibilities-9"><a class="header" href="#future-possibilities-9">Future possibilities</a></h1>
+<p>I can't think of any future possibilities at this time.</p>
+<h1 id="implementation-status-5"><a class="header" href="#implementation-status-5">Implementation status</a></h1>
+<p><strong>Yet to implement</strong></p>
+<p>Summary: Add <code>bors d+</code> as an alias to <code>bors delegate+</code> and <code>bors d=someone</code> as an alias to <code>bors delegate=someone</code>.</p>
+<blockquote>
+<p>I allow this RFC document to be modified and redistributed under the terms of the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache-2.0 license</a>, or the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">CC-BY-NC-SA 3.0 license</a>, at your option.</p>
+</blockquote>
+<h1 id="motivation-10"><a class="header" href="#motivation-10">Motivation</a></h1>
+<p>Based on @tommilligan's pull request and @matklad's issue, a lot of people are annoyed by how long the delegate command's name is.</p>
+<h1 id="guide-level-explanation-10"><a class="header" href="#guide-level-explanation-10">Guide-level explanation</a></h1>
+<p>In addition to adding reviewers who can approve any PR in the repo, you can “delegate” permission to approve a single PR to anyone else. It works like this:</p>
+<pre><code>    @some-user: bors r+
+    @bors[bot]: Permission denied
+    @some-reviewer: bors d=some-user
+    @bors[bot]: some-user now has permission to review this pull request.
+    @some-user: bors r+
+    @bors[bot]: Added to queue
+</code></pre>
+<p>If some-user happens to be the pull request author, you can also use the shorthand <code>d+</code> command.</p>
+<h1 id="reference-level-explanation-9"><a class="header" href="#reference-level-explanation-9">Reference-level explanation</a></h1>
+<table><thead><tr><th>Syntax</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>bors delegate+</code></td><td>Allow the pull request author to r+ their changes.</td></tr>
+<tr><td><code>bors delegate=[list]</code></td><td>Allow the listed users to r+ this pull request’s changes.</td></tr>
+<tr><td><code>bors d+</code></td><td>Allow the pull request author to r+ their changes (same as <code>delegate+</code>).</td></tr>
+<tr><td><code>bors d=[list]</code></td><td>Allow the listed users to r+ this pull request’s changes (same as <code>delegate=[list]</code>).</td></tr>
+</tbody></table>
+<h1 id="drawbacks-9"><a class="header" href="#drawbacks-9">Drawbacks</a></h1>
+<p>It adds another command that we need to maintain.</p>
+<p>It's also less readable, though, since bors responds with a message with what you're doing, that should be fine. Also, we already allow the super-short and kind of opaque <code>r+</code>, so it doesn't make much sense to be picky about self-documenting commands.</p>
+<h1 id="rationale-and-alternatives-9"><a class="header" href="#rationale-and-alternatives-9">Rationale and alternatives</a></h1>
+<ul>
+<li>
+<p>Why is this design the best in the space of possible designs?</p>
+<p>It fits with the way <code>r+</code> and <code>r=</code> work.</p>
+</li>
+<li>
+<p>What other designs have been considered and what is the rationale for not choosing them?</p>
+<p>About the only one that's really been considered is leaving it with <code>delegate</code>.</p>
+</li>
+<li>
+<p>What is the impact of not doing this?</p>
+<p>It's kind of annoying for people who regularly use delegation.</p>
+</li>
+</ul>
+<h1 id="prior-art-10"><a class="header" href="#prior-art-10">Prior art</a></h1>
+<p>No known prior art for this specifically. As an interesting note, the reason why the command keyword is <code>bors</code> instead of <code>bors-ng</code>, or the older name of this codebase, <code>aelita2</code>, is for this same reason, so there's lots of precedent for using short command names in bors.</p>
+<h1 id="unresolved-questions-8"><a class="header" href="#unresolved-questions-8">Unresolved questions</a></h1>
+<p>The &quot;design&quot; is pretty much already nailed down.</p>
+<h1 id="future-possibilities-10"><a class="header" href="#future-possibilities-10">Future possibilities</a></h1>
+<p><code>ping</code> is extremely rare, and pretty short anyway, so there's no real point in abbreviating it. We also couldn't use <code>p</code> anyway, since that's already taken for priority adjustment.</p>
+<p>The only other multi-letter commands are <code>try</code> and <code>retry</code>. Try is pretty short, at three letters, and retry ought to be pretty rare, even if not as rare as ping.</p>
+<h1 id="implementation-status-6"><a class="header" href="#implementation-status-6">Implementation status</a></h1>
+<p><strong>Implemented</strong></p>
+<ul>
+<li>Pull request: https://github.com/bors-ng/bors-ng/pull/727</li>
+</ul>
+<p>Summary: Add <code>bors merge</code> as an alias to <code>bors r+</code>, <code>bors merge=FOO</code> as an alias to <code>bors r=FOO</code>, <code>bors merge p=123</code> as an alias to <code>bors r+ p=123</code>, <code>bors merge=FOO p=123</code> as an alias to <code>bors r=FOO p=123</code>, and <code>bors merge-</code> as an alias to <code>bors r-</code>.</p>
+<blockquote>
+<p>I allow this RFC document to be modified and redistributed under the terms of the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache-2.0 license</a>, or the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">CC-BY-NC-SA 3.0 license</a>, at your option.</p>
+</blockquote>
+<h1 id="motivation-11"><a class="header" href="#motivation-11">Motivation</a></h1>
+<p>Based on the discussion in a previous forum thread (https://forum.bors.tech/t/user-defined-aliases-for-bors-commands/371), multiple users are confused by the <code>bors r+</code> command.</p>
+<h1 id="guide-level-explanation-11"><a class="header" href="#guide-level-explanation-11">Guide-level explanation</a></h1>
+<p>Once you've set it up, instead of clicking the green &quot;Merge Button&quot;,
+leave a comment like this on the pull request:</p>
+<blockquote>
+<p>bors r+</p>
+</blockquote>
+<p>Equivalently, you can comment the following</p>
+<blockquote>
+<p>bors merge</p>
+</blockquote>
+<p>The pull request, as well as any other pull requests that are reviewed around the same time, will be merged into a branch called &quot;staging&quot;. Your CI tool will test it in there, and report the result back where Bors-NG can see it. If that result is &quot;OK&quot;, master gets fast-forwarded to reach it.</p>
+<p>The status can be seen in the Dashboard page, which also makes a good one-stop-shop to see pull requests that are waiting for review.</p>
+<h1 id="reference-level-explanation-10"><a class="header" href="#reference-level-explanation-10">Reference-level explanation</a></h1>
+<table><thead><tr><th>Syntax</th><th>Description</th></tr></thead><tbody>
+<tr><td>bors r+</td><td>Run the test suite and push to master if it passes. Short for &quot;reviewed: looks good.&quot;</td></tr>
+<tr><td>bors merge</td><td>Equivalent to <code>bors r+</code></td></tr>
+<tr><td>bors r=[list]</td><td>Same as r+, but the &quot;reviewer&quot; in the commit log will be recorded as the user(s) given as the argument.</td></tr>
+<tr><td>bors merge=[list]</td><td>Equivalent to <code>bors r=[list]</code></td></tr>
+<tr><td>bors r-</td><td>Cancel an r+ or r=.</td></tr>
+<tr><td>bors merge-</td><td>Equivalent to <code>bors r-</code></td></tr>
+<tr><td>bors p=[priority]</td><td>Set the priority of the current pull request. Pull requests with different priority are never batched together. The pull request with the bigger priority number goes first.</td></tr>
+<tr><td>bors r+ p=[priority]</td><td>Set the priority, run the test suite, and push to master (shorthand for doing p= and r+ one after the other).</td></tr>
+<tr><td>bors merge p=[priority]</td><td>Equivalent to <code>bors r+ p=[priority]</code></td></tr>
+</tbody></table>
+<h1 id="drawbacks-10"><a class="header" href="#drawbacks-10">Drawbacks</a></h1>
+<p>It adds another command that we need to maintain.</p>
+<p>It creates multiple ways of doing the same thing, which might lead to some confusion.</p>
+<h1 id="rationale-and-alternatives-10"><a class="header" href="#rationale-and-alternatives-10">Rationale and alternatives</a></h1>
+<p>Why is this design the best in the space of possible designs?</p>
+<ul>
+<li>It allows for consistency across different projects that use Bors-NG.</li>
+</ul>
+<p>What other designs have been considered and what is the rationale for not choosing them?</p>
+<ul>
+<li>We could allow unlimited customization of aliases in <code>bors.toml</code>. But then this will lead to inconsistency across different projects that use Bors-NG and will become a real headache for people that are reviewers on multiple different projects.</li>
+</ul>
+<p>What is the impact of not doing this?</p>
+<ul>
+<li>If we do nothing, then people will continue to be confused by the opaque <code>r+</code> command.</li>
+</ul>
+<h1 id="prior-art-11"><a class="header" href="#prior-art-11">Prior art</a></h1>
+<p>The prior art for adding aliases to Bors-NG is the following RFC: https://forum.bors.tech/t/allow-delegate-to-be-abbreviated-as-d/362</p>
+<h1 id="unresolved-questions-9"><a class="header" href="#unresolved-questions-9">Unresolved questions</a></h1>
+<p>None.</p>
+<h1 id="future-possibilities-11"><a class="header" href="#future-possibilities-11">Future possibilities</a></h1>
+<p>Hopefully we won't need to add any more aliases after this one.</p>
+<h1 id="implementation-status-7"><a class="header" href="#implementation-status-7">Implementation status</a></h1>
+<p><strong>Implemented</strong>:</p>
+<ul>
+<li>Pull request: https://github.com/bors-ng/bors-ng/pull/746</li>
+</ul>
+<p>Summary: We distinguish between Github statuses that are errors and waiting differently (instead of treating them all as a failed <code>passed_status</code> . In the case where there are no errors and some waiting statuses, notify with a response and wait polling with an exponential backoff until we're in some other state than &quot;no errors and some waiting statuses&quot; (i.e., <code>patch_preflight</code> returns something else).</p>
+<blockquote>
+<p>I allow this RFC document to be modified and redistributed under the terms of the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache-2.0 license</a>, or the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">CC-BY-NC-SA 3.0 license</a>, at your option.</p>
+</blockquote>
+<h1 id="motivation-12"><a class="header" href="#motivation-12">Motivation</a></h1>
+<p>When using the <code>pr_status</code> feature to filter allowed pull requests, it really makes more sense to actually wait for it to finish, rather than immediately erroring. This process can also time out, so it is also necessary to expose a configuration option for changing that timeout.</p>
+<h1 id="guide-level-explanation-12"><a class="header" href="#guide-level-explanation-12">Guide-level explanation</a></h1>
+<p>There are two ways to gate on a GitHub Status CI report. The regular <code>status</code> option is used to watch for CI runs on the <code>staging</code> branch. The other, <code>pr_status</code>, is used to watch for integrations that only run on pull requests. Bors will wait for the PR status to complete before it merges into the staging branch.</p>
+<h1 id="reference-level-explanation-11"><a class="header" href="#reference-level-explanation-11">Reference-level explanation</a></h1>
+<p>Change the documentation for <code>pr_status</code>. Also add documentation for this configuration option.</p>
+<table><thead><tr><th>Name</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>pr_status</code></td><td>List of commit statuses that must pass on the PR commit <s>when it is r+-ed</s> <em>before it will go into staging</em>. If it is still running, bors will wait. If it fails, bors will fail immediately.</td></tr>
+<tr><td><code>prerun_timeout_sec</code></td><td>Timeout while waiting for <code>pr_status</code> checks to finish.</td></tr>
+</tbody></table>
+<h1 id="drawbacks-11"><a class="header" href="#drawbacks-11">Drawbacks</a></h1>
+<p>Other than code complexity, there are really no user-facing reasons to avoid doing this. It's obviously better in the cases where a PR status is still running. There are no known cases where users would prefer the old behavior, really.</p>
+<h1 id="rationale-and-alternatives-11"><a class="header" href="#rationale-and-alternatives-11">Rationale and alternatives</a></h1>
+<ul>
+<li>Not doing this is a pretty terrible option that got a lot of complaints before someone eventually got around to implementing it.</li>
+<li>As for doing this with a different setup, the obvious alternative is to add a separate config option for &quot;insta-fail statuses&quot; and &quot;waited statuses&quot;. If anybody wants that, let me know!</li>
+</ul>
+<h1 id="prior-art-12"><a class="header" href="#prior-art-12">Prior art</a></h1>
+<ul>
+<li>Homu doesn't seem to have anything even remotely comparable. The <code>pr_context</code> config option that they have never triggers waits. It triggers bypass behavior.</li>
+<li>Zuul seems to work the same way this RFC and its corresponding PR behave, though I can't tell for sure from their docs. <a href="https://zuul-ci.org/docs/zuul/user/concepts.html">They have a bunch of different kinds of triggers in place, so it might really be project-specific</a>. Their dependency infrastructure definitely seems sophisticated enough to implement this RFC, though.</li>
+</ul>
+<h1 id="unresolved-questions-10"><a class="header" href="#unresolved-questions-10">Unresolved questions</a></h1>
+<ul>
+<li>The question that came to my mind, that I'd like to know about, is the one described in the &quot;alternatives&quot; section: <strong>does anybody have any status changes that they don't want bors to ever wait on?</strong> That is, does anyone actually prefer the old behavior?</li>
+</ul>
+<h1 id="future-possibilities-12"><a class="header" href="#future-possibilities-12">Future possibilities</a></h1>
+<p>There are a bunch of pre-checks. Right now, we only poll statuses, but maybe we'd want to poll some of the others? Even if it's only with super-short timeouts to try to work around potential race conditions.</p>
+<h1 id="see-also"><a class="header" href="#see-also">See also</a></h1>
+<ul>
+<li>Implemented by <a href="https://github.com/bors-ng/bors-ng/pull/785">https://github.com/bors-ng/bors-ng/pull/785</a></li>
+</ul>
+<h1 id="implementation-status-8"><a class="header" href="#implementation-status-8">Implementation status</a></h1>
+<p><strong>Implemented</strong>:</p>
+<ul>
+<li>Pull request: https://github.com/bors-ng/bors-ng/pull/785</li>
+</ul>
+<p>Summary: Allow patches to be batched by themselves only.</p>
+<!-- RFC documents are put under a dual license, because the default license for content on this forum is CC-BY-NC-SA, while the license for bors's code is Apache 2.0 -->
+<blockquote>
+<p>I allow this RFC document to be modified and redistributed under the terms of the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache-2.0 license</a>, or the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">CC-BY-NC-SA 3.0 license</a>, at your option.</p>
+</blockquote>
+<h1 id="motivation-13"><a class="header" href="#motivation-13">Motivation</a></h1>
+<p>This RFC is to allow users to configure batch size limit by providing an option to allow patches to be batched by themselves only.</p>
+<h1 id="guide-level-explanation-13"><a class="header" href="#guide-level-explanation-13">Guide-level explanation</a></h1>
+<p>Appending &quot;single on&quot;or &quot;single=on&quot;  to the bors review command will force a patch to be batched by itself only and will never be put it a batch with other patches nor will other patches join its batch, like so:</p>
+<blockquote>
+<p>bors r+ single on
+bors r+ single=on</p>
+</blockquote>
+<p>Once a patch is reviewed with &quot;single on&quot; appended, all future reviews on the patch will remember the option and the patch will always be batched alone.</p>
+<p>If this behavior is no longer desired, it can be disabled by appending &quot;single off&quot; or &quot;single=off&quot; to the review command and can be re-enable later by appending &quot;single on&quot; to a review command.</p>
+<blockquote>
+<p>bors r+ single off
+bors r+ single=off</p>
+</blockquote>
+<p>Additionally, the single command may be used without a review command like to turn the behavior on or off without having to review.</p>
+<blockquote>
+<p>bors single=on
+bors single=off</p>
+</blockquote>
+<h1 id="reference-level-explanation-12"><a class="header" href="#reference-level-explanation-12">Reference-level explanation</a></h1>
+<p>The following options to the existing &quot;bors r+&quot; command, along with its alias, will be added:</p>
+<blockquote>
+<p>bors r+ single on
+bors r+ single off
+bors merge single on
+bors merge single off
+bors single=on
+bors single=off</p>
+</blockquote>
+<p>These commands will enable and disable the functionality to force a patch to always be batched by itself. Because the option is appended to the review command, once the option is handled, the review command will also be handled.</p>
+<p>To support the option, the &quot;patches&quot; table will require a column to store the flag which will be checked before batching the patch. </p>
+<p>Checking whether a patch should be batched alone will be performed during the handling of the review command and during the bisection of a batch. Batches that are currently running or waiting will be left alone.</p>
+<h1 id="drawbacks-12"><a class="header" href="#drawbacks-12">Drawbacks</a></h1>
+<p>There shouldn't be any drawbacks since the option only affects patches which have received the specified command and can be disabled if desired.</p>
+<h1 id="rationale-and-alternatives-12"><a class="header" href="#rationale-and-alternatives-12">Rationale and alternatives</a></h1>
+<ul>
+<li>This design is a simple solution to providing the users a method to limit batch size.</li>
+<li>An alternative solution would be allow the user to specify the max number of patches a batch can hold which would affect all patches in a project.</li>
+</ul>
+<h1 id="prior-art-13"><a class="header" href="#prior-art-13">Prior art</a></h1>
+<ul>
+<li>The original bors system used implemented this solution. Unsure if other CI/CD systems implemented this system.</li>
+</ul>
+<h1 id="unresolved-questions-11"><a class="header" href="#unresolved-questions-11">Unresolved questions</a></h1>
+<ul>
+<li>Is it necessary for the bisecting logic to honor the &quot;single on&quot; option? If the patch is already in a batch, it would either be merged in without any issues or fail sooner or later. Additionally, since the option is appended to the review command, the patch shouldn't ever be seen by the bisecting logic unless the patched r+'ed again while it's already in a batch.</li>
+<li>Should the option also handle patches that are already in a running/waiting batch? Should it pull out the patch and place it in a separate batch by itself?</li>
+</ul>
+<h1 id="future-possibilities-13"><a class="header" href="#future-possibilities-13">Future possibilities</a></h1>
+<p>None foreseen.</p>
+<h1 id="see-also-1"><a class="header" href="#see-also-1">See also</a></h1>
+<p>Implemented by pull request #839 on GitHub</p>
+<h1 id="implementation-status-9"><a class="header" href="#implementation-status-9">Implementation status</a></h1>
+<p><strong>Implemented</strong>:</p>
+<ul>
+<li>Pull request: https://github.com/bors-ng/bors-ng/pull/839</li>
+</ul>
+<p>The <code>required_approvals</code> option should enforce that every piece of code that makes it into the master branch, has been reviewed by the requisite number of people.  However, the current implementation counts approving reviews even if new code has been added to a PR since the review.  This unfortunate situation requires users to manually reason about which code has been adequately reviewed.  Bors should recognize approvals only if they apply to all of the changes which are going to be merged.  For backwards compatibility and flexibility, this should be controlled by a new configuration option.</p>
+<blockquote>
+<p>I allow this RFC document to be modified and redistributed under the terms of the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache-2.0 license</a>, or the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">CC-BY-NC-SA 3.0 license</a>, at your option.</p>
+</blockquote>
+<h1 id="motivation-14"><a class="header" href="#motivation-14">Motivation</a></h1>
+<p>Suppose you have a project which specifies <code>required_approvals = 3</code>:</p>
+<ul>
+<li>Person A creates a PR.</li>
+<li>Reviewers B, C, and D approve it.</li>
+<li>Person A pushes an &quot;extra&quot; commit to the PR.</li>
+<li>Reviewer B runs <code>bors r+</code>.</li>
+</ul>
+<p>In this situation, bors will happily merge the PR, even though the extra commit wasn't actually approved by anyone except for possibly reviewer B.  This makes the <code>required_approvals</code> configuration option much less useful, since it fails to ensure that all changes have been approved by 3 people.</p>
+<p>The invariant that <code>required_approvals = n</code> means every piece of code that makes it into the master branch has been reviewed by <em>n</em> people is a natural extension of the NRSROSE, and bors should enforce it too.</p>
+<h1 id="guide-level-explanation-14"><a class="header" href="#guide-level-explanation-14">Guide-level explanation</a></h1>
+<p>The configuration option <code>up_to_date_approvals = true</code> causes GitHub Reviews to count towards the number of <code>required_approvals</code> only when they are up to date.  Pushing new changes to the PR branch requires prior approving reviews to be resubmitted in order to count.</p>
+<p>Enabling <code>up_to_date_approvals</code> makes certain that any code merged to master has been adequately reviewed.</p>
+<h1 id="reference-level-explanation-13"><a class="header" href="#reference-level-explanation-13">Reference-level explanation</a></h1>
+<p><code>up_to_date_approvals</code> is a boolean configuration option in <code>bors.toml</code> defaulting to false.</p>
+<p>We say review R is <em>up to date</em> for commit hash X if R's <code>commit_id</code> key as seen through the <a href="https://developer.github.com/v3/pulls/reviews/">GitHub Review API</a> is exactly X.  Otherwise it is <em>stale</em>.  If <code>up_to_date_approvals</code> is true, then whenever the number of approving reviews is counted for the purpose of comparing against <code>required_approvals</code>, only those reviews which are up to date for the hash of the commit to be merged are counted.  If <code>up_to_date_approvals</code> is false, then all reviews from the PR are counted (maintaining current behavior).  The <code>up_to_date_approvals</code> option has no effect if <code>required_approvals</code> is not set.  The <code>up_to_date_approvals</code> option also does not affect the determination of whether or not there are any <em>rejecting</em> reviews.</p>
+<p>If a bors command is rejected due to not having enough approving reviews, then bors will include the number of reviews counted and the number of reviews required in its comment.  If <code>up_to_date_approvals</code> is true, it will also include the number of approving reviews that were not counted because they were not up to date.</p>
+<p>Let <em>n</em> be the value of <code>required_approvals</code>, <em>m</em> be the number of total approvals present, and <em>l</em> be the number of up to date approvals.</p>
+<p>If <code>up_to_date_approvals</code> is false, or if <em>l</em> == <em>m</em>:</p>
+<blockquote>
+<p>Rejected by too few approved reviews: <em>m</em> out of <em>n</em> required approvals were present</p>
+</blockquote>
+<p>If <code>up_to_date_approvals</code> is true and <em>l</em> != <em>m</em>:</p>
+<blockquote>
+<p>Rejected by too few approved reviews: <em>l</em> out of <em>n</em> required approvals were present (<em>m</em> - <em>l</em> stale reviews were not counted)</p>
+</blockquote>
+<h1 id="drawbacks-13"><a class="header" href="#drawbacks-13">Drawbacks</a></h1>
+<ul>
+<li>Adds a new configuration option, increasing complexity.</li>
+<li>Might require more API calls to determine if reviews are up to date.</li>
+<li>UX may be confusing since GitHub will still display the stale reviews, but bors won't count them.</li>
+</ul>
+<h1 id="alternatives"><a class="header" href="#alternatives">Alternatives</a></h1>
+<ul>
+<li>Make <code>up_to_date_approvals = true</code> the default behavior or the only behavior.
+<ul>
+<li>Not chosen because it would be a breaking change for current workflows</li>
+<li>Not all users may want this stricter behavior, since it requires more effort from reviewers and change authors</li>
+</ul>
+</li>
+<li>Use a CI check to enforce the number of up-to-date reviews
+<ul>
+<li>It's more impactful to make this change in bors instead of requiring every project that wants this behavior to implement it themselves.</li>
+<li>Requires duplicating most of the existing functionality of <code>required_approvals</code> just to change one small aspect of it.</li>
+</ul>
+</li>
+<li>Do nothing
+<ul>
+<li>For some projects it's not acceptable for code changes to be merged without a certain minimum number of reviews.</li>
+</ul>
+</li>
+</ul>
+<h1 id="prior-art-14"><a class="header" href="#prior-art-14">Prior art</a></h1>
+<ul>
+<li>The GitHub option, &quot;Dismiss stale pull request approvals when new commits are pushed.&quot;, essentially implements the same behavior as this.
+<ul>
+<li>Note that projects using bors can't take advantage of this, because GitHub doesn't allow enabling this option without also enabling the &quot;Require [nonzero number] of approving reviews&quot; protection rule on the target branch.  This latter rule is itself <a href="https://bors.tech/documentation/getting-started/#if-it-doesnt-work">incompatible with bors</a>, since the merge commit created by bors counts as &quot;unapproved&quot;.</li>
+</ul>
+</li>
+<li>The Gerrit approval system automatically dismisses reviews when new code is pushed.</li>
+<li>graydon/bors' <a href="https://github.com/graydon/bors/blob/a6b07e6a876a312997eb241805bccb1b7899be95/bors.py#L321-L341">implementation of code review</a> uses approval comments which are either attached to the commits themselves, or with the commit hash included in the comment.  Either way, approvals only count for a single commit.  This is the implementation used by the Rust language project.</li>
+</ul>
+<h1 id="unresolved-questions-12"><a class="header" href="#unresolved-questions-12">Unresolved questions</a></h1>
+<ul>
+<li>What parts of the design do you expect to resolve through the RFC process before this gets accepted?
+<ul>
+<li>Final choice of configuration option name and exact wording of error messages</li>
+</ul>
+</li>
+<li>What parts of the design do you expect to resolve through the implementation of this feature before deployment?
+<ul>
+<li>Details of interaction with the GitHub API to determine which reviews are stale.</li>
+</ul>
+</li>
+<li>What related issues do you consider out of scope for this RFC that could be addressed in the future independently of the solution that comes out of this RFC?
+<ul>
+<li>Dismissal of stale rejecting reviews</li>
+</ul>
+</li>
+</ul>
+<h1 id="future-possibilities-14"><a class="header" href="#future-possibilities-14">Future possibilities</a></h1>
+<p>Didn't think of anything.</p>
+<h1 id="implementation-status-10"><a class="header" href="#implementation-status-10">Implementation status</a></h1>
+<p><strong>Implemented</strong>:</p>
+<ul>
+<li>Pull request: https://github.com/bors-ng/bors-ng/pull/986</li>
+</ul>
+<p>When a PR depends upon another one that's been merged, update the unmerged PR base branch to point to the merged PRs base branch.</p>
+<blockquote>
+<p>I allow this RFC document to be modified and redistributed under the terms of the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache-2.0 license</a>, or the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">CC-BY-NC-SA 3.0 license</a>, at your option.</p>
+</blockquote>
+<h1 id="motivation-15"><a class="header" href="#motivation-15">Motivation</a></h1>
+<p>The current behaviour causes dependant PRs to be closed then the merged branch is deleted. Github doesn't allow editing the PR or re opening it: a new PR needs to be created, losing any discussion that was already in the original.</p>
+<h1 id="guide-level-explanation-15"><a class="header" href="#guide-level-explanation-15">Guide-level explanation</a></h1>
+<p>Supponse we have 2 PRs A (base branch <code>default</code>) and B (base branch <code>a</code>) and A is merged by bors. If bors.toml contains <code>update_base_for_deletes = true</code>, then bors will update B to have base <code>default</code> before deleting branch <code>a</code>. </p>
+<h1 id="reference-level-explanation-14"><a class="header" href="#reference-level-explanation-14">Reference-level explanation</a></h1>
+<p>An optional setting <code>update_base_for_deletes</code> (default <code>false</code>) will be added to bors.toml to enable/disable the feature.</p>
+<p>When the branch deleter determines it should delete the branch for a merged/closed PR <code>closed_pr</code>, it will first query the Github PR API for any pull request that have <code>base</code> set to <code>closed_pr.head_ref</code>. It will then update the <code>base</code> to point to <code>closed_pr.base</code> using the Github API again.</p>
+<p>If <code>use_squash_merge</code> is disabled, then the updated PR will show a message with the base branch change, but nothing else will change since github ignores commits that already exist on <code>default</code>. Otherwise, if squash merges are enabled, the closed PR commits will be listed but the changes ignored in the UI and by git for the next squash merge.</p>
+<h1 id="drawbacks-14"><a class="header" href="#drawbacks-14">Drawbacks</a></h1>
+<ul>
+<li>Adds a new configuration option, increasing complexity.</li>
+<li>Github UI will be confusing if <code>use_squash_merge</code> is enabled</li>
+</ul>
+<h1 id="rationale-and-alternatives-13"><a class="header" href="#rationale-and-alternatives-13">Rationale and alternatives</a></h1>
+<p><em>Why is this design the best in the space of possible designs?</em>
+This is not a one-size-fits-all solution, since workflows can exist that would be made harder by the proposed behaviour. Hiding the feature behind a flag allows users to opt in when they fell they'd reap the benefits.</p>
+<p><em>What other designs have been considered and what is the rationale for not choosing them?</em>
+Stop bors from deleting branches if PRs exist with it as <code>base</code>. While this reduces the manual work required by developers by avoiding the need to create a new PR, it also introduces a potential foot gun. Those PRs can inadvertently be merged onto a branch that is already considered merged, causing devs to think their changes have been integrated on the default branch when they weren't. While you could argue that updating the base branch is also a potential foot gun since you can merge onto the default branch without realizing, I can't think of a workflow where I'd want to merge changes onto an already integrated branch.</p>
+<p><em>What is the impact of not doing this?</em>
+Manual work is required whenever a PR with others depending on it is required, and review context is lost each time that ocurrs. In our case, this caused team members to stop using bors altogether due to the friction to their workflows.</p>
+<h1 id="prior-art-15"><a class="header" href="#prior-art-15">Prior art</a></h1>
+<p>If you use Github to merge PRs, it does this automatically by default.</p>
+<h1 id="unresolved-questions-13"><a class="header" href="#unresolved-questions-13">Unresolved questions</a></h1>
+<ul>
+<li>
+<p>What parts of the design do you expect to resolve through the RFC process before this gets accepted?</p>
+</li>
+<li>
+<p>Final choice of configuration option name since the current one doesn't carry the full meaning</p>
+</li>
+<li>
+<p>Whether it would be desired to implement the behaviour where bors doesn't delete a branch if PRs point to it can be implemented regardless of this feature.</p>
+</li>
+</ul>
+<h1 id="future-possibilities-15"><a class="header" href="#future-possibilities-15">Future possibilities</a></h1>
+<p>Github is previewing an API to rebase a PR that could be used after updating the <code>base</code> of a PR, potentially cleaning up the commit history of the PR.</p>
+<h1 id="see-also-2"><a class="header" href="#see-also-2">See also</a></h1>
+<ul>
+<li><a href="https://github.com/bors-ng/bors-ng/pull/1023">PR #1023</a> implements the proposal</li>
+<li>This solution was previously suggested in a topic titled <a href="https://forum.bors.tech/t/better-handling-prs-with-dependencies/409">&quot;Better handling PRs with dependencies&quot;</a></li>
+<li>The issue was raised in <a href="https://github.com/bors-ng/bors-ng/issues/950">#950</a> in the repo</li>
+</ul>
+<h1 id="implementation-status-11"><a class="header" href="#implementation-status-11">Implementation status</a></h1>
+<p><strong>Implemented</strong>:</p>
+<ul>
+<li>Pull request: https://github.com/bors-ng/bors-ng/pull/1023</li>
+</ul>
+<p>Summary: Add a config option to log all outgoing HTTP requests.</p>
+<!-- RFC documents are put under a dual license, because the default license for content on this forum is CC-BY-NC-SA, while the license for bors's code is Apache 2.0 -->
+<blockquote>
+<p>I allow this RFC document to be modified and redistributed under the terms of the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache-2.0 license</a>, or the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">CC-BY-NC-SA 3.0 license</a>, at your option.</p>
+</blockquote>
+<h1 id="motivation-16"><a class="header" href="#motivation-16">Motivation</a></h1>
+<p>This is a debugging aid, which is why it'll be off by default.</p>
+<h1 id="guide-level-explanation-16"><a class="header" href="#guide-level-explanation-16">Guide-level explanation</a></h1>
+<p>If you set the <code>BORS_LOG_OUTGOING</code> environment variable, it will write every HTTP request to the log, making it easier to debug the GitHub API usage. For example</p>
+<pre><code>2020-08-03T07:00:15.168988+00:00 app[web.1]: 07:00:15.168 pid=&lt;0.344.0&gt; [info] GET https://api.github.com/repositories/284424834/contents/bors.toml -&gt; 200 (194.823 ms)
+2020-08-03T07:00:15.420605+00:00 app[web.1]: 07:00:15.420 pid=&lt;0.344.0&gt; [info] GET https://api.github.com/repositories/284424834/issues/9/labels -&gt; 200 (226.039 ms)
+2020-08-03T07:00:15.621675+00:00 app[web.1]: 07:00:15.621 pid=&lt;0.344.0&gt; [info] GET https://api.github.com/repositories/284424834/commits/5a99b398b8c1d16f1ba5120b6670fdb31903c38f/status -&gt; 200 (200.326 ms)
+2020-08-03T07:00:16.079808+00:00 app[web.1]: 07:00:16.079 pid=&lt;0.344.0&gt; [info] GET https://api.github.com/repositories/284424834/commits/5a99b398b8c1d16f1ba5120b6670fdb31903c38f/check-runs -&gt; 200 (457.674 ms)
+2020-08-03T07:00:16.286852+00:00 app[web.1]: 07:00:16.286 pid=&lt;0.344.0&gt; [info] GET https://api.github.com/repositories/284424834/commits/5a99b398b8c1d16f1ba5120b6670fdb31903c38f/status -&gt; 200 (206.264 ms)
+2020-08-03T07:00:16.468819+00:00 app[web.1]: 07:00:16.467 pid=&lt;0.344.0&gt; [info] GET https://api.github.com/repositories/284424834/commits/5a99b398b8c1d16f1ba5120b6670fdb31903c38f/check-runs -&gt; 200 (180.530 ms)
+2020-08-03T07:00:16.468828+00:00 app[web.1]: 07:00:16.467 pid=&lt;0.547.0&gt; [info] Checking code owners
+2020-08-03T07:00:16.667539+00:00 app[web.1]: 07:00:16.666 pid=&lt;0.344.0&gt; [info] GET https://api.github.com/repositories/284424834/contents/.github/CODEOWNERS -&gt; 200 (198.168 ms)
+2020-08-03T07:00:16.687920+00:00 app[web.1]: 07:00:16.686 pid=&lt;0.547.0&gt; [info] CODEOWNERS file %BorsNG.CodeOwners{patterns: [%BorsNG.FilePattern{approvers: [&quot;@organisationjetteauloin/dummy&quot;], file_pattern: &quot;*&quot;}]}
+</code></pre>
+<h1 id="reference-level-explanation-15"><a class="header" href="#reference-level-explanation-15">Reference-level explanation</a></h1>
+<p>The <code>BORS_LOG_OUTGOING</code> environment variable will activate the <a href="https://hexdocs.pm/tesla/Tesla.Middleware.Logger.html"><code>Tesla.Middleware.Logger</code></a> plug-in.</p>
+<h1 id="drawbacks-15"><a class="header" href="#drawbacks-15">Drawbacks</a></h1>
+<p>It's probably not going to be used that much, though the ones that do use it will love it.</p>
+<h1 id="rationale-and-alternatives-14"><a class="header" href="#rationale-and-alternatives-14">Rationale and alternatives</a></h1>
+<ul>
+<li>This could be turned on by default, instead of requiring a config option, but it's not likely to be used much in the production instances, because it's very noisy.</li>
+<li>This could be done using a different method than the Elixir logger, but maybe metrics gathering should be a separate matter anyway.</li>
+</ul>
+<h1 id="prior-art-16"><a class="header" href="#prior-art-16">Prior art</a></h1>
+<p>This is based on <a href="https://hexdocs.pm/tesla/Tesla.Middleware.Logger.html">Tesla's existing features</a>. We're just exposing it to the user.</p>
+<h1 id="unresolved-questions-14"><a class="header" href="#unresolved-questions-14">Unresolved questions</a></h1>
+<p>Do we want something this ad-hoc? Or would we rather come up with more of an all-encompassing plan?</p>
+<h1 id="future-possibilities-16"><a class="header" href="#future-possibilities-16">Future possibilities</a></h1>
+<p>Collecting metrics on API calls could allow us to detect things that go wrong, even in production setups where &quot;just log and read everything&quot; isn't much of an option.</p>
+<h1 id="see-also-3"><a class="header" href="#see-also-3">See also</a></h1>
+<ul>
+<li>Mostly implemented by <a href="https://github.com/bors-ng/bors-ng/pull/996">https://github.com/bors-ng/bors-ng/pull/996</a></li>
+</ul>
+<h1 id="implementation-status-12"><a class="header" href="#implementation-status-12">Implementation status</a></h1>
+<ul>
+<li>in progress</li>
+</ul>
+<p>This RFC proposes a new environment variable,  <code>PUBLIC_PROTOCOL</code>. If unset, or set to <code>https</code>, the behaviour of bors will remain unchanged, and the bors app will be served at a HTTPS endpoint. If set to <code>http</code>, the bors app will be served at a HTTP endpoint.</p>
+<!-- RFC documents are put under a dual license, because the default license for content on this forum is CC-BY-NC-SA, while the license for bors's code is Apache 2.0 -->
+<blockquote>
+<p>I allow this RFC document to be modified and redistributed under the terms of the Apache-2.0 license, or the CC-BY-NC-SA 3.0 license, at your option.</p>
+</blockquote>
+<h1 id="motivation-17"><a class="header" href="#motivation-17">Motivation</a></h1>
+<p>Allow the bors app to run at a HTTP endpoint if HTTPS is not required or available.</p>
+<p>Specifically, I have a use case at work to serve the  <code>bors</code>  app at a HTTP endpoint, which will be connected to securely by other means (SSH port forwarding).</p>
+<p>Currently, the <code>PUBLIC_HOST</code> is assumed to be served over HTTPS (and delivers  <code>301</code>  redirects accordingly). This makes it impossible to expose the app at a HTTP address.</p>
+<pre><code>12:46:59.521 pid=&lt;0.2186.0&gt; [info] Plug.SSL is redirecting GET / to https ://172.17.0.1:39103 with status 301
+</code></pre>
+<p>This also makes it hard to test changes locally, without proxying via another service acting as a TLS terminator (such as nginx).</p>
+<h1 id="guide-level-explanation-17"><a class="header" href="#guide-level-explanation-17">Guide-level explanation</a></h1>
+<p>A new environment variable <code>PUBLIC_PROTOCOL</code> will be added, to match the existing variables <code>PUBLIC_PORT</code> and <code>PUBLIC_HOST</code>.</p>
+<p>This can be left unset, or set to one of <code>https</code>, <code>http</code>. The behaviour of <code>https</code> and unset are identical, and consistent with current behaviour.</p>
+<p>If set to <code>http</code>, the bors app will be served at a HTTP endpoint.</p>
+<p>Please see the proposed implementation (link below)</p>
+<h1 id="reference-level-explanation-16"><a class="header" href="#reference-level-explanation-16">Reference-level explanation</a></h1>
+<p>No further detail.</p>
+<h1 id="drawbacks-16"><a class="header" href="#drawbacks-16">Drawbacks</a></h1>
+<p>This gives users the option to expose bors at a HTTP endpoint. This conceivably makes it easier for users to expose such a deployment insecurely. However, this feature is opt it, requiring a user to consciously consider their choice.</p>
+<h1 id="rationale-and-alternatives-15"><a class="header" href="#rationale-and-alternatives-15">Rationale and alternatives</a></h1>
+<p>This design is back compatible, and allows more flexibility when choosing to deploy bors.</p>
+<p>If bors does not have an option to serve the dashboard over HTTP, this makes deploying bors strictly harder in some scenarios.</p>
+<h1 id="prior-art-17"><a class="header" href="#prior-art-17">Prior art</a></h1>
+<p>It is common for developer-oriented dashboards and internal access points to be exposed over HTTP, with HTTPS an external concern.</p>
+<p>For instance:</p>
+<ul>
+<li>CockroachDB Dashboard: https://www.cockroachlabs.com/docs/v20.1/admin-ui-overview#admin-ui-access</li>
+<li>Elasticsearch's Kibana: https://www.elastic.co/guide/en/kibana/current/access.html#access</li>
+</ul>
+<h1 id="unresolved-questions-15"><a class="header" href="#unresolved-questions-15">Unresolved questions</a></h1>
+<p>n/a</p>
+<h1 id="future-possibilities-17"><a class="header" href="#future-possibilities-17">Future possibilities</a></h1>
+<p>n/a</p>
+<h1 id="see-also-4"><a class="header" href="#see-also-4">See also</a></h1>
+<ul>
+<li>Implemented by https://github.com/bors-ng/bors-ng/pull/1043</li>
+<li>Issue raised at https://github.com/bors-ng/bors-ng/issues/1042</li>
+</ul>
+<p>Summary: Introduce a new configuration property to define a commit title template.</p>
+<blockquote>
+<p>I allow this RFC document to be modified and redistributed under the terms of the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">CC-BY-NC-SA 3.0 license</a>.</p>
+</blockquote>
+<h1 id="motivation-18"><a class="header" href="#motivation-18">Motivation</a></h1>
+<p>My team uses the conventional commits specification (conventionalcommits .org) for our commit messages and we use GitCop (gitcop .com) to police that users adhere to these rules. We also only merge PRs using Bors, but Bors's hardcoded commit titles do not comply to the same rules.</p>
+<p>I would like to  have a way for us to specify what the commit title should look like when Bors creates a merge commit. This feature has also been mentioned in issue 637 and discussed in https://forum.bors.tech/t/how-to-change-the-commit-message-format/307.</p>
+<h1 id="guide-level-explanation-18"><a class="header" href="#guide-level-explanation-18">Guide-level explanation</a></h1>
+<p>I propose to introduce a new configuration property: <code>commit_title</code>.</p>
+<p>The <code>commit_title</code> configuration property can be used to define a custom template for the commit title, that Bors applies to generate the commit message of new merge commits. The <code>commit_title</code> can be configured in your <code>bors.toml</code> configuration file.</p>
+<p>For example, let's say you'd like Bors to merge all PRs with the commit title <code>merge pull request</code>. Simply add the following to your <code>bors.toml</code> configuration file.</p>
+<pre><code class="language-toml">commit_title = &quot;merge pull request&quot;
+</code></pre>
+<p>It is also possible to refer to the PR's unique identifier using a reserved keyword in the <code>commit_title</code>.</p>
+<p>For example, let's say you'd like Bors to merge a PR with id #8 using the commit title <code>merge: #8</code>. Just add the following to your <code>bors.toml</code> configuration file.</p>
+<pre><code class="language-toml">commit_title = &quot;merge: ${PR_REFS}&quot;
+</code></pre>
+<p>If you do not specify a <code>commit_title</code>, it defaults to:</p>
+<pre><code class="language-toml">commit_title = &quot;Merge ${PR_REFS}&quot;
+</code></pre>
+<h1 id="reference-level-explanation-17"><a class="header" href="#reference-level-explanation-17">Reference-level explanation</a></h1>
+<p>The <code>commit_title</code> is defined in the following BNF:</p>
+<pre><code class="language-bnf">&lt;commit_title&gt; ::= &lt;segment&gt; | &lt;commit_title&gt; &lt;segment&gt;
+&lt;segment&gt; ::= &lt;prefix&gt; &lt;pr_refs&gt; &lt;suffix&gt;
+&lt;prefix&gt; ::= &quot;&quot; | &lt;string&gt;
+&lt;pr_refs&gt; ::= &quot;&quot; | &quot;${PR_REFS}&quot;
+&lt;suffix&gt; ::= &quot;&quot; | &lt;string&gt;
+&lt;string&gt; ::= ... # any non empty string
+</code></pre>
+<p>This grammar means that the <code>commit_title</code> can contain:</p>
+<ul>
+<li>any non-empty string</li>
+<li>as many <code>${PR_REFS}</code> references as you'd like, and in any index in the string</li>
+</ul>
+<p>All occurrences of the <code>${PR_REFS}</code> keyword are replaced by the string of pr references. This is generated in the following manner:</p>
+<pre><code>For every PR that will be merged with this commit:
+   take the identifier (i.e. `xref`)
+   prepend the char `#`
+   join with space char in between
+</code></pre>
+<p>For the set of PR identifiers <code>[1,2,3,4]</code> this would result in: <code>#1 #2 #3 #4</code>.</p>
+<h1 id="drawbacks-17"><a class="header" href="#drawbacks-17">Drawbacks</a></h1>
+<p>Why should we not do this?</p>
+<ul>
+<li>It adds an additional config property and a reserved keyword to maintain.</li>
+<li>It might lead to unforeseen bugs.</li>
+</ul>
+<h1 id="rationale-and-alternatives-16"><a class="header" href="#rationale-and-alternatives-16">Rationale and alternatives</a></h1>
+<ul>
+<li>Why is this design the best in the space of possible designs?
+It allows for flexibility and is backwards compatible</li>
+<li>What other designs have been considered and what is the rationale for not choosing them?
+I have not yet considered other designs</li>
+<li>What is the impact of not doing this?
+Some users might feel they can't use a tool like Bors if they can't have this feature, although unlikely.</li>
+</ul>
+<h1 id="prior-art-18"><a class="header" href="#prior-art-18">Prior art</a></h1>
+<ul>
+<li>For feature RFC's: What other CI/CD systems implement anything similar to this one? What do they do well? What do they do poorly? If this proposal is similar to what one of them already does, did you change anything, and why or why not? Why would the user pick bors over just using that other thing instead?</li>
+</ul>
+<p>Rultor does not support this feature. I don't know any other tools that do the same.</p>
+<ul>
+<li>Also for feature RFC's: How does this feature you're proposing complement the software development lifecycle of real teams? Compare what you're implementing to things that they're doing by hand, or using other tools. Please make sure that this feature is likely to be used by more than one project.</li>
+</ul>
+<p>Other users have requested this feature. </p>
+<ul>
+<li>For process RFC's: What do other major open-source projects do? Focus on ones that make their environment welcome to marginalized groups. If they have a reputation for being mean, we don't want to copy them.</li>
+</ul>
+<p>NA</p>
+<ul>
+<li>What lessons can we learn from what other communities have done here? Why do they do what they do? Why is it applicable to bors, or why isn't it?</li>
+</ul>
+<p>NA</p>
+<ul>
+<li>Papers: Are there any published papers or great posts that discuss this? If you have some relevant papers to refer to, this can serve as a more detailed theoretical background.</li>
+</ul>
+<p>NA</p>
+<h1 id="unresolved-questions-16"><a class="header" href="#unresolved-questions-16">Unresolved questions</a></h1>
+<ul>
+<li>What parts of the design do you expect to resolve through the RFC process before this gets accepted?</li>
+</ul>
+<p>Specify and commit to a grammar and naming of the config property</p>
+<ul>
+<li>What parts of the design do you expect to resolve through the implementation of this feature before deployment?</li>
+</ul>
+<p>NA</p>
+<ul>
+<li>What related issues do you consider out of scope for this RFC that could be addressed in the future independently of the solution that comes out of this RFC?</li>
+</ul>
+<p>Commit body customisation
+Additional reserved keywords for PR summary and description</p>
+<h1 id="future-possibilities-18"><a class="header" href="#future-possibilities-18">Future possibilities</a></h1>
+<p>Commit body customisation
+Additional reserved keywords for PR summary and description</p>
+<h1 id="see-also-5"><a class="header" href="#see-also-5">See also</a></h1>
+<p>If this RFC already has a draft Pull Request, link to it here:</p>
+<ul>
+<li>Implemented by https://github.com/bors-ng/bors-ng/pull/1040</li>
+</ul>
+<p>Summary: make database timeout configurable</p>
+<!-- RFC documents are put under a dual license, because the default license for content on this forum is CC-BY-NC-SA, while the license for bors's code is Apache 2.0 -->
+<blockquote>
+<p>I allow this RFC document to be modified and redistributed under the terms of the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache-2.0 license</a>, or the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">CC-BY-NC-SA 3.0 license</a>, at your option.</p>
+</blockquote>
+<h1 id="motivation-19"><a class="header" href="#motivation-19">Motivation</a></h1>
+<p>Depending on the way bors is deployed, the default timeout might be too short.</p>
+<h1 id="guide-level-explanation-19"><a class="header" href="#guide-level-explanation-19">Guide-level explanation</a></h1>
+<p>If your deployment requires it, you can change the database timeout, such as in your docker-compose.yml </p>
+<pre><code>DATABASE_TIMEOUT: 60000
+</code></pre>
+<h1 id="reference-level-explanation-18"><a class="header" href="#reference-level-explanation-18">Reference-level explanation</a></h1>
+<p>The new environment variable:</p>
+<ul>
+<li><code>DATABASE_TIMEOUT</code> may be set higher than the default of <code>15_000</code>(ms). This may be necessary with repositories with a very large amount of members.</li>
+</ul>
+<p>We recommend also trying to make sure you have a high POOL_SIZE if you’re going to do this, so that other queries don’t get blocked, and also using a slow query log to try to find and optimize whichever query or transaction is taking so long.</p>
+<h1 id="drawbacks-18"><a class="header" href="#drawbacks-18">Drawbacks</a></h1>
+<p>It might just be masking a problem, such as a missing index or a transaction that’s blocking on an API call.</p>
+<h1 id="rationale-and-alternatives-17"><a class="header" href="#rationale-and-alternatives-17">Rationale and alternatives</a></h1>
+<p>It’s pretty much just exposing Ecto’s timeout setting. I’m not sure how else it would work.</p>
+<p>We could also try to avoid hitting the lower timeout by modifying the code, or by dedicating a better database server to it, but that requires lots of work and profiling.</p>
+<h1 id="prior-art-19"><a class="header" href="#prior-art-19">Prior art</a></h1>
+<p>Basically everybody exposes this kind of configurable knob. It’s weird that bors-ng didn’t.</p>
+<h1 id="unresolved-questions-17"><a class="header" href="#unresolved-questions-17">Unresolved questions</a></h1>
+<p>Beyond bikeshedding the name? Nothing really.</p>
+<h1 id="future-possibilities-19"><a class="header" href="#future-possibilities-19">Future possibilities</a></h1>
+<p>We expose API and database timeouts. How about incoming HTTP timeouts?</p>
+<h1 id="see-also-6"><a class="header" href="#see-also-6">See also</a></h1>
+<ul>
+<li>Implemented by <a href="https://github.com/bors-ng/bors-ng/pull/1134">https://github.com/bors-ng/bors-ng/pull/1134</a></li>
+</ul>
+<p>Summary: Keep track of when a pull request is unmergeable, or a draft, and reject them.</p>
+<blockquote>
+<p>I allow this RFC document to be modified and redistributed under the terms of the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache-2.0 license</a>, or the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">CC-BY-NC-SA 3.0 license</a>, at your option.</p>
+</blockquote>
+<h1 id="motivation-20"><a class="header" href="#motivation-20">Motivation</a></h1>
+<p>Right now, bors checks whether a pull request is &quot;not mergeable&quot; according to GitHub's API, before it tries to merge it. This is good, but it's kinda late at that point. The pull request webhook actually <a href="https://docs.github.com/en/developers/webhooks-and-events/webhook-events-and-payloads#webhook-payload-object-31">reports whether it's mergeable in advance</a>, so if bors used that, it would be able to reject it earlier and avoid wasting time, and it could show that information on the pull request dashboard.</p>
+<h1 id="guide-level-explanation-20"><a class="header" href="#guide-level-explanation-20">Guide-level explanation</a></h1>
+<p>This change is almost completely transparent to the user, and would basically only change the behavior in very weird corner cases, like if they queued a pull request that wouldn't merge cleanly into the main branch behind another one that actually fixed the merge conflict.</p>
+<h1 id="reference-level-explanation-19"><a class="header" href="#reference-level-explanation-19">Reference-level explanation</a></h1>
+<p>Bors will check whether your pull request is mergeable both before enqueueing it, and after dequeueing it.</p>
+<p>Bors will also refuse to merge draft pull requests.</p>
+<h1 id="drawbacks-19"><a class="header" href="#drawbacks-19">Drawbacks</a></h1>
+<p>It adds two new columns to the database, and one new column to the dashboard.</p>
+<h1 id="rationale-and-alternatives-18"><a class="header" href="#rationale-and-alternatives-18">Rationale and alternatives</a></h1>
+<ul>
+<li>By adding it to the database, bors can also show it in the dashboard, which makes it a bit more useful (whether a pull request is mergeable or not seems important).</li>
+<li>The current one uses slightly less code, but it's probably not what we want.</li>
+</ul>
+<h1 id="prior-art-20"><a class="header" href="#prior-art-20">Prior art</a></h1>
+<ul>
+<li>It's the design that <a href="https://bors.rust-lang.org/queue/rust">homu uses</a>.</li>
+</ul>
+<h1 id="unresolved-questions-18"><a class="header" href="#unresolved-questions-18">Unresolved questions</a></h1>
+<p>I'm not really aware of any.</p>
+<h1 id="future-possibilities-20"><a class="header" href="#future-possibilities-20">Future possibilities</a></h1>
+<p>Right now, we don't pluck unmergeable pull requests out of batches, but probably could change to do that. I don't think it would actually make much difference, performance-wise, but it would make the dashboard a bit more accurate.</p>
+<h1 id="see-also-7"><a class="header" href="#see-also-7">See also</a></h1>
+<ul>
+<li>Implemented by <a href="https://github.com/bors-ng/bors-ng/pull/1159">https://github.com/bors-ng/bors-ng/pull/1159</a></li>
+</ul>
+<h2 id="screenshot"><a class="header" href="#screenshot">Screenshot</a></h2>
+<p><img src="https://forum.bors.tech/uploads/default/original/1X/a0744e21768ae50d6c03cfbd74e8f0febbbbc418.png" alt="image|690x261" /></p>
+<p><img src="https://forum.bors.tech/uploads/default/original/1X/5ddb5f1299dbad9c251040ba704342f405fe8320.png" alt="image|690x482" /></p>
+<p><img src="https://forum.bors.tech/uploads/default/original/1X/f499f1214c7a9aca6208eeca94bffb7dda024ec2.png" alt="image|502x500" /></p>
+<p>Summary: Add &quot;bors cancel&quot; as alias for &quot;bors r-&quot;</p>
+<blockquote>
+<p>I allow this RFC document to be modified and redistributed under the terms of the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache-2.0 license</a>, or the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">CC-BY-NC-SA 3.0 license</a>, at your option.</p>
+</blockquote>
+<h1 id="motivation-21"><a class="header" href="#motivation-21">Motivation</a></h1>
+<p>It's just readability of the chat history.</p>
+<h1 id="guide-level-explanation-21"><a class="header" href="#guide-level-explanation-21">Guide-level explanation</a></h1>
+<p>Use <code>bors cancel</code> to cancel a PR from the queue.</p>
+<h1 id="reference-level-explanation-20"><a class="header" href="#reference-level-explanation-20">Reference-level explanation</a></h1>
+<table><thead><tr><th>command</th><th>description</th></tr></thead><tbody>
+<tr><td>bors cancel</td><td>Equivalent to bors r-</td></tr>
+</tbody></table>
+<h1 id="drawbacks-20"><a class="header" href="#drawbacks-20">Drawbacks</a></h1>
+<p>We already have one synonym. There's not much reason not to have two.</p>
+<h1 id="rationale-and-alternatives-19"><a class="header" href="#rationale-and-alternatives-19">Rationale and alternatives</a></h1>
+<p>Custom commands? No way. It's hard enough making sure everyone understands what's going on.</p>
+<h1 id="prior-art-21"><a class="header" href="#prior-art-21">Prior art</a></h1>
+<ul>
+<li><code>bors merge-</code></li>
+</ul>
+<h1 id="unresolved-questions-19"><a class="header" href="#unresolved-questions-19">Unresolved questions</a></h1>
+<ul>
+<li>What's the cut-off? We don't want to enable every possible one. <code>cancel</code> seems alright, because other parts of the app call it &quot;canceling,&quot; but if someone proposes &quot;stop,&quot; we might want to say no.</li>
+</ul>
+<h1 id="future-possibilities-21"><a class="header" href="#future-possibilities-21">Future possibilities</a></h1>
+<p>Since we already refer to it as &quot;cancel&quot;ing in other places, this makes sense, but beyond that, there hopefully won't be any more of these.</p>
+<h1 id="see-also-8"><a class="header" href="#see-also-8">See also</a></h1>
+<ul>
+<li>Implemented by <a href="https://github.com/bors-ng/bors-ng/pull/1191">https://github.com/bors-ng/bors-ng/pull/1191</a></li>
+</ul>
+<p>Summary: Add an endpoint that can be used for simple health checking. This endpoint should always return an HTTP 200 OK response code as long as the server is able to serve traffic.</p>
+<!-- RFC documents are put under a dual license, because the default license for content on this forum is CC-BY-NC-SA, while the license for bors's code is Apache 2.0 -->
+<blockquote>
+<p>I allow this RFC document to be modified and redistributed under the terms of the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache-2.0 license</a>, or the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">CC-BY-NC-SA 3.0 license</a>, at your option.</p>
+</blockquote>
+<h1 id="motivation-22"><a class="header" href="#motivation-22">Motivation</a></h1>
+<p>Support load balancers, proxies, and other services that implement some form of health checks without requiring workarounds like treating redirects as healthy or bypassing the health checks altogether. Some systems don't allow the above workarounds, and cannot be used. This health check endpoint is not meant to display any details about the status of Bors features or the database, simply provide a way for services to verify the underlying Elixir server is ready to handle requests.</p>
+<h1 id="guide-level-explanation-22"><a class="header" href="#guide-level-explanation-22">Guide-level explanation</a></h1>
+<p>The <code>/health</code> endpoint can be used to verify the Elixir server is running and ready to accept requests.</p>
+<h1 id="reference-level-explanation-21"><a class="header" href="#reference-level-explanation-21">Reference-level explanation</a></h1>
+<p>Added endpoint(s):</p>
+<ul>
+<li><code>/health</code> - will always return an HTTP 200 OK response code. This endpoint does not imply that all features are functioning as expected, instead it simply states the Elixir server powering Bors is running and ready to handle requests. </li>
+</ul>
+<h1 id="drawbacks-21"><a class="header" href="#drawbacks-21">Drawbacks</a></h1>
+<p>It could be misleading to have a health check endpoint that returns HTTP 200s when things internally might be broken. It's also an additional endpoint, albeit a simple one, that will require maintenance and consideration moving forward.</p>
+<h1 id="rationale-and-alternatives-20"><a class="header" href="#rationale-and-alternatives-20">Rationale and alternatives</a></h1>
+<p>Not really sure of any alternatives here besides bypassing health checks altogether, or updating specific load balancers/proxies to support treating redirect behaviors as healthy but that would be significantly more difficult and in some cases just outright impossible for hosted service like GCP or AWS.</p>
+<h1 id="prior-art-22"><a class="header" href="#prior-art-22">Prior art</a></h1>
+<p>It seems this essentially does what we need, however it's behind a redirect and is specific to webhooks.
+https://github.com/bors-ng/bors-ng/blob/08a938d08bdad80b84199d99511f62479be6d012/lib/web/controllers/webhook_controller.ex#L90-L92</p>
+<h1 id="unresolved-questions-20"><a class="header" href="#unresolved-questions-20">Unresolved questions</a></h1>
+<p>I've assumed the endpoint would live at <code>/health</code>, but am open to considering different routes. </p>
+<h1 id="future-possibilities-22"><a class="header" href="#future-possibilities-22">Future possibilities</a></h1>
+<p>This health check endpoint could theoretically be expanded in the future to support reporting data for Bors internals, such as queue size.</p>
+<h1 id="see-also-9"><a class="header" href="#see-also-9">See also</a></h1>
+<p>If this RFC already has a draft Pull Request, link to it here:</p>
+<p>Tracking issue: https://github.com/bors-ng/bors-ng/issues/1192</p>
+<p>Summary: Provide a Helm chart to facilitate the adoption of bors on a self-hosted manner</p>
+<!-- RFC documents are put under a dual license, because the default license for content on this forum is CC-BY-NC-SA, while the license for bors's code is Apache 2.0 -->
+<blockquote>
+<p>I allow this RFC document to be modified and redistributed under the terms of the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache-2.0 license</a>, or the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">CC-BY-NC-SA 3.0 license</a>, at your option.</p>
+</blockquote>
+<h1 id="motivation-23"><a class="header" href="#motivation-23">Motivation</a></h1>
+<p>As part of a company initiative to improve our security and manage better our costs we have moved our <code>bors-ng</code> deployment from Heroku into one of our private Kubernetes clusters. As part of that effort we have experimented and generated some Terraform code and Helm charts to achieve the same goal which is getting <code>bors-ng</code> running on a Kubernetes cluster. Since all this effort is not bounded in any way to the company we have decided to donate these Terraform snippets and Helm chart to <code>bors-ng</code> since we are benefitting from the application.</p>
+<p>This is specially useful for operator (like myself)</p>
+<h1 id="guide-level-explanation-23"><a class="header" href="#guide-level-explanation-23">Guide-level explanation</a></h1>
+<p>The code to add is not related to the application <code>bors-ng</code> on per se but the way it's run on the container orchestrator Kubernetes. A PR (link at the bottom) has already been created. The code included on the PR contains:</p>
+<ul>
+<li>
+<p>Helm chart v2 (Helm 3 compatible only)</p>
+</li>
+<li>
+<p>Terraform snippet to deploy on Kubernetes using <code>kubernetes</code> provider</p>
+</li>
+<li>
+<p>Terraform snippet to deploy on Kubernetes using <code>helm</code> provider and the chart included here</p>
+</li>
+</ul>
+<h1 id="reference-level-explanation-22"><a class="header" href="#reference-level-explanation-22">Reference-level explanation</a></h1>
+<p>As explained before this RFC does not affects the <code>bors-ng</code> code instead adds a couple of ways to easily deploy <code>bors-ng</code> on Kubernetes using some of the most popular tooling to manage infrastructure and Kubernetes</p>
+<h1 id="drawbacks-22"><a class="header" href="#drawbacks-22">Drawbacks</a></h1>
+<ul>
+<li>More code to maintain</li>
+</ul>
+<p><code>¯\_(ツ)_/¯</code></p>
+<h1 id="rationale-and-alternatives-21"><a class="header" href="#rationale-and-alternatives-21">Rationale and alternatives</a></h1>
+<ul>
+<li>
+<p>Why is this design the best in the space of possible designs?</p>
+</li>
+<li>
+<p>What other designs have been considered and what is the rationale for not choosing them?</p>
+</li>
+<li>
+<p>What is the impact of not doing this?</p>
+</li>
+</ul>
+<h1 id="prior-art-23"><a class="header" href="#prior-art-23">Prior art</a></h1>
+<ul>
+<li>
+<p>Heroku one click deployment</p>
+</li>
+<li>
+<p><code>docker</code> cli command to run bors on a container</p>
+</li>
+</ul>
+<h1 id="unresolved-questions-21"><a class="header" href="#unresolved-questions-21">Unresolved questions</a></h1>
+<ul>
+<li>Publishing the chart on a Helm repository. An option has been suggested on the PR mentioned below using Helm chart releaser and Github Pages making the hosting free and automated</li>
+</ul>
+<h1 id="future-possibilities-23"><a class="header" href="#future-possibilities-23">Future possibilities</a></h1>
+<ul>
+<li>
+<p>Adding <code>bors-ng</code> Helm repository to CNCF Artifacthub (searchable index for many Helm chart repositories)</p>
+</li>
+<li>
+<p>Helm chart compatible with Openshift</p>
+</li>
+<li>
+<p>Terraform modules addded to the hashicorp registry</p>
+</li>
+<li>
+<p>This could help to improve <code>bors-ng</code> adoption</p>
+</li>
+</ul>
+<h1 id="see-also-10"><a class="header" href="#see-also-10">See also</a></h1>
+<ul>
+<li>
+<p>Implemented by <a href="https://github.com/bors-ng/bors-ng/pull/1209">https://github.com/bors-ng/bors-ng/pull/1209</a></p>
+</li>
+<li>
+<p>&quot;Add simple health check&quot; <a href="https://forum.bors.tech/t/add-a-simple-health-check-endpoint/563/3">https://forum.bors.tech/t/add-a-simple-health-check-endpoint/563/3</a></p>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>

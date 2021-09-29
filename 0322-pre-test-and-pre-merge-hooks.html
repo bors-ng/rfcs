@@ -1,0 +1,345 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>0322 — Pre-test and Pre-merge hooks - The Bors RFC Archive</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="INFORMATIONAL.html">Informational RFC</a></li><li class="chapter-item expanded "><a href="PROCESS.html">Process RFC</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="0296-adopt-a-process-for-proposing-approving-and-tracking-major-changes-to-bors-ng.html">0296 — Adopt a process for proposing, approving, and tracking major changes to bors-ng</a></li><li class="chapter-item expanded "><a href="0332-elixir-and-erlang-version-update-policy.html">0332 — Elixir and Erlang version update policy</a></li><li class="chapter-item expanded "><a href="0412-simplify-bors-ng-bors-ngs-label-system.html">0412 — Simplify bors-ng/bors-ng's label system</a></li><li class="chapter-item expanded "><a href="0434-show-status-on-accepted-rfcs.html">0434 — Show status on accepted RFCs</a></li></ol></li><li class="chapter-item expanded "><a href="FEATURE.html">Feature RFC</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="0313-the-bors-button-extension.html">0313 — The bors button extension</a></li><li class="chapter-item expanded "><a href="0322-pre-test-and-pre-merge-hooks.html" class="active">0322 — Pre-test and Pre-merge hooks</a></li><li class="chapter-item expanded "><a href="0347-ability-to-create-merge-commits-locally-in-self-hosted-instances-of-bors.html">0347 — Ability to create merge commits locally in self-hosted instances of Bors</a></li><li class="chapter-item expanded "><a href="0349-use-a-squash-merge-in-bors.html">0349 — Use a squash merge in Bors</a></li><li class="chapter-item expanded "><a href="0357-bors-support-for-codeowners.html">0357 — Bors support for CODEOWNERS</a></li><li class="chapter-item expanded "><a href="0360-add-a-new-configuration-option-status-wait-success.html">0360 — Add a new configuration option status_wait_success</a></li><li class="chapter-item expanded "><a href="0362-allow-delegate-to-be-abbreviated-as-d.html">0362 — Allow delegate to be abbreviated as d</a></li><li class="chapter-item expanded "><a href="0376-allow-merge-as-an-alias-for-r.html">0376 — Allow merge as an alias for r+</a></li><li class="chapter-item expanded "><a href="0388-wait-for-ci-to-finish-instead-of-rejecting-immediately-on-bors-r-when-ci-is-still-pending.html">0388 — Wait for CI to finish instead of rejecting immediately on bors r+ when CI is still &quot;pending&quot;</a></li><li class="chapter-item expanded "><a href="0425-allow-patches-to-be-batched-by-themselves-only.html">0425 — Allow patches to be batched by themselves only</a></li><li class="chapter-item expanded "><a href="0471-the-required-approvals-option-should-require-up-to-date-approvals.html">0471 — The required_approvals option should require up-to-date approvals</a></li><li class="chapter-item expanded "><a href="0507-update-base-branch-of-prs-depending-on-a-branch-that-will-be-deleted.html">0507 — Update base branch of PRs depending on a branch that will be deleted</a></li><li class="chapter-item expanded "><a href="0508-log-outgoing-http-request.html">0508 — Log outgoing HTTP request</a></li><li class="chapter-item expanded "><a href="0521-add-a-new-environment-variable-public-protocol-to-allow-serving-bors-at-a-http-endpoint.html">0521 — Add a new environment variable 'PUBLIC_PROTOCOL', to allow serving bors at a HTTP endpoint</a></li><li class="chapter-item expanded "><a href="0516-add-support-for-custom-commit-titles.html">0516 — Add support for custom commit titles</a></li><li class="chapter-item expanded "><a href="0547-make-the-database-timeout-configurable.html">0547 — Make the database timeout configurable</a></li><li class="chapter-item expanded "><a href="0556-keep-track-of-unmergeable-and-draft-pull-requests.html">0556 — Keep track of unmergeable and draft pull requests</a></li><li class="chapter-item expanded "><a href="0561-add-bors-cancel-as-alias-for-bors-r.html">0561 — Add &quot;bors cancel&quot; as alias for &quot;bors r-&quot;</a></li><li class="chapter-item expanded "><a href="0563-add-a-simple-health-check-endpoint.html">0563 — Add a simple health check endpoint</a></li><li class="chapter-item expanded "><a href="0566-helm-chart-and-examples-using-terraform-with-kubernetes.html">0566 — Helm chart and examples using Terraform with Kubernetes</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">The Bors RFC Archive</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>Summary: Provide a way for projects to run arbitrary code before testing, and before merging.</p>
+<blockquote>
+<p>I allow this RFC document to be modified and redistributed under the terms of the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache-2.0 license</a>, or the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">CC-BY-NC-SA 3.0 license</a>, at your option.</p>
+</blockquote>
+<h1 id="motivation"><a class="header" href="#motivation">Motivation</a></h1>
+<p>Consider an auto-formatter, like clang-format. When should you run it?</p>
+<ul>
+<li>You could assume everyone contributing to your project will run it before committing. But this is error-prone and requires changes to many individual users' computers, which isn't practical, especially for open-source projects.</li>
+<li>You could use your CI to enforce that the linter has been run: run it on a temporary checkout, see if it makes any changes, and if it does then fail the test and force someone to fix it by hand. But creates extra work for contributors.</li>
+<li>You could make a bot that automatically formats PRs, and pushes the changes back into the PR branch. But inserting commits into a PR branch like this causes problems for users when they want to update their PR, because now the PR branch on github doesn't match their PR branch locally. This is annoying, and contributors with less experience with git may not be able to recover at all.</li>
+</ul>
+<p>The ideal workflow, therefore, is: approve PR -&gt; merge from master -&gt; auto-format -&gt; test -&gt; merge to master. The &quot;pre-test&quot; hook in this RFC allows bors-ng to handle everything after the approval. And you probably also want to run this during &quot;try&quot; commands too, so we provide a &quot;pre-try&quot; hook as well.</p>
+<p>Consider a continuous deployment workflow, where everytime you merge into master, you also want to upload the latest version somewhere. Since bors-ng takes care of merging into master, it seems like a natural place to handle this uploading step. This RFC defines a &quot;pre-merge&quot; hook to handle this.</p>
+<p>There's some more discussion in this thread: https://forum.bors.tech/t/running-custom-code-before-and-after-the-merge-for-continuous-deployment-or-other-uses/315</p>
+<h1 id="guide-level-explanation"><a class="header" href="#guide-level-explanation">Guide-level explanation</a></h1>
+<p>In <code>bors.toml</code>, you can set <em>pre-test</em>, <em>pre-try</em>, and <em>pre-merge hooks</em> to be a list of URLs:</p>
+<pre><code class="language-toml">pre-test-hooks = [&quot;https://example.com/pre-test-example&quot;]
+pre-try-hooks = [&quot;https://example.com/pre-try-example&quot;]
+pre-merge-hooks = [
+    &quot;https://example.com/pre-merge-example1&quot;,
+    &quot;https://example.com/pre-merge-example2&quot;,
+]
+</code></pre>
+<p>The pre-test and pre-try hooks are invoked after bors-ng has prepared a commit for testing, but before running tests. They may be used to alter the code being tested – for example, by running an auto-formatter. The pre-merge hook is invoked after an approved commit has passed testing, just before bors-ng merges it into the target branch. It cannot alter the code, but it can do other things, like trigger a deployment process or create a tag.</p>
+<p>A hook is &quot;invoked&quot; by <code>POST</code>ing a JSON document to the given URL – something like:</p>
+<pre><code class="language-json">{
+    &quot;phase&quot;: &quot;pre-test&quot;,
+    &quot;repository&quot;: &quot;https://github.com/bors-ng/bors-ng&quot;,
+    &quot;work-branch&quot;: &quot;staging.tmp&quot;,
+    &quot;target-branch&quot;: &quot;master&quot;,
+    &quot;commit-id&quot;: &quot;0b7d6e1ccf9d5fdbce73b690da8a4f76fffc38eb&quot;,
+    &quot;timeout&quot;: 60,
+    &quot;callback&quot;: &quot;https://bors.tech/webhook/callback/5a4857627&quot;
+}
+</code></pre>
+<p>More keys may be added in the future. Unrecognized keys should be ignored.</p>
+<p>When implementing a hook, the first thing you should do is validate the payload. Normally this includes the following steps:</p>
+<ol>
+<li>
+<p>Confirm that the request actually came from the bors-ng service, by checking the <code>X-Bors-NG-Signature</code> header. This will contain a comma-separated list of signatures, like:</p>
+<pre><code>X-Bors-NG-Signature: sha256-hmac=5257a869e7ecebeda32affa62cdca3fa51cad7e77a0e56ff536d0ce8e108d8bd, some-future-algorithm=6ffbb59b2300aae63f272406069a9788598b792a944a07aba816edb039989a39
+</code></pre>
+<p>Right now the only supported form is <code>sha256-hmac</code>, which will contain hex-encoded SHA256-HMAC of the request body. The key is a unique per-repo secret, which can be obtained from your bors-ng dashboard. In the future, more algorithms may be added, and you should be prepared to detect and ignore unrecognized signatures.</p>
+<p>Remember to use a constant-time equality test whenever checking HMAC signatures. For example, in Python use <a href="https://docs.python.org/3/library/hmac.html#hmac.compare_digest"><code>hmac.compare_digest</code></a>.</p>
+</li>
+<li>
+<p>Before manipulating the <code>work-branch</code>, confirm that its HEAD matches the given <code>commit-id</code>. This helps avoid race conditions in case the bors-ng service and your hook get confused and out-of-sync.</p>
+<p>Depending on what your hook does, it may also make sense to revalidate this commit id later. For example, if you're going to mutate the branch, don't use <code>git push --force</code>; always use <code>git push</code> or <a href="https://blog.developer.atlassian.com/force-with-lease/"><code>git push --force-with-lease</code></a>.</p>
+</li>
+</ol>
+<p>The hook responds by <code>POST</code>ing JSON documents to the given <code>callback</code> URL. These documents look like:</p>
+<pre><code class="language-json">{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;comment&quot;: &quot;Hook complete - for details see [here](https://...)&quot;
+}
+</code></pre>
+<p>The <code>&quot;status&quot;</code> field must be one of <code>&quot;success&quot;</code>, <code>&quot;failure&quot;</code>, or <code>&quot;pending&quot;</code>. The <code>&quot;comment&quot;</code> field contains arbitrary Github-flavored Markdown.</p>
+<p>The <code>&quot;timeout&quot;</code> field in the request body indicates how many seconds bors-ng is willing to wait for the callback to be invoked. If bors-ng receives a <code>&quot;pending&quot;</code> response, then it resets its timeout. We recommend that if a hook needs more than this amount of time to run, then it should send a <code>&quot;pending&quot;</code> callback every (timeout/2) seconds to extend the timeout.</p>
+<h1 id="reference-level-explanation"><a class="header" href="#reference-level-explanation">Reference-level explanation</a></h1>
+<h2 id="hook-lifecycle"><a class="header" href="#hook-lifecycle">Hook lifecycle</a></h2>
+<p>Hooks are always invoked in sequence with each other and with other operations on the branch, never in parallel. For example, if there are two pre-test hooks, then bors-ng performs the following steps in order:</p>
+<ul>
+<li>Set up the <code>staging.tmp</code> branch</li>
+<li><code>POST</code> to the first hook</li>
+<li>Wait for the first hook's callback to be invoked.</li>
+<li><code>POST</code> to the second hook</li>
+<li>Wait for the second hook's callback to be invoked</li>
+<li>Rename <code>staging.tmp</code> → <code>staging</code> to start the test run.</li>
+</ul>
+<p>Rationale: hooks are allowed to mutate things and may fail. Running them sequentially makes it much easier to reason about these cases.</p>
+<p>If a hook returns a non-200 response, the timeout expires, the callback is invoked with any <code>status</code> besides <code>&quot;success&quot;</code> or <code>&quot;pending&quot;</code>, or the callback payload is invalid, then the run is immediately aborted, and an error is reported to the user, similar to a test failure. If the run is a rollup, then the entire rollup is failed; no attempt is made to bisect the failing commit. (Rationale: hooks are not tests; they're intended to always succeed. So if a hook fails, there's no point in trying to figure out which commit to blame; the hook is to blame, and the hook is what needs to be fixed.)</p>
+<p>If a pre-merge hook alters the working branch (i.e., after running it, the head of the test branch has changed), then bors-ng should detect that and report an error rather than merge an untested commit.</p>
+<h2 id="request-payload"><a class="header" href="#request-payload">Request payload</a></h2>
+<p>The request payload is a JSON object with the following keys:</p>
+<ul>
+<li><code>phase</code>: one of <code>&quot;pre-test&quot;</code>, <code>&quot;pre-try&quot;</code>, or <code>&quot;pre-merge&quot;</code></li>
+<li><code>repository</code>: the canonical URL for the repository</li>
+<li><code>work-branch</code>: the branch in that repository that bors-ng is working on. Generally <code>&quot;staging.tmp&quot;</code> for pre-test hooks, <code>&quot;trying.tmp&quot;</code> for pre-try hooks, and <code>&quot;staging&quot;</code> for <code>pre-merge</code> hooks.</li>
+<li><code>target-branch</code>: For pre-test and pre-merge hooks, the name of the target branch that this change will eventually be merged into. For <code>pre-try</code> hooks, this is always <code>null</code>.</li>
+<li><code>commit-id</code>: Bors-ng believes that this commit is the HEAD of the <code>work-branch</code>.</li>
+<li><code>timeout</code>: The number of seconds bors-ng will wait before assuming the hook has crashed.</li>
+<li><code>callback</code>: The URL the hook should <code>POST</code> updates to.</li>
+</ul>
+<h2 id="security"><a class="header" href="#security">Security</a></h2>
+<p>We need some way for hooks to tell that they're being invoked by bors-ng, and for bors-ng to tell that the callbacks are coming from the hooks.</p>
+<p>The latter is fairly easy: bors-ng should create a new, high-entropy callback URL for each hook invocation. That way it knows that anyone who invokes the callback is in fact authorized to do so.</p>
+<p>For invoking hooks, life is more difficult, because we expect hook URLs to be checked into public repositories. And if hooks don't validate that it's really bors-ng invoking them, then anyone who knows the hook URL could send it a POST that pretends to be from bors-ng. If timed correctly, this might cause a hook to try to auto-format a <code>testing.tmp</code> branch that bors-ng is in the middle of assembling, or trigger the deployment of a branch whose tests are still running. That would be bad.</p>
+<p>Therefore, each time bors-ng adds a new repo, it generates a 256-bit secret. This secret is shown on the repo's dashboard page, and can be manually regenerated by the user (e.g. by pressing a button on the dashboard).</p>
+<p>When bors-ng invokes a hook, it includes a <code>X-Bors-NG-Signature</code> header, containing a SHA256 HMAC of the request body, keyed by this secret: <code>sha256-hmac=&lt;256 bits of hex&gt;</code>. (Prior art: <a href="https://developer.github.com/webhooks/securing/">Github</a>, <a href="https://stripe.com/docs/webhooks/signatures">Stripe</a>.)</p>
+<p>The header should also contain some fake signatures with randomly generated names, like <code>sdof123-jow=&lt;more gibberish here&gt;</code>. This forces hook implementations to be prepared to handle unrecognized signature algorithms, so that if we later need to transition to a new signature algorithm we can do that without breaking everyone (<a href="https://tools.ietf.org/html/draft-ietf-tls-grease-02">see also</a>).</p>
+<h1 id="drawbacks"><a class="header" href="#drawbacks">Drawbacks</a></h1>
+<p>It's kind of complicated? But auto-formatting and continuous deployment are pretty awesome things.</p>
+<h1 id="rationale-and-alternatives"><a class="header" href="#rationale-and-alternatives">Rationale and alternatives</a></h1>
+<p>We could provide a way for bors-ng to run arbitrary code directly. That might be acceptable for locally-hosted versions, or with complex sandboxing. But we would like to support this feature in the publically hosted version, and without complex sandboxing. This is the simplest approach I can think of that doesn't require trusting the hook code.</p>
+<p>In practice, it seems likely that the pre-test and pre-try hooks will often be the same. I kept them separate because I'm not sure whether this is always true or not.</p>
+<p>The pre-merge hook has a weaker rationale than the others, because there are other ways to invoke code after your tests pass, or after code is merged into master (e.g. the deployment support in most popular CI systems). However, it still seems to be worth including, because:</p>
+<ul>
+<li>In the continuous deployment use case, you probably want pre-test and pre-merge hooks to collaborate (e.g., setting the version number in pre-test, and then creating the corresponding tag in pre-merge). Splitting this between two different services seems like a pain.</li>
+<li>If you're using multiple status checks and want to gate deployment on all of them together, then that requires some separate service. bors-ng is already set up to do this.</li>
+<li>Most hosted CI systems expose deployment secrets to all users with write access to the repository. In bors-ng deployments, its common that there are users who have write permission (e.g. to create branches or modify issues), but who don't have permission to push directly to the master branch. Storing the deployment secrets in some other system, whose access is gated behind bors-ng, is a way to enforce the NRSROSE principle for deployments as well as merges.</li>
+<li>We expect that the cost of implementing pre-merge hooks should be pretty low, since they should be able to share most of their code with pre-test/pre-try hooks.</li>
+</ul>
+<h1 id="prior-art"><a class="header" href="#prior-art">Prior art</a></h1>
+<p>I'm not aware of any prior art for these kinds of hooks in other NRSROSE systems.</p>
+<h1 id="unresolved-questions"><a class="header" href="#unresolved-questions">Unresolved questions</a></h1>
+<p>None.</p>
+<h1 id="future-possibilities"><a class="header" href="#future-possibilities">Future possibilities</a></h1>
+<p>I briefly considered adding a mechanism to pass information between the pre-test and pre-merge hooks. (For example: the pre-test hook could return some JSON data, which would then be passed through to the pre-merge hook.) I couldn't think of any use cases, so I left it out, but it could be added later if any use cases are discovered.</p>
+<p>If you have a lot of repositories managed by bors-ng, then it might be tiresome to have to manually configure secrets for each one. Maybe we'll want to add a way to let multiple repositories use the same secret? (E.g., a per-github-org secret instead of a per-repo secret.)</p>
+<h1 id="implementation-status"><a class="header" href="#implementation-status">Implementation status</a></h1>
+<p><strong>Yet to be implemented</strong></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="0313-the-bors-button-extension.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="0347-ability-to-create-merge-commits-locally-in-self-hosted-instances-of-bors.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="0313-the-bors-button-extension.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="0347-ability-to-create-merge-commits-locally-in-self-hosted-instances-of-bors.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

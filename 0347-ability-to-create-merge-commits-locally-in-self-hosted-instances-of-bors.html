@@ -1,0 +1,339 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>0347 — Ability to create merge commits locally in self-hosted instances of Bors - The Bors RFC Archive</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="INFORMATIONAL.html">Informational RFC</a></li><li class="chapter-item expanded "><a href="PROCESS.html">Process RFC</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="0296-adopt-a-process-for-proposing-approving-and-tracking-major-changes-to-bors-ng.html">0296 — Adopt a process for proposing, approving, and tracking major changes to bors-ng</a></li><li class="chapter-item expanded "><a href="0332-elixir-and-erlang-version-update-policy.html">0332 — Elixir and Erlang version update policy</a></li><li class="chapter-item expanded "><a href="0412-simplify-bors-ng-bors-ngs-label-system.html">0412 — Simplify bors-ng/bors-ng's label system</a></li><li class="chapter-item expanded "><a href="0434-show-status-on-accepted-rfcs.html">0434 — Show status on accepted RFCs</a></li></ol></li><li class="chapter-item expanded "><a href="FEATURE.html">Feature RFC</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="0313-the-bors-button-extension.html">0313 — The bors button extension</a></li><li class="chapter-item expanded "><a href="0322-pre-test-and-pre-merge-hooks.html">0322 — Pre-test and Pre-merge hooks</a></li><li class="chapter-item expanded "><a href="0347-ability-to-create-merge-commits-locally-in-self-hosted-instances-of-bors.html" class="active">0347 — Ability to create merge commits locally in self-hosted instances of Bors</a></li><li class="chapter-item expanded "><a href="0349-use-a-squash-merge-in-bors.html">0349 — Use a squash merge in Bors</a></li><li class="chapter-item expanded "><a href="0357-bors-support-for-codeowners.html">0357 — Bors support for CODEOWNERS</a></li><li class="chapter-item expanded "><a href="0360-add-a-new-configuration-option-status-wait-success.html">0360 — Add a new configuration option status_wait_success</a></li><li class="chapter-item expanded "><a href="0362-allow-delegate-to-be-abbreviated-as-d.html">0362 — Allow delegate to be abbreviated as d</a></li><li class="chapter-item expanded "><a href="0376-allow-merge-as-an-alias-for-r.html">0376 — Allow merge as an alias for r+</a></li><li class="chapter-item expanded "><a href="0388-wait-for-ci-to-finish-instead-of-rejecting-immediately-on-bors-r-when-ci-is-still-pending.html">0388 — Wait for CI to finish instead of rejecting immediately on bors r+ when CI is still &quot;pending&quot;</a></li><li class="chapter-item expanded "><a href="0425-allow-patches-to-be-batched-by-themselves-only.html">0425 — Allow patches to be batched by themselves only</a></li><li class="chapter-item expanded "><a href="0471-the-required-approvals-option-should-require-up-to-date-approvals.html">0471 — The required_approvals option should require up-to-date approvals</a></li><li class="chapter-item expanded "><a href="0507-update-base-branch-of-prs-depending-on-a-branch-that-will-be-deleted.html">0507 — Update base branch of PRs depending on a branch that will be deleted</a></li><li class="chapter-item expanded "><a href="0508-log-outgoing-http-request.html">0508 — Log outgoing HTTP request</a></li><li class="chapter-item expanded "><a href="0521-add-a-new-environment-variable-public-protocol-to-allow-serving-bors-at-a-http-endpoint.html">0521 — Add a new environment variable 'PUBLIC_PROTOCOL', to allow serving bors at a HTTP endpoint</a></li><li class="chapter-item expanded "><a href="0516-add-support-for-custom-commit-titles.html">0516 — Add support for custom commit titles</a></li><li class="chapter-item expanded "><a href="0547-make-the-database-timeout-configurable.html">0547 — Make the database timeout configurable</a></li><li class="chapter-item expanded "><a href="0556-keep-track-of-unmergeable-and-draft-pull-requests.html">0556 — Keep track of unmergeable and draft pull requests</a></li><li class="chapter-item expanded "><a href="0561-add-bors-cancel-as-alias-for-bors-r.html">0561 — Add &quot;bors cancel&quot; as alias for &quot;bors r-&quot;</a></li><li class="chapter-item expanded "><a href="0563-add-a-simple-health-check-endpoint.html">0563 — Add a simple health check endpoint</a></li><li class="chapter-item expanded "><a href="0566-helm-chart-and-examples-using-terraform-with-kubernetes.html">0566 — Helm chart and examples using Terraform with Kubernetes</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">The Bors RFC Archive</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>Summary: Add support for creating merge commits locally in self-hosted instances of Bors. This feature will never be enabled on the free public instance of Bors.</p>
+<blockquote>
+<p>I allow this RFC document to be modified and redistributed under the terms of the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache-2.0 license</a>, or the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">CC-BY-NC-SA 3.0 license</a>, at your option.</p>
+</blockquote>
+<h1 id="motivation"><a class="header" href="#motivation">Motivation</a></h1>
+<p>Currently, Bors uses GitHub's <a href="https://developer.github.com/v3/git/">Git Database API</a> to create merge commits. This approach results in relatively inexpensive disk storage requirements and is sufficient for most purposes.</p>
+<p>However, there are several important features that are not possible when creating merge commits with the Git Database API. For example:</p>
+<ol>
+<li>
+<p>Merge commits created using the Git Database API are not automatically GPG-signed (<a href="https://github.com/bors-ng/bors-ng/issues/647">issue #647</a>).</p>
+</li>
+<li>
+<p>Merges performed using the Git Database API do not respect the merge strategies specified in any <code>.gitattributes</code> files (<a href="https://github.com/bors-ng/bors-ng/issues/512">issue #512</a>).</p>
+</li>
+</ol>
+<h1 id="guide-level-explanation"><a class="header" href="#guide-level-explanation">Guide-level explanation</a></h1>
+<p>An instance of Bors can be configured either to perform all merges using the Git Database API or to perform all merges locally using local <code>git</code>. This is a server-wide setting; the same setting will apply to all repositories on the Bors server. The default setting is to perform all merges using the Git Database API.</p>
+<p>If you manage an instance of Bors, you can enable local <code>git</code> merges by setting the <code>perform_git_merges_locally</code> configuration setting to <code>true</code> in the <a href="https://github.com/bors-ng/bors-ng/blob/a4c2f27367027172aad4c7624316025c6e6640aa/config/config.exs"><code>config.exs</code> file</a>. The default value of <code>perform_git_merges_locally</code> is <code>false</code>.</p>
+<pre><code class="language-elixir"># General application configuration
+config :bors, BorsNG,
+  command_trigger: {:system, :string, &quot;COMMAND_TRIGGER&quot;, &quot;bors&quot;},
+  home_url: &quot;https://bors.tech/&quot;,
+  allow_private_repos: {:system, :boolean, &quot;ALLOW_PRIVATE_REPOS&quot;, false},
+  perform_git_merges_locally: {:system, :boolean, &quot;PERFORM_GIT_MERGES_LOCALLY&quot;, true},
+  dashboard_header_html: {:system, :string, &quot;DASHBOARD_HEADER_HTML&quot;, &quot;&quot;&quot;
+          &lt;a class=header-link href=&quot;https://bors.tech&quot;&gt;Home&lt;/a&gt;
+          &lt;a class=header-link href=&quot;https://forum.bors.tech&quot;&gt;Forum&lt;/a&gt;
+          &lt;a class=header-link href=&quot;https://bors.tech/documentation/getting-started/&quot;&gt;Docs&lt;/a&gt;
+          &lt;b class=header-link&gt;Dashboard&lt;/b&gt;
+    &quot;&quot;&quot;},
+  dashboard_footer_html: {:system, :string, &quot;DASHBOARD_FOOTER_HTML&quot;, &quot;&quot;&quot;
+        This service is provided for free on a best-effort basis.
+    &quot;&quot;&quot;}
+</code></pre>
+<p>By default, Bors will look for an executable named <code>git</code> in the PATH. To customize the location of the <code>git</code> executable, set the value of the <code>git_command</code> configuration setting. The default value of <code>git_command</code> is <code>git</code>.</p>
+<pre><code class="language-elixir"># General application configuration
+config :bors, BorsNG,
+  command_trigger: {:system, :string, &quot;COMMAND_TRIGGER&quot;, &quot;bors&quot;},
+  home_url: &quot;https://bors.tech/&quot;,
+  allow_private_repos: {:system, :boolean, &quot;ALLOW_PRIVATE_REPOS&quot;, false},
+  perform_git_merges_locally: {:system, :boolean, &quot;PERFORM_GIT_MERGES_LOCALLY&quot;, true},
+  git_command: {:system, :string, &quot;GIT_COMMAND&quot;, &quot;/bin/git&quot;},
+  dashboard_header_html: {:system, :string, &quot;DASHBOARD_HEADER_HTML&quot;, &quot;&quot;&quot;
+          &lt;a class=header-link href=&quot;https://bors.tech&quot;&gt;Home&lt;/a&gt;
+          &lt;a class=header-link href=&quot;https://forum.bors.tech&quot;&gt;Forum&lt;/a&gt;
+          &lt;a class=header-link href=&quot;https://bors.tech/documentation/getting-started/&quot;&gt;Docs&lt;/a&gt;
+          &lt;b class=header-link&gt;Dashboard&lt;/b&gt;
+    &quot;&quot;&quot;},
+  dashboard_footer_html: {:system, :string, &quot;DASHBOARD_FOOTER_HTML&quot;, &quot;&quot;&quot;
+        This service is provided for free on a best-effort basis.
+    &quot;&quot;&quot;}
+</code></pre>
+<p>This RFC does not deprecate or break any existing features. Maintainers of Bors servers will always have the option to perform all merges using the Git Database API.</p>
+<h1 id="reference-level-explanation"><a class="header" href="#reference-level-explanation">Reference-level explanation</a></h1>
+<p>If you were to perform the merge yourself, here are the steps you would follow. Suppose that we have a repository located at <code>https://github.com/someusername/somerepository.git</code>, and we want to merge pull requests <code>#10</code>, <code>#15</code>, and <code>#20</code> into the target branch <code>sometargetbranch</code>.</p>
+<ol>
+<li><code>git clone https://x-access-token:&lt;token&gt;@github.com/someusername/somerepository.git</code></li>
+<li><code>cd somerepository</code></li>
+<li><code>git checkout sometargetbranch</code></li>
+<li><code>git fetch origin pull/10/head:randomlygeneratedstring-10</code></li>
+<li><code>git checkout randomlygeneratedstring-10</code></li>
+<li><code>git fetch origin pull/10/head:randomlygeneratedstring-15</code></li>
+<li><code>git checkout randomlygeneratedstring-15</code></li>
+<li><code>git fetch origin pull/10/head:randomlygeneratedstring-20</code></li>
+<li><code>git checkout randomlygeneratedstring-20</code></li>
+<li><code>git checkout sometargetbranch</code></li>
+<li><code>git branch --force staging</code></li>
+<li><code>git checkout staging</code></li>
+<li><code>git merge randomlygeneratedstring-10 randomlygeneratedstring-15 randomlygeneratedstring-20</code></li>
+<li><code>git push --force origin staging</code></li>
+<li><code>cd ..</code></li>
+<li><code>rm -rf somerepository</code></li>
+</ol>
+<p>In order to implement this in Bors, we'll likely need to write additional versions of the <code>start_attempt</code> method in <a href="https://github.com/bors-ng/bors-ng/blob/a4c2f27367027172aad4c7624316025c6e6640aa/lib/worker/attemptor.ex">attemptor.ex</a> and the <code>start_waiting_batch</code> and <code>start_waiting_merged_batch</code>  methods in <a href="https://github.com/bors-ng/bors-ng/blob/a4c2f27367027172aad4c7624316025c6e6640aa/lib/worker/batcher.ex">batcher.ex</a>. Then, we'll add logic that calls the appropriate methods based on the value of the <code>perform_git_merges_locally</code> configuration option.</p>
+<h1 id="drawbacks"><a class="header" href="#drawbacks">Drawbacks</a></h1>
+<p>In order for Bors to perform a merge locally, the server on which Bors is running will need to have sufficient disk space for <code>git</code> to be able to clone repositories locally. Thus, any Bors server maintainer that is considering setting <code>perform_git_merges_locally</code> to <code>true</code> should make sure that they will have enough disk space.</p>
+<p>Let <code>N</code> denote the number of repositories on which Bors is installed, and let <code>M</code> denote the size on disk of the largest repository. Since each repository could have both <code>bors r+</code> and <code>bors try</code> commands running simultaneously, a conservative estimate for the disk space requirement for cloning repositories is <code>2MN</code>.</p>
+<h1 id="rationale-and-alternatives"><a class="header" href="#rationale-and-alternatives">Rationale and alternatives</a></h1>
+<p>The alternative will be to continue using the Git Database API for creating merge commits. This is a great option for most users, and it will continue to be the only option available on the free public instance of Bors. However, as described above, there are certain features that will never be available through the Git Database API, and for those, a Bors administrator will need to use local merges.</p>
+<h1 id="prior-art"><a class="header" href="#prior-art">Prior art</a></h1>
+<p>The following apps implement the NRSROSE and have the option to create the merge commit locally:</p>
+<ul>
+<li><a href="https://github.com/servo/homu">homu</a> (<a href="https://github.com/servo/homu/blob/2ea53e76ebac3e5fa11bc39054b3cd4c42eff607/homu/main.py#L693">source file</a>)</li>
+<li><a href="https://github.com/openstack-infra/zuul">zuul</a> (<a href="https://github.com/openstack-infra/zuul/blob/dc9347c1223e3c7eb0399889d03c5de9e854a836/zuul/merger/merger.py#L382">source file</a>)</li>
+<li><a href="https://github.com/smarkets/marge-bot">marge-bot</a> (<a href="https://github.com/smarkets/marge-bot/blob/4813da4baf9e92f8d429990a2fccf03baea1b668/marge/git.py#L104">source file</a>)</li>
+</ul>
+<h1 id="unresolved-questions"><a class="header" href="#unresolved-questions">Unresolved questions</a></h1>
+<ul>
+<li>How do we implement tests for this feature?</li>
+</ul>
+<h1 id="future-possibilities"><a class="header" href="#future-possibilities">Future possibilities</a></h1>
+<h3 id="next-steps-for-maintainers-of-bors-servers-after-this-feature-is-implemented"><a class="header" href="#next-steps-for-maintainers-of-bors-servers-after-this-feature-is-implemented">Next steps for maintainers of Bors servers after this feature is implemented</a></h3>
+<h5 id="gpg-signing-all-merge-commits"><a class="header" href="#gpg-signing-all-merge-commits">GPG-signing all merge commits</a></h5>
+<p>If you run a Bors server and you want to enable GPG-signing of all merge commits, you first need to set <code>perform_git_merges_locally</code> to <code>true</code>. Then, you should log in to the server as the same user that Bors runs as and run the following commands:</p>
+<ul>
+<li><code>git config --global user.signingkey your_gpg_key_id</code></li>
+<li><code>git config --global commit.gpgsign true</code></li>
+</ul>
+<h5 id="using-specific-merge-strategies-for-certain-files"><a class="header" href="#using-specific-merge-strategies-for-certain-files">Using specific merge strategies for certain files</a></h5>
+<p>If you use a Bors server with <code>perform_git_merges_locally</code> set to <code>true</code>, and you want to use a specific merge strategy for certain files in one of your repositories, you only need to create an appropriate <code>.gitattributes</code> file and commit it in your repository. The command-line <code>git</code> will use the <code>.gitattributes</code> file automatically.</p>
+<h3 id="future-work-in-bors"><a class="header" href="#future-work-in-bors">Future work in Bors</a></h3>
+<p>Once the ability to create merge commits locally has been implemented, future work might include the implementation of a <code>git_squash = true</code> option in <code>bors.toml</code> that would pass the <code>--squash</code> flag to the <code>git merge</code> command. This could potentially help us close <a href="https://github.com/bors-ng/bors-ng/issues/138">issue #138</a> and/or <a href="https://github.com/bors-ng/bors-ng/issues/194">issue #194</a>.</p>
+<p>But this would be an advanced feature, and we should not implement it as part of this first RFC. The best plan is to first implement the ability simply to create merge commits locally. Once we have implemented that, we can consider opening a second RFC for discussion specifically of a <code>git_squash = true</code> option for passing the <code>--squash</code> flag to the <code>git merge</code> command, or something similar.</p>
+<h1 id="implementation-status"><a class="header" href="#implementation-status">Implementation status</a></h1>
+<p><strong>Yet to be implemented</strong></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="0322-pre-test-and-pre-merge-hooks.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="0349-use-a-squash-merge-in-bors.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="0322-pre-test-and-pre-merge-hooks.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="0349-use-a-squash-merge-in-bors.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

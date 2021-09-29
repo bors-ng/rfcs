@@ -1,0 +1,373 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>0360 — Add a new configuration option status_wait_success - The Bors RFC Archive</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="INFORMATIONAL.html">Informational RFC</a></li><li class="chapter-item expanded "><a href="PROCESS.html">Process RFC</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="0296-adopt-a-process-for-proposing-approving-and-tracking-major-changes-to-bors-ng.html">0296 — Adopt a process for proposing, approving, and tracking major changes to bors-ng</a></li><li class="chapter-item expanded "><a href="0332-elixir-and-erlang-version-update-policy.html">0332 — Elixir and Erlang version update policy</a></li><li class="chapter-item expanded "><a href="0412-simplify-bors-ng-bors-ngs-label-system.html">0412 — Simplify bors-ng/bors-ng's label system</a></li><li class="chapter-item expanded "><a href="0434-show-status-on-accepted-rfcs.html">0434 — Show status on accepted RFCs</a></li></ol></li><li class="chapter-item expanded "><a href="FEATURE.html">Feature RFC</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="0313-the-bors-button-extension.html">0313 — The bors button extension</a></li><li class="chapter-item expanded "><a href="0322-pre-test-and-pre-merge-hooks.html">0322 — Pre-test and Pre-merge hooks</a></li><li class="chapter-item expanded "><a href="0347-ability-to-create-merge-commits-locally-in-self-hosted-instances-of-bors.html">0347 — Ability to create merge commits locally in self-hosted instances of Bors</a></li><li class="chapter-item expanded "><a href="0349-use-a-squash-merge-in-bors.html">0349 — Use a squash merge in Bors</a></li><li class="chapter-item expanded "><a href="0357-bors-support-for-codeowners.html">0357 — Bors support for CODEOWNERS</a></li><li class="chapter-item expanded "><a href="0360-add-a-new-configuration-option-status-wait-success.html" class="active">0360 — Add a new configuration option status_wait_success</a></li><li class="chapter-item expanded "><a href="0362-allow-delegate-to-be-abbreviated-as-d.html">0362 — Allow delegate to be abbreviated as d</a></li><li class="chapter-item expanded "><a href="0376-allow-merge-as-an-alias-for-r.html">0376 — Allow merge as an alias for r+</a></li><li class="chapter-item expanded "><a href="0388-wait-for-ci-to-finish-instead-of-rejecting-immediately-on-bors-r-when-ci-is-still-pending.html">0388 — Wait for CI to finish instead of rejecting immediately on bors r+ when CI is still &quot;pending&quot;</a></li><li class="chapter-item expanded "><a href="0425-allow-patches-to-be-batched-by-themselves-only.html">0425 — Allow patches to be batched by themselves only</a></li><li class="chapter-item expanded "><a href="0471-the-required-approvals-option-should-require-up-to-date-approvals.html">0471 — The required_approvals option should require up-to-date approvals</a></li><li class="chapter-item expanded "><a href="0507-update-base-branch-of-prs-depending-on-a-branch-that-will-be-deleted.html">0507 — Update base branch of PRs depending on a branch that will be deleted</a></li><li class="chapter-item expanded "><a href="0508-log-outgoing-http-request.html">0508 — Log outgoing HTTP request</a></li><li class="chapter-item expanded "><a href="0521-add-a-new-environment-variable-public-protocol-to-allow-serving-bors-at-a-http-endpoint.html">0521 — Add a new environment variable 'PUBLIC_PROTOCOL', to allow serving bors at a HTTP endpoint</a></li><li class="chapter-item expanded "><a href="0516-add-support-for-custom-commit-titles.html">0516 — Add support for custom commit titles</a></li><li class="chapter-item expanded "><a href="0547-make-the-database-timeout-configurable.html">0547 — Make the database timeout configurable</a></li><li class="chapter-item expanded "><a href="0556-keep-track-of-unmergeable-and-draft-pull-requests.html">0556 — Keep track of unmergeable and draft pull requests</a></li><li class="chapter-item expanded "><a href="0561-add-bors-cancel-as-alias-for-bors-r.html">0561 — Add &quot;bors cancel&quot; as alias for &quot;bors r-&quot;</a></li><li class="chapter-item expanded "><a href="0563-add-a-simple-health-check-endpoint.html">0563 — Add a simple health check endpoint</a></li><li class="chapter-item expanded "><a href="0566-helm-chart-and-examples-using-terraform-with-kubernetes.html">0566 — Helm chart and examples using Terraform with Kubernetes</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">The Bors RFC Archive</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>Summary: Add a new configuration option <code>status_wait_success</code>. Bors will wait until all of the GitHub Statuses listed in <code>status_wait_success</code> succeed (i.e. &quot;turn green&quot;), or until Bors times out.</p>
+<blockquote>
+<p>I allow this RFC document to be modified and redistributed under the terms of the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache-2.0 license</a>, or the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">CC-BY-NC-SA 3.0 license</a>, at your option.</p>
+</blockquote>
+<h1 id="motivation"><a class="header" href="#motivation">Motivation</a></h1>
+<p>There are some GitHub Statuses that will initially report a failing (i.e. &quot;red X&quot;) status, but at a later point in time will change their status to passing (i.e. &quot;green checkmark&quot;). An example would be the <code>codecov/project</code> status from CodeCov. If you have multiple CI jobs that each report partial coverage, then initially the <code>codecov/project</code> status will be failing. However, after all of the CI jobs have completed and submitted their coverage reports, CodeCov will merge all of the coverage reports and will change the <code>codecov/project</code> status to passing.</p>
+<p>If you list such a status in the <code>status</code> section of your <code>bors.toml</code> file, then Bors will fail the build as soon as it sees a failing status. But this is not what we want - we want Bors to ignore those failing statuses and instead wait until the status passes (or until Bors times out, whichever comes first). </p>
+<p>A more detailed description of the CodeCov use case is available in <a href="https://forum.bors.tech/t/bug-report-travis-should-not-look-at-the-codecov-status-if-the-travis-status-check-is-still-pending/356">this forum thread</a>.</p>
+<h1 id="guide-level-explanation"><a class="header" href="#guide-level-explanation">Guide-level explanation</a></h1>
+<p>If you want Bors to require that a certain GitHub Status pass, and if you want Bors to immediately fail the build if that GitHub Status ever reports a failing (i.e. &quot;red X&quot;) status, put that status in the <code>status</code> list.</p>
+<p>If you want Bors to require that a certain GitHub Status pass, and you want Bors to wait until that GitHub status passes (i.e. &quot;green checkmark&quot;), and you do not want Bors to fail the build if that GitHub Status ever reports a failing status, put that status in the <code>status_wait_success</code>.</p>
+<p>If you specify one or more statuses in the <code>status_wait_success</code> list, the Bors will wait until all of those statuses succeed. If not all of the statuses have succeeded by the time that the Bors timeout period has elapsed, then Bors will fail with a timeout error.</p>
+<h2 id="example"><a class="header" href="#example">Example</a></h2>
+<p>For example, suppose that you want Bors to require that the following four statuses pass in order for Bors to merge:</p>
+<ul>
+<li><code>continuous-integration/travis-ci/push</code></li>
+<li><code>Taskcluster (push)</code></li>
+<li><code>codecov/project</code></li>
+<li><code>codecov/patch</code></li>
+</ul>
+<p>If the <code>continuous-integration/travis-ci/push</code> and/or <code>Taskcluster (push)</code> statuses fails, you want Bors to immediately fail the build. However, if the <code>codecov/project</code> and/or <code>codecov/patch</code> statuses fails, you want Bors to ignore the failure, and instead wait until both the <code>codecov/project</code> and <code>codecov/patch</code> statuses succeed. In this example, your <code>bors.toml</code> file would look like this:</p>
+<pre><code class="language-toml">status = [ &quot;continuous-integration/travis-ci/push&quot;, &quot;Taskcluster (push)&quot; ]
+
+status_wait_success = [&quot;codecov/project&quot;, &quot;codecov/patch&quot;]
+</code></pre>
+<h2 id="customizing-the-timeout"><a class="header" href="#customizing-the-timeout">Customizing the timeout</a></h2>
+<p>The default Bors timeout is one hour (i.e. 3600 seconds). You can specifying a longer or shorter timeout by setting the <code>timeout_sec</code> option in <code>bors.toml</code>. For example, to set the Bors timeout to twelve hours (i.e. 43200 seconds), you would set <code>timeout_sec = 43200</code>. So your <code>bors.toml</code> file would look like this:</p>
+<pre><code class="language-toml">status = [ &quot;continuous-integration/travis-ci/push&quot;, &quot;Taskcluster (push)&quot; ]
+
+status_wait_success = [&quot;codecov/project&quot;, &quot;codecov/patch&quot;]
+
+timeout_sec = 43200
+</code></pre>
+<h1 id="reference-level-explanation"><a class="header" href="#reference-level-explanation">Reference-level explanation</a></h1>
+<p>Here is a rough overview of the changes that we need to make.</p>
+<p>First, we will modify the code that lives in <a href="https://github.com/bors-ng/bors-ng/blob/4b7e2594ba2b4557c54e4f3d9980147240f6656e/lib/github/github.ex#L224"><code>lib/github/github.ex</code>, starting at line 224</a>. Currently, the code looks like this:</p>
+<pre><code class="language-elixir">@spec map_state_to_status(binary) :: tstatus
+def map_state_to_status(state) do
+  case state do
+    &quot;pending&quot; -&gt; :running
+    &quot;success&quot; -&gt; :ok
+    &quot;failure&quot; -&gt; :error
+    &quot;error&quot; -&gt; :error
+  end
+end
+
+@spec map_check_to_status(binary) :: tstatus
+def map_check_to_status(conclusion) do
+  case conclusion do
+    nil -&gt; :running
+    &quot;success&quot; -&gt; :ok
+    _ -&gt; :error
+  end
+end
+
+@spec map_status_to_state(tstatus) :: binary
+def map_status_to_state(state) do
+  case state do
+    :running -&gt; &quot;pending&quot;
+    :ok -&gt; &quot;success&quot;
+    :error -&gt; &quot;failure&quot;
+  end
+end
+</code></pre>
+<p>We will modify it to look like this:</p>
+<pre><code class="language-elixir">@spec map_state_to_status(binary) :: tstatus
+def map_state_to_status(state) do
+  case state do
+    &quot;pending&quot; -&gt; :running
+    &quot;success&quot; -&gt; :ok
+    &quot;failure&quot; -&gt; :error
+    &quot;error&quot; -&gt; :error
+  end
+end
+
+@spec map_check_to_status(binary) :: tstatus
+def map_check_to_status(conclusion) do
+  case conclusion do
+    nil -&gt; :running
+    &quot;success&quot; -&gt; :ok
+    _ -&gt; :error
+  end
+end
+
+@spec map_status_to_state(tstatus) :: binary
+def map_status_to_state(state) do
+  case state do
+    :running -&gt; &quot;pending&quot;
+    :ok -&gt; &quot;success&quot;
+    :error -&gt; &quot;failure&quot;
+  end
+end
+
+@spec map_state_to_status_wait_success(binary) :: tstatus
+def map_state_to_status_wait_success(state) do
+  case state do
+    &quot;pending&quot; -&gt; :running
+    &quot;success&quot; -&gt; :ok
+    &quot;failure&quot; -&gt; :running
+    &quot;error&quot; -&gt; :running
+  end
+end
+
+@spec map_check_to_status_wait_success(binary) :: tstatus
+def map_check_to_status_wait_success(conclusion) do
+  case conclusion do
+    nil -&gt; :running
+    &quot;success&quot; -&gt; :ok
+    _ -&gt; :running
+  end
+end
+
+@spec map_status_wait_success_to_state(tstatus) :: binary
+def map_status_wait_success_to_state(state) do
+  case state do
+    :running -&gt; &quot;pending&quot;
+    :ok -&gt; &quot;success&quot;
+    :error -&gt; &quot;pending&quot;
+  end
+end
+</code></pre>
+<p>Basically, we want Bors to think of any status other than <code>success</code> as <code>pending</code>.</p>
+<p>Then we will add logic that checks the <code>bors.toml</code> file and calls the correct functions (i.e. <code>map_state_to_status</code> versus <code>map_state_to_status_wait_success</code>) depending on whether the relevant GitHub Status was listed in <code>status</code> or <code>status_wait_success</code>.</p>
+<p>We should also make it a <code>bors.toml</code> parsing error to specify the same status in both <code>status</code> and <code>status_wait_success</code>.</p>
+<h1 id="drawbacks-rationale-and-alternatives"><a class="header" href="#drawbacks-rationale-and-alternatives">Drawbacks, rationale and alternatives</a></h1>
+<p>The drawbacks, rationale and alternatives have been explained in detail in <a href="https://forum.bors.tech/t/bug-report-travis-should-not-look-at-the-codecov-status-if-the-travis-status-check-is-still-pending/356">this forum thread</a>.</p>
+<p>The feature described here is the only approach that avoids a race condition.</p>
+<h1 id="prior-art"><a class="header" href="#prior-art">Prior art</a></h1>
+<ul>
+<li>I am not aware of any prior art.</li>
+</ul>
+<h1 id="unresolved-questions"><a class="header" href="#unresolved-questions">Unresolved questions</a></h1>
+<ul>
+<li>How will we implement tests for this new feature?</li>
+</ul>
+<h1 id="future-possibilities"><a class="header" href="#future-possibilities">Future possibilities</a></h1>
+<p>I can't think of any future possibilities at this time.</p>
+<h1 id="implementation-status"><a class="header" href="#implementation-status">Implementation status</a></h1>
+<p><strong>Yet to implement</strong></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="0357-bors-support-for-codeowners.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="0362-allow-delegate-to-be-abbreviated-as-d.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="0357-bors-support-for-codeowners.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="0362-allow-delegate-to-be-abbreviated-as-d.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
